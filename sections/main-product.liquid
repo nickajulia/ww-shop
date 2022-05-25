@@ -195,7 +195,32 @@
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
       <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
+        {% render 'skio-plan-picker', start_onetime: false %}
+        <div class="trustspot-inline-product" data-product-sku="{{ product.id }}"></div>
+        <!-- TrustBox widget - Product Reviews -->
 
+        <div class="trustpilot-widget" data-locale="en-GB" data-template-id="544a426205dc0a09088833c6"  data-style-height="700px" data-style-width="100%" data-theme="light" data-sku="{{ variant.sku }}">
+
+            <a href="https://uk.trustpilot.com/review/firstmats.co.uk" target="_blank" rel="noopener">Trustpilot</a>
+            
+    </div>
+    
+    <!-- End TrustBox widget -->
+    <div class="icon-with-text-wrap">
+        {% assign icon_with_text = product.metafields.pdp_icon_with_text %}
+        {%- for i in (i..icon_with_text.size) -%}
+            {%- assign iconWithText = 'icon_with_text-' | append : i -%}
+            {% assign iconWithTextVal = product.metafields.pdp_icon_with_text[iconWithText] %}
+            {%- assign image = iconWithTextVal | split: ' | ' | first -%}
+            {%- assign title = iconWithTextVal | split: ' | ' | last -%}
+            {%- if forloop.first != true -%}
+                <div class="icon-with-text">
+                    <img src="{{ image }}" alt="Icon with text" />
+                    <p>{{ title }}</p>
+                </div>
+            {%- endif -%}
+        {%- endfor -%}        
+    </div>
         {%- for block in section.blocks -%}
           {%- case block.type -%}
           {%- when '@app' -%}

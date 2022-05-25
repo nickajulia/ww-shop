@@ -1,0 +1,13 @@
+{% comment %}
+Requires item from cart.items to be passed in 
+Usage: {% render 'skio-cart-label', item: item %}
+{% endcomment %}
+
+{% liquid 
+    assign allocation = item.selling_plan_allocation
+    assign selling_plan = allocation.selling_plan
+  %}
+  {% if allocation %}
+    <div>{{ selling_plan.name }}</div>
+  {% endif %}
+  
