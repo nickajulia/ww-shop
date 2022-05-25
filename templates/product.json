@@ -117,7 +117,7 @@
         "enable_sticky_info": false,
         "gallery_layout": "thumbnail_slider",
         "media_size": "medium",
-        "mobile_thumbnails": "hide",
+        "mobile_thumbnails": "show",
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
