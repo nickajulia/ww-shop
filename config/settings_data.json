@@ -121,7 +121,7 @@
         "settings": {
           "color_scheme": "background-1",
           "logo": "shopify:\/\/shop_images\/logo.webp",
-          "logo_width": 240,
+          "logo_width": 180,
           "logo_position": "top-left",
           "menu": "new-main-menu",
           "menu_type_desktop": "mega",
