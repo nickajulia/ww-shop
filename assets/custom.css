@@ -1,0 +1,24 @@
+nav.header__inline-menu {
+    text-align: left;
+    font-weight: 900;
+    color: white;
+    font-size: 15px;
+}
+nav.header__inline-menu ul li a,.header__menu-item span {
+    color: #fff;
+    font-size: 15px;
+}
+.header predictive-search.search-modal__form {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 30px;
+}
+nav.header__inline-menu:before {content: '';
+    background: #3e3e3e;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+}

@@ -1,0 +1,88 @@
+{%- assign metafields = product.metafields -%}
+{%- if build_variant == 'all' or build_variant == 'json' -%}
+    {%- capture json_images -%}
+        {%- for image in product.images -%}
+            {"id":"{{ image.id }}","src":"{{ image.src | img_url: 'master' }}"}{% if forloop.last != true %},{% endif %}
+        {%- endfor -%}
+    {%- endcapture -%}
+    {%- capture json_media -%}
+        {"id":"{{ product.media.first.id }}"}
+    {%- endcapture -%}
+    {%- if metafields.labels.hot or metafields.labels.new or metafields.countdown.date -%}
+        {%- capture json_product_metafields -%}
+            {%- if metafields.labels.hot or metafields.labels.new %}
+                "labels":{
+                {%- if metafields.labels.hot -%}
+                    "hot":{% if metafields.labels.hot == 'true' %}{{ metafields.labels.hot }}{% else %}false{% endif %}
+                {%- endif -%}
+                {%- if metafields.labels.new -%}
+                    {%- if metafields.labels.hot -%},{%- endif -%}
+                    "new":{% if metafields.labels.new == 'true' %}{{ metafields.labels.new }}{% else %}false{% endif %}
+                {%- endif -%}
+                }
+            {%- endif -%}
+            {%- if metafields.countdown and metafields.countdown.date -%}
+                {%- if metafields.labels.hot or metafields.labels.new -%},{%- endif -%}
+                "countdown": {"date":"{{ metafields.countdown.date }}"}
+            {%- endif -%}
+        {%- endcapture -%}
+    {%- endif -%}
+    {%- capture json_variants_metafields -%}
+        {%- for variant in product.variants -%}
+            {%- if variant.metafields.labels.hot or variant.metafields.labels.new or variant.metafields.countdown.date -%}
+                {%- capture json_metafields -%}
+                    {%- if variant.metafields.labels.hot or variant.metafields.labels.new %}
+                        "labels":{
+                            {%- if variant.metafields.labels.hot -%}
+                                "hot":{% if variant.metafields.labels.hot == 'true' %}{{ variant.metafields.labels.hot }}{% else %}false{% endif %}
+                            {%- endif -%}
+                            {%- if variant.metafields.labels.new -%}
+                                {%- if variant.metafields.labels.hot -%},{%- endif -%}
+                                "new":{% if variant.metafields.labels.new == 'true' %}{{ variant.metafields.labels.new }}{% else %}false{% endif %}
+                            {%- endif -%}
+                        }
+                    {%- endif -%}
+                    {%- if variant.metafields.countdown and variant.metafields.countdown.date -%}
+                        {%- if variant.metafields.labels.hot or variant.metafields.labels.new -%},{%- endif -%}
+                        "countdown": {"date":"{{ variant.metafields.countdown.date }}"}
+                    {%- endif -%}
+                {%- endcapture -%}
+                {%- if metafields_is_present == true -%},{%- endif -%}
+                {"variant_id":"{{ variant.id }}","metafields":{ {{ json_metafields }} }}
+                {%- assign metafields_is_present = true -%}
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endcapture -%}
+    {%- capture json_variants_quantity -%}
+        {%- assign is_first = true -%}
+        {%- for variant in product.variants -%}
+            {%- if variant.available -%}
+                {% if is_first != true %},{% endif %}{"id":"{{ variant.id }}","quantity":"{{ variant.inventory_quantity }}","policy":"{{ variant.inventory_policy }}"}
+                {%- assign is_first = false -%}
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endcapture -%}
+    {%- capture json_variants_price_sale_details -%}
+        {%- assign is_first = true -%}
+        {%- for variant in product.variants -%}
+            {%- if variant.compare_at_price > variant.price -%}
+                {%- assign price_save = variant.compare_at_price | minus: variant.price -%}
+                {%- assign price_save_money = price_save | money | replace: '"', '\"' -%}
+                {%- assign price_save_procent = variant.price | times: 100 | divided_by: variant.compare_at_price | minus: 100 | times: -1 -%}
+                {% if is_first != true %},{% endif %}{"id":"{{ variant.id }}","details":"{{ 'products.product.price_sale_details_html' | t: price: price_save_money, procent: price_save_procent }}"}
+                {%- assign is_first = false -%}
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endcapture -%}
+    {%- capture json_product -%}
+        {"handle":"{{ product.handle }}","variants":{{ product.variants | json }},"variants_quantity":[ {{ json_variants_quantity }} ],"variants_price_sale_details":[ {{ json_variants_price_sale_details }} ],"options":{{ product.options | json }},"images":[ {{ json_images }} ], "media":[ {{ json_media }}],"metafields":{ {{ json_product_metafields }} },"variants_metafields":[ {{ json_variants_metafields }} ],"default_variant_id":"{{ product.selected_or_first_available_variant.id }}","image_size":"{{ image_size }}"}
+    {%- endcapture -%}
+    {%- assign json_product = json_product | strip_newlines | strip | replace: '  ', '' -%}
+{%- endif -%}
+{%- if build_variant == 'json' -%}
+    {% capture product_attrs %}{{ json_product }}{% endcapture %}
+{%- else -%}
+    {% capture product_attrs %} data-js-product{% if product_ajax_preload_json %} data-js-product-json-preload{% endif %} data-product-handle="{{ product.handle }}" data-product-variant-id="{{ current_variant_id }}"{% if json_product and show_options or show_images_navigation %} data-json-product='{{ json_product }}'{% endif %}{% endcapture %}
+{%- endif -%}
+{{ product_attrs }}
+{%- assign build_variant = null -%}
