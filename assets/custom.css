@@ -6,7 +6,9 @@ nav.header__inline-menu {
 }
 nav.header__inline-menu ul li a,.header__menu-item span {
     color: #fff;
-    font-size: 15px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 .header predictive-search.search-modal__form {
     position: absolute;
@@ -21,4 +23,72 @@ nav.header__inline-menu:before {content: '';
     height: 1px;
     position: absolute;
     left: 0;
+}
+.mega-menu__content{
+    background-color: #fff !important;
+}
+nav.header__inline-menu ul.list-unstyled li a {color: #858585;}
+.mega-menu__link--level-2 {color: black !important;}
+.mega-menu__list li img{
+    width:100%
+}
+.mega-LIFESTYLE{
+    display: flex !important;
+}
+.mega-LIFESTYLE li {
+    width: 25%;
+    padding: 0 10px;
+}
+.mega-LIFESTYLE li a{
+   font-size:17px !Important;
+   color: #141414 !important;
+   font-weight: 600 !important;
+}
+.footer-block--custom_newsletter{
+    width: calc(50% - var(--grid-desktop-horizontal-spacing) * 3 / 4) !important;
+}
+.footer-block--custom_newsletter .footer-block--newsletter{
+    margin-top: 0;
+    margin-bottom: 35px;
+}
+.footer-block--custom_newsletter .footer-block__newsletter{
+    text-align:left;
+}
+.footer-block--custom_newsletter .footer-block__heading{
+    margin-bottom: 0;
+}
+form#ContactFooter {
+    max-width: 100%;
+}
+.footer-block--custom_newsletter .list-social{
+    justify-content: start;
+
+}
+.header predictive-search.search-modal__form.search-mobile{
+display: none;
+}
+@media screen and (max-width: 990px){
+    .header predictive-search.search-modal__form.search-desktopv1{
+        display: none;
+    }
+    .header predictive-search.search-modal__form.search-mobile{
+        display: block;
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 90%;
+        top: 0;
+     }
+     .list-menu{
+         margin-top: 25px !important;
+     }
+     .grid--1-col .grid__item{
+        width: 100% !important;
+     }
+     .footer-block.grid__item.footer-block--menu {order: 1;}
+}
+.footer__content-bottom {
+    border-top: solid 1px #3e3e3e;
+    margin-top: 30px;
 }
