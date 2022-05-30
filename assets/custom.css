@@ -226,6 +226,10 @@ display: none;
 /* 
 * Product Form
  */
+ .product-form shopify-payment-terms {
+   font-size: 12px;
+   text-align: center;
+ }
 .product-form .product-form__submit {
   background-color: #F05423;
   --border-opacity: none;
@@ -233,13 +237,18 @@ display: none;
 
 .product-form__quantity-wrapper {
   display: flex;
+  margin-top: 2.5em;
 }
 .product-form__quantity-wrapper .product-form__input {
   flex: none;
   margin-right: 1em;
 }
+.product-form__quantity-wrapper .quantity__input:focus-visible{
+    background-color: transparent;
+    outline: 0;
+    box-shadow: none;
+}
 .product-form__quantity-wrapper .product-form__buttons {
-  margin-top: calc(19.5px + 0.6rem);
   width: 100%;
   max-width: 44em;
 }
@@ -373,7 +382,10 @@ display: none;
   /* 
   * Product FAQ's 
   */
-
+  .products-faqs .page-width {
+    max-width: 680px;
+    margin: 0 auto;
+  }
   .products-faqs .faq_head h5 {
     color: #FFC7B6;
     font-size: 16px;
@@ -390,6 +402,20 @@ display: none;
     color: #fff;
     margin-top: 0;
     font-size: 20px
+  }
+
+  .section-head h5 {
+    color: #FFC7B6;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+  .section-head h2 {
+    margin-top: 0;
+  }
+
+  .page-accent--dark .section-head h2 {
+    color: #fff;
   }
 
   .page-accent--dark .accordion details {
