@@ -324,6 +324,23 @@
         {%- endif -%}
       </div>
       <div class="footer__column footer__column--info">
+        <div class="footer__copyright caption">
+        
+          <a href="{{ routes.root_url }}" class="footer-logo">
+           
+            
+              <img 
+                src="{{ section.settings.footer-logo | image_url: width: 252  }}"
+                loading="lazy"
+              
+                width="126"
+              >
+         
+          
+          </a>
+          <small class="copyright__content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
+          <small class="copyright__content">{{ powered_by_link }}</small>
+        </div>
         {%- if section.settings.payment_enable -%}
           <div class="footer__payment">
             <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
@@ -336,11 +353,7 @@
             </ul>
           </div>
         {%- endif -%}
-        <div class="footer__copyright caption">
-          <img class="rimage__img" data-master="//cdn.shopify.com/s/files/1/1030/5821/files/logo_{width}x.png?v=1552593308" data-aspect-ratio="4.4" srcset="//cdn.shopify.com/s/files/1/1030/5821/files/logo_252x.png?v=1552593308 1x, //cdn.shopify.com/s/files/1/1030/5821/files/logo_252x@2x.png?v=1552593308 2x" data-scale="2" itemprop="logo" alt="Wild Willies" loading="lazy">
-          <small class="copyright__content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
-          <small class="copyright__content">{{ powered_by_link }}</small>
-        </div>
+      
       </div>
     </div>
   </div>
@@ -511,6 +524,7 @@
       "default": "background-1",
       "label": "t:sections.all.colors.label"
     },
+
     {
       "type": "header",
       "content": "t:sections.footer.settings.header__1.content",
@@ -521,6 +535,11 @@
       "id": "newsletter_enable",
       "default": true,
       "label": "t:sections.footer.settings.newsletter_enable.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "footer-logo",
+      "label": "footer logo"
     },
     {
       "type": "text",
