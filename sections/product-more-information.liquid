@@ -1,0 +1,211 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="more-information page-width isolate section-{{ section.id }}-padding">
+  <div class="product-tabs">
+    {% if section.settings.show_tabs == true %}
+      <div class="tab-links">
+        {% assign link_ctr = 1 %}
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'tab' -%}
+              {% assign scroll_to_element = block.settings.scroll_to_element  %}
+              {% assign target_element = block.settings.target_element  %}
+              <a 
+                href="#{%- if scroll_to_element == true -%}{{ target_element }}{%- endif -%}" 
+                data-scroll="{%- if scroll_to_element == true -%}true{%- endif -%}" 
+                data-scroll-element="{{ target_element }}" id="{{ target_element }}" 
+                class="tabs-link {% if link_ctr == 1 %}active{% endif %}">{{ block.settings.tab_label }}</a>
+              {% assign link_ctr = link_ctr | plus: 1 %}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    {% endif %}
+    
+    <div class="description-wrapper">
+      <div class="description__left">
+        <div id="content-description" class="tab-content active">
+          <span class="title_section">Ingredients</span>
+          <div class="description-content">
+            {%- if product.metafields.tabbed_header.tabbed_header_title != blank -%}
+              <h3 class="h2 header-title">{{ product.metafields.tabbed_header.tabbed_header_title }}</h3>
+            {%- endif -%}
+            {%- if product.metafields.tabbed_header.tabbed_header_content != blank -%}
+              <div class="header-content">{{ product.metafields.tabbed_header.tabbed_header_content }}</div>
+            {%- endif -%}
+    
+            <div image-mobile-selector></div>
+    
+            <div class="product-accordion">
+              {%- if section.settings.sub_heading != blank -%}
+                <h4 class="h2 title">{{ section.settings.sub_heading }}</h4>
+              {%- endif -%}
+
+              <div class="accordion">
+                {% assign desc_content_data = product.metafields.desc_content %}
+                {%- for i in (i..desc_content_data.size) -%}
+                  {%- assign descContent = 'desc_content-' | append : i -%}
+                  {% assign descArr = product.metafields.desc_content[descContent] %}
+                  {%- assign title = descArr | split: ' | ' | first -%}
+                  {%- assign content = descArr | split: ' | ' | last -%}
+                  {% if forloop.first != true %}   
+                      <details class="product-accordion__item">
+                        <summary>
+                          {{ title | escape }}
+                        </summary>
+                        <div class="accordion__content rte" id="feature-Accordion-{{ forloop.index }}">
+                          {{ content }}
+                        </div>
+                      </details>
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="content-shipping" class="tab-content">
+          {%- assign get_content = pages[section.settings.page_content].content -%}
+          {{  get_content }}
+        </div>
+      </div>
+      <div class="description__right">
+        {%- if product.metafields.tabbed_image.tabbed_image_url != blank -%}
+          <img alt="{{ product.title }}" image-desktop-selector src="{{ product.metafields.tabbed_image.tabbed_image_url | img_url: 'master' }}"  loading="lazy" />
+        {%- endif -%}
+        <div class="icons-list">
+          {% assign tabbed_icon_text = product.metafields.tabbed_icon_text %}
+          {%- for i in (i..tabbed_icon_text.size) -%}
+            {%- assign iconWithText = 'tabbed_icon_with_text-' | append : i -%}
+            {% assign iconWithTextVal = product.metafields.tabbed_icon_text[iconWithText] %}
+            {%- assign image = iconWithTextVal | split: ' | ' | first -%}
+            {%- assign title = iconWithTextVal | split: ' | ' | last -%}
+            {%- if forloop.first != true -%}
+              <div class="list-item">
+                <div class="li_icon">
+                  <img src="{{ image }}">
+                </div>
+                <div class="li_txt">
+                  <p>{{ title }}</p>
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%} 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'tab.js' | asset_url }}"></script>
+<script src="{{ 'product.js' | asset_url }}"></script>
+{% schema %}
+{
+  "name": "More Information",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_tabs",
+      "label": "Show tabs",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    },
+    {
+      "type": "header",
+      "content": "Page"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Sub heading",
+      "default" : "What is the deal with ..."
+    },
+    {
+      "type": "page",
+      "id": "page_content",
+      "label": "Page content",
+      "info": "Select Shipping & Return Page"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_label",
+          "default": "Description",
+          "label": "Label"
+        },
+        {
+          "type": "checkbox",
+          "id": "scroll_to_element",
+          "label": "Scroll to section",
+          "default": false,
+          "info": "Uncheck if the content in under tabs"
+        },
+        {
+          "type": "text",
+          "id": "target_element",
+          "label": "Element id",
+          "info": "Place the ID of the element",
+          "placeholder": "SECTION_ID"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "More Information",
+      "blocks": [
+        {
+          "type": "tab"
+        },
+        {
+          "type": "tab"
+        },
+        {
+          "type": "tab"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

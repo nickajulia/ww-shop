@@ -4,8 +4,8 @@
     "theme_name": "Dawn",
     "theme_version": "5.0.0",
     "theme_author": "Shopify",
-    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
   },
   {
     "name": "t:settings_schema.colors.name",
@@ -1141,6 +1141,17 @@
         "id": "currency_code_enabled",
         "label": "t:settings_schema.currency_format.settings.currency_code_enabled.label",
         "default": true
+      }
+    ]
+  },
+  {
+    "name": "Feee shipping Price",
+    "settings": [
+      {
+        "type": "text",
+        "id": "free_shipping_value",
+        "label": "Free shipping value",
+        "default": "50"
       }
     ]
   }

@@ -3,32 +3,30 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
           }
         },
-        "caption": {
-          "type": "text",
+        "4fa09fbb-7582-4705-a157-9ed19c3f4a7f": {
+          "type": "guarantee_text",
           "settings": {
-            "text": "{{ product.metafields.descriptors.subtitle.value }}",
-            "text_style": "subtitle"
+            "guarantee_content": "",
+            "guarantee_url": ""
           }
         },
-        "8832f79e-8963-4d6f-83c2-954672c794f2": {
-          "type": "shopify:\/\/apps\/skio-subscriptions-yc-s20\/blocks\/app-block\/de50f7a4-0bb0-4d4c-84e2-c03dce83436d",
+        "b8af8a9b-6f74-49d8-a54b-2222d5dcd2cd": {
+          "type": "trustspot_badge",
           "settings": {
           }
         },
         "price": {
           "type": "price",
+          "settings": {
+          }
+        },
+        "8832f79e-8963-4d6f-83c2-954672c794f2": {
+          "type": "shopify:\/\/apps\/skio-subscriptions-yc-s20\/blocks\/app-block\/de50f7a4-0bb0-4d4c-84e2-c03dce83436d",
           "settings": {
           }
         },
@@ -49,69 +47,22 @@
             "show_dynamic_checkout": true
           }
         },
-        "description": {
-          "type": "description",
+        "6d803d8d-f486-4b5b-b810-8c0dc041db03": {
+          "type": "icons",
           "settings": {
-          }
-        },
-        "collapsible-row-0": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Materials",
-            "icon": "leather",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-1": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Shipping & Returns",
-            "icon": "truck",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-2": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Dimensions",
-            "icon": "ruler",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-3": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Care Instructions",
-            "icon": "heart",
-            "content": "",
-            "page": ""
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
           }
         }
       },
       "block_order": [
-        "vendor",
         "title",
-        "caption",
-        "8832f79e-8963-4d6f-83c2-954672c794f2",
+        "4fa09fbb-7582-4705-a157-9ed19c3f4a7f",
+        "b8af8a9b-6f74-49d8-a54b-2222d5dcd2cd",
         "price",
+        "8832f79e-8963-4d6f-83c2-954672c794f2",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description",
-        "collapsible-row-0",
-        "collapsible-row-1",
-        "collapsible-row-2",
-        "collapsible-row-3",
-        "share"
+        "6d803d8d-f486-4b5b-b810-8c0dc041db03"
       ],
       "settings": {
         "enable_sticky_info": false,
@@ -124,82 +75,52 @@
         "padding_bottom": 12
       }
     },
-    "image-with-text": {
-      "type": "image-with-text",
+    "165378798809d72ea2": {
+      "type": "product-more-information",
       "blocks": {
-        "image-with-text-0": {
-          "type": "heading",
+        "165378798735a83435-0": {
+          "type": "tab",
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
+            "tab_label": "Description",
+            "scroll_to_element": false,
+            "target_element": "description"
           }
         },
-        "image-with-text-1": {
-          "type": "text",
+        "165378798735a83435-1": {
+          "type": "tab",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "text_style": "body"
+            "tab_label": "Reviews",
+            "scroll_to_element": true,
+            "target_element": "reviews"
+          }
+        },
+        "165378798735a83435-2": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Shipping",
+            "scroll_to_element": false,
+            "target_element": "shipping"
           }
         }
       },
       "block_order": [
-        "image-with-text-0",
-        "image-with-text-1"
+        "165378798735a83435-0",
+        "165378798735a83435-1",
+        "165378798735a83435-2"
       ],
       "settings": {
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-2",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "show_tabs": true,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "sub_heading": "What is the deal with ...",
+        "page_content": "returns"
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column-0": {
-          "type": "column",
-          "settings": {
-            "title": "Free Shipping",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column-1": {
-          "type": "column",
-          "settings": {
-            "title": "Hassle-Free Exchanges",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column-0",
-        "column-1"
-      ],
+    "165386176811bef6d0": {
+      "type": "product-faqs",
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "product-recommendations": {
@@ -222,8 +143,8 @@
   },
   "order": [
     "main",
-    "image-with-text",
-    "multicolumn",
+    "165378798809d72ea2",
+    "165386176811bef6d0",
     "product-recommendations"
   ]
 }
