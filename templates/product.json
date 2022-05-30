@@ -30,6 +30,11 @@
           "settings": {
           }
         },
+        "c4d4833d-1c83-4bfc-8d6c-c10691d7d650": {
+          "type": "shipping_bar",
+          "settings": {
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -59,6 +64,7 @@
         "b8af8a9b-6f74-49d8-a54b-2222d5dcd2cd",
         "price",
         "8832f79e-8963-4d6f-83c2-954672c794f2",
+        "c4d4833d-1c83-4bfc-8d6c-c10691d7d650",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
