@@ -116,9 +116,23 @@
         "page_content": "returns"
       }
     },
+    "165392569956caccbd": {
+      "type": "product-testimonials",
+      "settings": {
+        "title": "What People Are Saying",
+        "subheading": "Testimonials",
+        "subtext": "Wild Willies one-of-a-kind beard oil is made of 10 natural vitamins and organic",
+        "color_accent": "dark",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "165386176811bef6d0": {
       "type": "product-faqs",
       "settings": {
+        "title": "Frequently asked questions",
+        "subheading": "FAQ",
+        "color_accent": "dark",
         "padding_top": 40,
         "padding_bottom": 52
       }
@@ -139,12 +153,21 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "1653925689922fbb1d": {
+      "type": "product-reviews",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
     "165378798809d72ea2",
+    "165392569956caccbd",
     "165386176811bef6d0",
-    "product-recommendations"
+    "product-recommendations",
+    "1653925689922fbb1d"
   ]
 }
