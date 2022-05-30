@@ -98,6 +98,7 @@ display: none;
     grid-template-columns: 1fr 1.5fr;
     padding:15px 0;
 }
+.link--text:hover{color:white; }
 a.footer-logo {display: inline-block;top: 5px;position: relative;}
 a.footer-logo {display: inline-block;top: 5px;position: relative;}
 
