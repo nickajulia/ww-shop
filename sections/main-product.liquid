@@ -222,7 +222,12 @@
                     {% assign freeShippingPer =  freeShippingPrice | minus : cart.total_price | divided_by: 100 | times: 2 %}
                     <span class="text">Add <b>$ <span class="left-shipping-price">{{ freeShippingPrice | minus: cart.total_price | money_without_currency }}</span></b> more to your cart for free shipping!</span>
                     <span class="shipping-bar-bg">
-                        <span class="shipping-tool" style="left: calc(100% - {{ freeShippingPer }}% - 30px);background-color : #999999"></span>
+                        {% if cart.total_price <= 0 %}
+                          {%- assign left_align = 0 -%}
+                        {%- else -%}
+                          {%- assign left_align = 30 -%}
+                        {% endif %}
+                        <span class="shipping-tool" style="left: calc(100% - {{ freeShippingPer }}% - {{ left_align }}px);background-color : #999999"></span>
                     </span>
                     <span class="shipping-bar-price">
                         <span class="shipping-tool-price" style="left: 0%;">
