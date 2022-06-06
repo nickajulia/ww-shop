@@ -26,14 +26,18 @@
       {% if section.settings.image != blank %}
         <div class="logos-wrapper {{ section.settings.text_alignment }}">
           <img
-            src="{{ section.settings.image | image_url: width: 500, height: 500 }}"
-            class="password-logo"
-            alt="{{ section.settings.image.alt | default: shop.name | escape }}"
-            style="max-width: {{ section.settings.logo_max_width }}px"
-            width="{{ section.settings.logo_max_width }}"
-            height="{{ section.settings.logo_max_width | divided_by: section.settings.logo.aspect_ratio }}"
+            srcset="{% if section.settings.image.width >= 350 %}{{ section.settings.image | image_url: width: 350 }} 350w,{% endif %}
+              {% if section.settings.image.width >= 750 %}{{ section.settings.image | image_url: width: 750 }} 750w,{% endif %}
+              {% if section.settings.image.width >= 1100 %}{{ section.settings.image | image_url: width: 1100 }} 1100w,{% endif %}
+              {% if section.settings.image.width >= 1500 %}{{ section.settings.image | image_url: width: 1500 }} 1500w,{% endif %}
+              {% if section.settings.image.width >= 2200 %}{{ section.settings.image | image_url: width: 2200 }} 2200w,{% endif %}
+              {% if section.settings.image.width >= 3000 %}{{ section.settings.image | image_url: width: 3000 }} 3000w,{% endif %}
+              {{ section.settings.image | image_url }} {{ section.settings.image.width }}w"
+            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px) calc(100vw - 10rem), 100vw"
+            src="{{ section.settings.image | image_url: width: 1100 }}"
             loading="lazy"
-          >
+            width="620"
+            alt="{{ section.settings.image.alt | escape }}">
         </div>
       {% endif %}
     </div>

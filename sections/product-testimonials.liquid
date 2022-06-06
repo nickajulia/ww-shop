@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://npmcdn.com/flickity@1.2/dist/flickity.min.css">
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -74,6 +75,8 @@
   </div>
 </div>
 
+<script src="https://npmcdn.com/flickity@1.2/dist/flickity.pkgd.min.js"></script>
+
 <script>
   window.addEventListener('load', (event) => {
     var playButton = document.querySelector(".playpause");
@@ -96,6 +99,20 @@
       }
     });
   });
+</script>
+
+<script>
+  let breakpoint = window.matchMedia('(min-width: 990px)');
+  if (breakpoint.matches === false) {
+    var elem = document.querySelector('.testimonials-outer-wrap');
+    var flkty = new Flickity( elem, {
+      // options
+      freeScroll: true,
+      contain: true,
+      pageDots: true,
+      prevNextButtons: false
+    });
+  }
 </script>
 
 {% schema %}

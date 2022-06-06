@@ -183,6 +183,12 @@
         "default": 8,
         "unit": "px",
         "label": "t:settings_schema.layout.settings.spacing_grid_vertical.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "layout_show_breadcrumbs",
+        "label": "Show breadcrumbs",
+        "default": true
       }
     ]
   },
