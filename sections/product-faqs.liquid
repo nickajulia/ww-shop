@@ -17,9 +17,9 @@
 {% if faq_content_data != blank %}
   <div class="products-faqs page-accent--{{ section.settings.color_accent }}">
     <div class="page-width isolate section-{{ section.id }}-padding">
-      <div class="faq_head">
+      <div class="section-head">
         <h5>{{ section.settings.subheading }}</h5>
-        <h1>{{ section.settings.title }}</h1>
+        <h2 class="h1">{{ section.settings.title }}</h1>
       </div>
       <div class="accordion">
         {%- for i in (i..faq_content_data.size) -%}

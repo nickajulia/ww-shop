@@ -1,11 +1,11 @@
 {
   "current": {
     "colors_solid_button_labels": "#ffffff",
-    "colors_accent_1": "#121212",
+    "colors_accent_1": "#000000",
     "gradient_accent_1": "",
     "colors_accent_2": "#f05423",
     "gradient_accent_2": "",
-    "colors_text": "#121212",
+    "colors_text": "#000000",
     "colors_outline_button_labels": "#121212",
     "colors_background_1": "#141414",
     "gradient_background_1": "",
@@ -96,6 +96,7 @@
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": true,
     "currency_code_enabled": true,
+    "logo": "shopify:\/\/shop_images\/image_12.png",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",

@@ -20,10 +20,15 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
+<div class="section--product-recommendations color-{{ section.settings.color_scheme }} gradient page-accent--{{ section.settings.color_accent }}"">
   <product-recommendations class="product-recommendations page-width section-{{ section.id }}-padding isolate" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}">
     {% if recommendations.performed and recommendations.products_count > 0 %}
-      <h2 class="product-recommendations__heading {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
+      {%- comment -%}<h2 class="product-recommendations__heading {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>{%- endcomment -%}
+
+      <div class="section-head">
+        <h5>MORE LIKE THIS</h5>
+        <h2 class="h1">Shop Similar Items</h2>
+      </div>
       <ul class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" role="list">
         {% for recommendation in recommendations.products %}
           <li class="grid__item">
@@ -32,7 +37,8 @@
               media_aspect_ratio: section.settings.image_ratio,
               show_secondary_image: section.settings.show_secondary_image,
               show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating
+              show_rating: section.settings.show_rating,
+              show_quick_add: true
             %}
           </li>
         {% endfor %}
@@ -222,6 +228,22 @@
           "label": "t:sections.product-recommendations.settings.columns_mobile.options__2.label"
         }
       ]
+    },
+    {
+      "type": "select",
+      "id": "color_accent",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ],
+      "default": "dark",
+      "label": "Color accent"
     },
     {
       "type": "header",

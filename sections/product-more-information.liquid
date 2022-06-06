@@ -81,7 +81,7 @@
       </div>
       <div class="description__right">
         {%- if product.metafields.tabbed_image.tabbed_image_url != blank -%}
-          <img alt="{{ product.title }}" image-desktop-selector src="{{ product.metafields.tabbed_image.tabbed_image_url | img_url: 'master' }}"  loading="lazy" />
+          <img alt="{{ product.title }}" image-desktop-selector src="{{ product.metafields.tabbed_image.tabbed_image_url | img_url: '388x' }}"  loading="lazy" />
         {%- endif -%}
         <div class="icons-list">
           {% assign tabbed_icon_text = product.metafields.tabbed_icon_text %}
