@@ -1,0 +1,156 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-instruction page-accent--{{ section.settings.color_accent }}">
+  <div class="page-width isolate section-{{ section.id }}-padding">
+    <div class="section-head">
+      <h5>{{ section.settings.title }}</h5>
+      <h2 class="h1">{{ section.settings.subhead }}</h2>
+    </div>
+
+    <div class="instruction-list">
+      {%- unless product.metafields.how_to_use.how_to_use_1_image == blank and product.metafields.how_to_use.how_to_use_1_heading == blank and product.metafields.how_to_use.how_to_use_1_content == blank  -%}
+        <div class="instruction-content">
+          {%- unless product.metafields.how_to_use.how_to_use_1_image == blank -%}
+            <div class="instruction-image">
+              <img src="{{ product.metafields.how_to_use.how_to_use_1_image | img_url: 'master' }}" class="stepsImage">
+              <span class="index">1</span>
+            </div>
+          {%- endunless -%}
+          {%- unless product.metafields.how_to_use.how_to_use_1_heading == blank and product.metafields.how_to_use.how_to_use_1_content == blank -%}
+            <div class="instruction-text">
+              {%- unless product.metafields.how_to_use.how_to_use_1_heading == blank -%}
+                <div class="text-title">{{ product.metafields.how_to_use.how_to_use_1_heading }} <span>{% render 'svg-circle-bordered' %}</span></div>
+              {%- endunless -%}
+              {%- unless product.metafields.how_to_use.how_to_use_1_content == blank -%}
+                <p>{{ product.metafields.how_to_use.how_to_use_1_content }} </p>
+              {%- endunless -%}
+            </div>
+          {%- endunless -%}
+        </div>
+      {%- endunless -%}
+      {%- unless product.metafields.how_to_use.how_to_use_2_image == blank and product.metafields.how_to_use.how_to_use_2_heading == blank and product.metafields.how_to_use.how_to_use_2_content == blank  -%}
+        <div class="instruction-content">
+          {%- unless product.metafields.how_to_use.how_to_use_2_image == blank -%}
+            <div class="instruction-image">
+              <img src="{{ product.metafields.how_to_use.how_to_use_2_image | img_url: 'master' }}" class="stepsImage">
+              <span class="index">2</span>
+            </div>
+          {%- endunless -%}
+          {%- unless product.metafields.how_to_use.how_to_use_2_heading == blank and product.metafields.how_to_use.how_to_use_2_content == blank -%}
+            <div class="instruction-text">
+              {%- unless product.metafields.how_to_use.how_to_use_2_heading == blank -%}
+                <div class="text-title">{{ product.metafields.how_to_use.how_to_use_2_heading }} <span>{% render 'svg-circle-bordered' %}</span></div>
+              {%- endunless -%}
+              {%- unless product.metafields.how_to_use.how_to_use_2_content == blank -%}
+                <p>{{ product.metafields.how_to_use.how_to_use_2_content }} </p>
+              {%- endunless -%}
+            </div>
+          {%- endunless -%}
+        </div>
+      {%- endunless -%}
+      {%- unless product.metafields.how_to_use.how_to_use_3_image == blank and product.metafields.how_to_use.how_to_use_3_heading == blank and product.metafields.how_to_use.how_to_use_3_content == blank  -%}
+        <div class="instruction-content">
+          {%- unless product.metafields.how_to_use.how_to_use_3_image == blank -%}
+            <div class="instruction-image">
+              <img src="{{ product.metafields.how_to_use.how_to_use_3_image | img_url: 'master' }}" class="stepsImage">
+              <span class="index">3</span>
+            </div>
+          {%- endunless -%}
+          {%- unless product.metafields.how_to_use.how_to_use_3_heading == blank and product.metafields.how_to_use.how_to_use_3_content == blank -%}
+            <div class="instruction-text">
+              {%- unless product.metafields.how_to_use.how_to_use_3_heading == blank -%}
+                <div class="text-title">{{ product.metafields.how_to_use.how_to_use_3_heading }} <span>{% render 'svg-circle-bordered' %}</span></div>
+              {%- endunless -%}
+              {%- unless product.metafields.how_to_use.how_to_use_3_content == blank -%}
+                <p>{{ product.metafields.how_to_use.how_to_use_3_content }} </p>
+              {%- endunless -%}
+            </div>
+          {%- endunless -%}
+        </div>
+      {%- endunless -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Instruction",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Instructions"
+    },
+    {
+      "type": "text",
+      "id": "subhead",
+      "label": "Subheading",
+      "default": "How to use this product"
+    },
+    {
+      "type": "header",
+      "content": "Color"
+    },
+    {
+      "type": "select",
+      "id": "color_accent",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ],
+      "default": "dark",
+      "label": "Color accent"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Instruction"
+    }
+  ]
+}
+{% endschema %}

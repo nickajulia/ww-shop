@@ -1,0 +1,162 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<!-- how-do-we-stack start -->
+{%- assign tabletFirstShow = false -%}
+{%- assign tabletSecondShow = false -%}
+{%- assign tabletThirdtShow = false -%}
+{%- assign tabletFourthShow = false -%}
+
+{%- for prodTag in product.tags -%}
+  {%- if prodTag contains 'we_stack_up-1' -%}
+    {%- assign tabletFirstShow = true -%}
+    {% break %}
+  {%- endif -%}
+  {%- if prodTag contains 'we_stack_up-2' -%}
+    {%- assign tabletSecondShow = true -%}
+    {% break %}
+  {%- endif -%}
+  {%- if prodTag contains 'we_stack_up-3' -%}
+    {%- assign tabletThirdtShow = true -%}
+    {% break %}
+  {%- endif -%}
+  {%- if prodTag contains 'we_stack_up-4' -%}
+    {%- assign tabletFourthShow = true -%}
+    {% break %}
+  {%- endif -%}
+{%- endfor -%}
+
+
+<div class="section-how-do-we-stack-up page-accent--{{ section.settings.color_accent }}">
+  <div class="page-width isolate section-{{ section.id }}-padding">
+    <div class="section-head">
+      <h5 class="hidden-mobile">{{ section.settings.title }}</h5>
+      <h2 class="h1 hidden-mobile">{{ section.settings.subhead }}</h2>
+      <h2 class="h1 hidden-desktop line-style">
+        <span>{{ section.settings.subhead_mobile }}</span>
+      </h2>
+    </div>
+
+    <div style="overflow-x:auto;" class="table_wrapper">
+      {%- if tabletFirstShow and section.settings.table_first_wrapper != blank -%}
+        {{ section.settings.table_first_wrapper }}
+      {%- endif -%}
+      {%- if tabletSecondShow and section.settings.table_second_wrapper != blank -%}
+        {{ section.settings.table_second_wrapper }}
+      {%- endif -%}
+      {%- if tabletThirdtShow and section.settings.table_third_wrapper != blank -%}
+        {{ section.settings.table_third_wrapper }}
+      {%- endif -%}
+      {%- if tabletFourthShow and section.settings.table_fourth_wrapper != blank -%}
+        {{ section.settings.table_fourth_wrapper }}
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "How do we stack up",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "HOW DO WE STACK UP"
+    },
+    {
+      "type": "text",
+      "id": "subhead",
+      "label": "Subheading",
+      "default": "What makes our products so much better than other products"
+    },
+    {
+      "type": "text",
+      "id": "subhead_mobile",
+      "label": "Subheading mobile",
+      "default": "What makes our products so much better than other products"
+    },
+    {
+      "type" : "html",
+      "id" : "table_first_wrapper",
+      "label" : "First Table"
+    },
+    {
+      "type" : "html",
+      "id" : "table_second_wrapper",
+      "label" : "Second Table"
+    },
+    {
+      "type" : "html",
+      "id" : "table_third_wrapper",
+      "label" : "Third Table"
+    },
+    {
+      "type" : "html",
+      "id" : "table_fourth_wrapper",
+      "label" : "Fourt Table"
+    },
+    {
+      "type": "header",
+      "content": "Color"
+    },
+    {
+      "type": "select",
+      "id": "color_accent",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ],
+      "default": "dark",
+      "label": "Color accent"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    }
+  ],
+  "presets": [
+    {
+      "name": "How do we stack up"
+    }
+  ]
+}
+{% endschema %}
