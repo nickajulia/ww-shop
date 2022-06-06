@@ -117,9 +117,9 @@
             
             {% if show_rating %}
               {% if template contains 'collection' %}
-                <div class="trustspot-inline-category" data-product-sku="{{ card_product.id }}"></div>
+<!--                 <div class="trustspot-inline-category" data-product-sku="{{ card_product.id }}"></div> -->
               {% else %}
-                <div class="trustspot-inline-category" data-product-sku="{{ card_product.id }}"></div>
+<!--                 <div class="trustspot-inline-category" data-product-sku="{{ card_product.id }}"></div> -->
               {% endif %}
             {% endif %}
             {%- comment -%}
@@ -145,7 +145,7 @@
               </p>
             {%- endif -%}
             {%- endcomment -%}
-
+<div class="trustspot-inline-category" data-product-sku="{{ card_product.id }}"></div>
             {% render 'price', product: card_product, price_class: '' %}
 
             {%- if show_quick_add -%}
