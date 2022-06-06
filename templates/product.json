@@ -8,16 +8,16 @@
           "settings": {
           }
         },
-        "4fa09fbb-7582-4705-a157-9ed19c3f4a7f": {
-          "type": "guarantee_text",
-          "settings": {
-            "guarantee_content": "",
-            "guarantee_url": ""
-          }
-        },
         "b8af8a9b-6f74-49d8-a54b-2222d5dcd2cd": {
           "type": "trustspot_badge",
           "settings": {
+          }
+        },
+        "4fa09fbb-7582-4705-a157-9ed19c3f4a7f": {
+          "type": "guarantee_text",
+          "settings": {
+            "guarantee_content": "100% satisfaction guarantee",
+            "guarantee_url": "shopify:\/\/pages\/returns"
           }
         },
         "price": {
@@ -60,8 +60,8 @@
       },
       "block_order": [
         "title",
-        "4fa09fbb-7582-4705-a157-9ed19c3f4a7f",
         "b8af8a9b-6f74-49d8-a54b-2222d5dcd2cd",
+        "4fa09fbb-7582-4705-a157-9ed19c3f4a7f",
         "price",
         "8832f79e-8963-4d6f-83c2-954672c794f2",
         "c4d4833d-1c83-4bfc-8d6c-c10691d7d650",
@@ -139,7 +139,7 @@
       "settings": {
         "title": "",
         "text_alignment": "text-center",
-        "image": "shopify:\/\/shop_images\/image_6.png",
+        "image": "shopify:\/\/shop_images\/image_6_1.png",
         "logo_max_width": 650,
         "color_accent": "dark",
         "padding_top": 40,
@@ -194,6 +194,7 @@
         "show_vendor": false,
         "show_rating": true,
         "columns_mobile": "2",
+        "color_accent": "light",
         "padding_top": 36,
         "padding_bottom": 28
       }

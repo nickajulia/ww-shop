@@ -115,6 +115,8 @@
 
             <span class="caption-large light">{{ block.settings.description | escape }}</span>
             
+            <div class="trustspot-inline-category" data-product-sku="{{ card_product.id }}"></div>
+            {%- comment -%}
             {% if show_rating %}
               {% if template contains 'collection' %}
                 <div class="trustspot-inline-category" data-product-sku="{{ card_product.id }}"></div>
@@ -122,7 +124,7 @@
                 <div class="trustspot-inline-category" data-product-sku="{{ card_product.id }}"></div>
               {% endif %}
             {% endif %}
-            {%- comment -%}
+            
             {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
               {% liquid
                 assign rating_decimal = 0
