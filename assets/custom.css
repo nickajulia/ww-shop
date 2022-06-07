@@ -1090,3 +1090,9 @@ nav.header__inline-menu {
 .header-wrapper{
   top: 0;
 }
+
+.card__heading a{
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px; 
+}
