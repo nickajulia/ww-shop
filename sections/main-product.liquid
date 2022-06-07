@@ -692,7 +692,7 @@
           $.getJSON('/cart.js', function(cart) {
               //console.log(cart);
 
-              var total_price = cart.total_price;
+              var total_price = parseFloat(cart.total_price)/100 );
               console.log("total_price");
               console.log(total_price);
            });
