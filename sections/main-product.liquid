@@ -723,16 +723,12 @@
           url: '/cart.json',
           async: false,
           cache: false,
-          dataType: 'json'
-          })
-        .then(response => {
-          console.log("Ajax success!");
-          const cart = JSON.parse(response);
-          console.log(cart);
-
-        })
-        .catch(error => {
-           console.log("Ajax failed!");
+          dataType: 'json',
+          success: function(response) {
+            console.log("Ajax success!");
+            const cart = JSON.parse(response);
+            console.log(cart);
+          }
         });
 
       });
