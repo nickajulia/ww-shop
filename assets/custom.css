@@ -1082,3 +1082,7 @@ nav.header__inline-menu {
   padding-left: 3px;
   padding-right: 3px;
 }
+
+.search__button:not(:focus-visible):not(.focused){
+  background-color: red;
+}
