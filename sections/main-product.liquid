@@ -683,6 +683,20 @@
     });
   </script>
 
+  <script>
+    jQuery(document).ready(function() {
+      jQuery(".product-form__submit").click(function() {
+        setTimeout(function() {
+          jQuery.getJSON('/cart.js', function(cart) {
+              console.log(cart);
+              console.log("item_count");
+              console.log(cart.item_count);
+           });
+         }, 200);
+      });
+    });
+  </script>
+
   {%- liquid
     if product.selected_or_first_available_variant.featured_media
       assign seo_media = product.selected_or_first_available_variant.featured_media
