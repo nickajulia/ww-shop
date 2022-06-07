@@ -684,10 +684,10 @@
   </script>
 
   <script>
-    $(document).ready(function() {
-      $(".product-form__submit").click(function() {
+    jQuery(document).ready(function() {
+      jQuery(".product-form__submit").click(function() {
         setTimeout(function() {
-          $.getJSON('/cart.js', function(cart) {
+          jQuery.getJSON('/cart.js', function(cart) {
               console.log(cart);
               console.log("item_count");
               console.log(cart.item_count);
