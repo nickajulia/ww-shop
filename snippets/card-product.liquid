@@ -90,6 +90,7 @@
                 {{ card_product.title | escape }}
               </a>
             </h3>
+            <div class="trustspot-inline-product" data-product-sku="{{ card_product.id }}"></div>
           </div>
           <div class="card__badge {{ settings.badge_position }}">
             {%- if card_product.available == false -%}
