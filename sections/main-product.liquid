@@ -704,11 +704,11 @@
               console.log(total_price + free_shipping_price);
 
               if(total_price >= free_shipping_price){
-                
+                console.log(">=");
                 $('.shipping-bar-bg').css('background-color', '#f15523');
                 $('.shipping-tool').hide();
               }else{
-                
+                console.log("<");
                 $('.shipping-bar-bg').removeAttr("style")
               }
               
