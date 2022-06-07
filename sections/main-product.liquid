@@ -692,7 +692,7 @@
     
         setTimeout(function() {
           $.getJSON('/cart.js', function(cart) {
-              /*
+            console.log(cart);
               var free_shipping_price = parseFloat("{{ freeShippingPrice }}")/100;
               var total_price = parseFloat(cart.total_price/100 );
 
@@ -712,8 +712,9 @@
                 console.log("<");
                 $('.shipping-bar-bg').removeAttr("style")
               }
-              */
+              
            }).done(function( cart ) {
+              console.log("done");
               console.log(cart);
            });
          }, 200);
