@@ -686,10 +686,10 @@
 
   <script src="{{ 'jquery.min.js' | asset_url }}"></script>
   <script>
-    jQuery(document).ready(function() {
-      jQuery(".product-form__submit").click(function() {
+    $(document).ready(function() {
+      $(".product-form__submit").click(function() {
         setTimeout(function() {
-          jQuery.getJSON('/cart.js', function(cart) {
+          $.getJSON('/cart.js', function(cart) {
               console.log(cart);
               console.log("item_count");
               console.log(cart.item_count);
