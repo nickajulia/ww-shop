@@ -719,9 +719,11 @@
          */
 
         $.ajax({
-          type: "GET",
-          url: "/cart.js",
+          type: 'GET',
+          url: '/cart.js',
+          async: false,
           cache: false,
+          dataType: 'json'
           })
         .then(response => {
           console.log("Ajax success!");
