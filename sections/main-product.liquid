@@ -727,7 +727,7 @@
           })
         .then(response => {
           console.log("Ajax success!");
-          const result = JSON.parse(cart);
+          const cart = JSON.parse(response);
           console.log(cart);
 
         })
