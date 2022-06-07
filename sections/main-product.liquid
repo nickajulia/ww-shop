@@ -692,16 +692,18 @@
           $.getJSON('/cart.js', function(cart) {
               //console.log(cart);
 
-              var freeShippingPrice = parseFloat("{{ freeShippingPrice }}");
+              var free_shipping_price = parseFloat("{{ freeShippingPrice }}");
               var total_price = parseFloat(cart.total_price/100 );
 
-              if(total_price => freeShippingPrice){
+              console.log("free_shipping_price");
+              console.log(free_shipping_price);
+
+              if(total_price => free_shipping_price){
                 $('.shipping-bar-bg').css('background-color', '#f15523');
               }else{
                 $('.shipping-bar-bg').removeAttr("style")
               }
-              //console.log("total_price");
-              //console.log(total_price);
+              
            });
          }, 200);
       });
