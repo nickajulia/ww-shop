@@ -1083,7 +1083,6 @@ nav.header__inline-menu {
   padding-right: 3px;
 }
 
-.search__button:not(:focus-visible):not(.focused){
-  background-color: red;
-  
+.cart-notification-wrapper .cart-notification{
+  z-index: 1;
 }
