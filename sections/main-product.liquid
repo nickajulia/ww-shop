@@ -690,9 +690,11 @@
       $(".product-form__submit").click(function() {
         setTimeout(function() {
           $.getJSON('/cart.js', function(cart) {
-              console.log(cart);
-              console.log("item_count");
-              console.log(cart.item_count);
+              //console.log(cart);
+
+              var total_price = Shopify.formatMoney(cart.total_price, '\{\{amount\}\}');
+              console.log("total_price");
+              console.log(total_price);
            });
          }, 200);
       });
