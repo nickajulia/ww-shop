@@ -1085,4 +1085,5 @@ nav.header__inline-menu {
 
 .search__button:not(:focus-visible):not(.focused){
   background-color: red;
+  
 }
