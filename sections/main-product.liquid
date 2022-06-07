@@ -689,11 +689,12 @@
     $(document).ready(function() {
       $(".product-form__submit").click(function() {
 
-        /*
+    
         setTimeout(function() {
           $.getJSON('/cart.js', function(cart) {
-              console.log(cart);
+              data
 
+              /*
               var free_shipping_price = parseFloat("{{ freeShippingPrice }}")/100;
               var total_price = parseFloat(cart.total_price/100 );
 
@@ -713,23 +714,12 @@
                 console.log("<");
                 $('.shipping-bar-bg').removeAttr("style")
               }
-              
+              */
+           }).done(function( cart ) {
+              console.log(cart);
            });
          }, 200);
-         */
-
-        $.ajax({
-          type: 'GET',
-          url: '/cart.json',
-          async: false,
-          cache: false,
-          dataType: 'json',
-          success: function(response) {
-            console.log("Ajax success!");
-            const cart = JSON.parse(response);
-            console.log(cart);
-          }
-        });
+         
 
       });
     });
