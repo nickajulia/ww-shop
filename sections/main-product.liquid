@@ -692,7 +692,7 @@
           $.getJSON('/cart.js', function(cart) {
               //console.log(cart);
 
-              var total_price = Shopify.formatMoney(cart.total_price, '\{\{amount\}\}');
+              var total_price = cart.total_price;
               console.log("total_price");
               console.log(total_price);
            });
