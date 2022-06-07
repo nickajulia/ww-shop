@@ -709,7 +709,7 @@
 
               console.log(total_price + free_shipping_price);
 
-              if( int(total_price) >= int(free_shipping_price) ){
+              if( parseFloat(total_price) >= parseFloat(free_shipping_price) ){
                 console.log(">=");
                 $('.shipping-bar-bg').css('background-color', '#f15523');
                 $('.shipping-tool').hide();
