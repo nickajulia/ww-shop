@@ -964,6 +964,10 @@ form.search .search__button {
   height: 3.5rem;
   font-size: 13px;
 }
+form.search .search__button:hover{
+  background-color: #ffffff;
+  color: #000;
+}
 
 form.search .field::before, form.search .field::after {
   box-shadow: none !important;
