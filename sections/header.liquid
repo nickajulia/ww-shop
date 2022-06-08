@@ -502,9 +502,9 @@
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
         {%- liquid
           if cart == empty
-            render 'icon-cart2'
+            render 'icon-cart-empty'
           else
-            render 'icon-cart2'
+            render 'icon-cart'
           endif
         -%}
         <span>{{ 'templates.cart.cart' | t }}</span>
