@@ -1133,3 +1133,7 @@ form.search .field .field__label{
 form.search .field__input:hover{
   box-shadow: 0 0 0 1px #fff;
 }
+
+.header-wrapper.onscroll {
+  background-color: rgb(0 0 0 / 90%);
+}
