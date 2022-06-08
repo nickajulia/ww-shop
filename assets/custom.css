@@ -975,6 +975,9 @@ form.search .search__input.field__input {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+form.search .field__input:focus~.field__label{
+  display: none;
+}
 
 form.search .field__input:focus-visible {
   box-shadow: none;
