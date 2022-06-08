@@ -1108,7 +1108,7 @@ nav.header__inline-menu {
   color: #858585;
 }
 .mega-menu__link:hover, .mega-menu__link--active{
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .header__active-menu-item{
   text-decoration: none;
