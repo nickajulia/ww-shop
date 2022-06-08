@@ -1105,14 +1105,14 @@ nav.header__inline-menu {
   text-decoration: none;
 }
 
-form.search .search__input.field__input::-webkit-input-placeholder { /* Edge */
+::-webkit-input-placeholder { /* Edge */
   color: red;
 }
 
-form.search .search__input.field__input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
   color: red;
 }
 
-form.search .search__input.field__input::placeholder {
+::placeholder {
   color: red;
 }
