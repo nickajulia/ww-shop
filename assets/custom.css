@@ -1104,6 +1104,9 @@ nav.header__inline-menu {
   text-decoration: none;
   color: #858585;
 }
+.header__menu-item:hover svg {
+  color: #858585;
+}
 .header__active-menu-item{
   text-decoration: none;
 }
