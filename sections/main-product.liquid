@@ -754,7 +754,7 @@
                 console.log("<");
                 $('.shipping-bar-bg').removeAttr("style");
                 $('span.text').html("");
-                $('span.text').html("Add <b>$ <span class="left-shipping-price">{{ freeShippingPrice | minus: cart.total_price | money_without_currency }}</span></b> more to your cart for free shipping!");
+                $('span.text').html("Add <b>$ <span class='left-shipping-price'>{{ freeShippingPrice | minus: cart.total_price | money_without_currency }}</span></b> more to your cart for free shipping!");
               }
               
            });
