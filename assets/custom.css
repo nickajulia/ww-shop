@@ -1100,3 +1100,6 @@ nav.header__inline-menu {
 .header__menu-item:hover span{
   text-decoration: none;
 }
+.header__active-menu-item{
+  text-decoration: none;
+}
