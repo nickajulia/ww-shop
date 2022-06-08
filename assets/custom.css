@@ -1105,14 +1105,8 @@ nav.header__inline-menu {
   text-decoration: none;
 }
 
-::-webkit-input-placeholder { /* Edge */
-  color: red;
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: red;
-}
-
-::placeholder {
-  color: red;
+form.search .field .field__label{
+  left: 35px;
+  top: 9px;
+  font-size: 13px;  
 }
