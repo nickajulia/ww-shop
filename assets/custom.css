@@ -1112,4 +1112,5 @@ form.search .field .field__label{
   left: 35px;
   top: 9px;
   font-size: 13px;  
+  letter-spacing: 0.04rem;
 }
