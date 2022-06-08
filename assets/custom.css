@@ -1131,5 +1131,5 @@ form.search .field .field__label{
   letter-spacing: 0.04rem;
 }
 form.search .field__input:hover{
-  box-shadow: 0 0 0 2px #fff;
+  box-shadow: 0 0 0 1px #fff;
 }
