@@ -1109,6 +1109,7 @@ nav.header__inline-menu {
 }
 .mega-menu__link:hover, .mega-menu__link--active{
   text-decoration: none !important;
+  background-color: #f2f2f2;
 }
 .header__active-menu-item{
   text-decoration: none;
