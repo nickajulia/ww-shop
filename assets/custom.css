@@ -955,7 +955,7 @@ form.search {
 
 form.search .search__button {
   padding: 0 2em;
-  width: auto;
+  width: 135px;;
   position: relative;
   border: 1px solid #ffffff;
   margin-left: 1em;
