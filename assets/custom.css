@@ -1096,3 +1096,7 @@ nav.header__inline-menu {
   font-size: 14px;
   line-height: 17px; 
 }
+
+.header__menu-item:hover span{
+  text-decoration: none;
+}
