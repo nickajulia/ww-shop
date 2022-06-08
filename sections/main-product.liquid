@@ -748,10 +748,12 @@
                 console.log(">=");
                 $('.shipping-bar-bg').css('background-color', '#f15523');
                 $('.shipping-tool').hide();
+                $('span.text').html("");
                 $('span.text').html("You've got free shipping");
               }else{
                 console.log("<");
-                $('.shipping-bar-bg').removeAttr("style")
+                $('.shipping-bar-bg').removeAttr("style");
+                $('span.text').html("");
                 $('span.text').html("Add <b>$ <span class="left-shipping-price">{{ freeShippingPrice | minus: cart.total_price | money_without_currency }}</span></b> more to your cart for free shipping!");
               }
               
