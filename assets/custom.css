@@ -1107,6 +1107,9 @@ nav.header__inline-menu {
 .header__menu-item:hover svg {
   color: #858585;
 }
+.mega-menu__link:hover, .mega-menu__link--active{
+  text-decoration: none;
+}
 .header__active-menu-item{
   text-decoration: none;
 }
