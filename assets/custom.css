@@ -1099,6 +1099,7 @@ nav.header__inline-menu {
 
 .header__menu-item:hover span{
   text-decoration: none;
+  color: #858585;
 }
 .header__active-menu-item{
   text-decoration: none;
