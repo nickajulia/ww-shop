@@ -968,7 +968,7 @@ form.search .field::before, form.search .field::after {
 }
 
 form.search .search__input.field__input {
-  padding-left: 5rem;
+  padding-left: 3.5rem;
   background-color: transparent;
   border: solid 1px #3e3e3e;
   height: 3.5rem;
