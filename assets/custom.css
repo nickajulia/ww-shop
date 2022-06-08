@@ -52,7 +52,10 @@ nav.header__inline-menu:before {content: '';
 .mega-menu__content{
     background-color: #fff !important;
 }
-nav.header__inline-menu ul.list-unstyled li a {color: #858585;}
+nav.header__inline-menu ul.list-unstyled li a {
+  color: #858585;
+  text-transform: unset;
+}
 .mega-menu__link--level-2 {color: black !important;}
 .mega-menu__list li img{
     width:100%
