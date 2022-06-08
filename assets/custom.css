@@ -1137,3 +1137,6 @@ form.search .field__input:hover{
 .header-wrapper.onscroll {
   background-color: rgb(0 0 0 / 90%);
 }
+.header__icons:hover{
+  opacity: 0.8;
+}
