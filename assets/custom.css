@@ -118,7 +118,11 @@ footer.footer {
   margin-right: 1em;
 }
 button#Subscribe {
-    background: #000;
+  background: #000;
+}
+button#Subscribe:hover{
+  background: #fff;
+  color: #000;
 }
 input#NewsletterForm--footer {
     background: transparent;
@@ -1151,4 +1155,8 @@ details[open]>.header__menu-item{
 .newsletter-form__field-wrapper .field__input:focus~.field__label{
   display: none;
 }
-
+input#NewsletterForm--footer:focus {
+  background: #fff;
+  color: #000;
+  padding-top: 8px;
+}
