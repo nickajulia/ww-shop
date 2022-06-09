@@ -935,7 +935,11 @@ color: #F05423;
 .section--product-recommendations {
   background-color: #fff;
 }
-
+.section--product-recommendations .price--on-sale .price-item--regular{
+  font-size: 22px !important;
+  font-weight: 600; 
+  color: #000000;
+}
 .section--product-recommendations .quick-add__submit {
   background-color: #fff;
   text-transform: uppercase;
@@ -1167,8 +1171,4 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
   background: #fff;
   color: #000;
   padding-top: 8px;
-}
-.price--on-sale .price-item--regular{
-  font-size: 22px;
-  font-weight: 600; 
 }
