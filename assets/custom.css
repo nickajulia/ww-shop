@@ -1109,7 +1109,11 @@ nav.header__inline-menu {
   top: 0;
 }
 
-.card__heading a{
+.section--product-recommendations .card__heading {
+  height: 36px;
+  overflow: hidden
+}
+.section--product-recommendations .card__heading a{
   font-weight: 700;
   font-size: 14px;
   line-height: 17px; 
