@@ -50,7 +50,7 @@
     <div class="price__regular">
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
       <span class="price-item price-item--regular">
-        {{ money_price | strip }}
+        {{ money_price }}
       </span>
     </div>
     <div class="price__sale">
@@ -59,9 +59,9 @@
         <span>
           <s class="price-item price-item--regular {% if subscription_enabled == true %}subscription-enabled{% endif %}">
             {% if settings.currency_code_enabled %}
-              {{ compare_at_price | money_with_currency | strip }}
+              {{ compare_at_price | money_with_currency }}
             {% else %}
-              {{ compare_at_price | money | strip }}
+              {{ compare_at_price | money }}
             {% endif %}
           </s>
         </span>
@@ -69,7 +69,7 @@
       {% unless subscription_enabled == true %}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
         <span class="price-item price-item--sale price-item--last">
-          {{ money_price  | strip }}
+          {{ money_price }}
         </span>
       {% endunless %}
     </div>
