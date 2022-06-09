@@ -121,7 +121,7 @@ button#Subscribe {
   background: #000;
 }
 button#Subscribe:hover{
-  background: #fff;
+  background-color: #fff !important;
   color: #000;
 }
 input#NewsletterForm--footer {
