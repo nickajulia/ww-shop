@@ -1148,4 +1148,7 @@ details[open]>.header__menu-item{
   text-decoration: none;
 }
 
+.newsletter-form__field-wrapper .field__input:focus~.field__label{
+  display: none;
+}
 
