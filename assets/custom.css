@@ -1168,3 +1168,7 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
   color: #000;
   padding-top: 8px;
 }
+.price--on-sale .price-item--regular{
+  font-size: 22px;
+  font-weight: bold; 
+}
