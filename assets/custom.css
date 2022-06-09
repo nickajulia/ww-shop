@@ -52,9 +52,14 @@ nav.header__inline-menu:before {content: '';
 .mega-menu__content{
     background-color: #fff !important;
 }
+nav.header__inline-menu ul.list-unstyled{
+  margin-left: -5px;
+}
 nav.header__inline-menu ul.list-unstyled li a {
   color: #858585;
   text-transform: unset;
+  padding: 5px;
+  font-size: 14px;
 }
 .mega-menu__link--level-2 {color: black !important;}
 .mega-menu__list li img{
@@ -1143,3 +1148,5 @@ form.search .field__input:hover{
 details[open]>.header__menu-item{
   text-decoration: none;
 }
+
+
