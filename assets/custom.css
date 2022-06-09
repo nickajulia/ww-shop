@@ -1031,7 +1031,7 @@ nav.header__inline-menu {
     text-decoration: none;
     border: 0;
     left: 0;
-    top: 0;
+    top: 1px;
     font-size: 13px;
   }
 
