@@ -939,6 +939,7 @@ color: #F05423;
 .section--product-recommendations .quick-add__submit {
   background-color: #fff;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 /* 
