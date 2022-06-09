@@ -95,7 +95,7 @@
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": true,
-    "currency_code_enabled": false,
+    "currency_code_enabled": true,
     "logo": "shopify:\/\/shop_images\/image_12.png",
     "sections": {
       "announcement-bar": {
