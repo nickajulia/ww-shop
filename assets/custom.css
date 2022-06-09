@@ -1152,10 +1152,13 @@ details[open]>.header__menu-item{
   text-decoration: none;
 }
 
+.newsletter-form__field-wrapper .field__input:hover~.field__label{
+  color: #000;
+}
 .newsletter-form__field-wrapper .field__input:focus~.field__label{
   display: none;
 }
-input#NewsletterForm--footer:focus {
+input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
   background: #fff;
   color: #000;
   padding-top: 8px;
