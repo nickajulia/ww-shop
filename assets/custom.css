@@ -53,13 +53,12 @@ nav.header__inline-menu:before {content: '';
     background-color: #fff !important;
 }
 nav.header__inline-menu ul.list-unstyled{
-  margin-left: -5px;
+
 }
 nav.header__inline-menu ul.list-unstyled li a {
   color: #858585;
   text-transform: unset;
-  padding: 5px;
-  font-size: 14px;
+
 }
 .mega-menu__link--level-2 {color: black !important;}
 .mega-menu__list li img{
