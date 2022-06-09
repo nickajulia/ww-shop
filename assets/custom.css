@@ -1140,3 +1140,6 @@ form.search .field__input:hover{
 .header__icons a:hover{
   opacity: 0.8;
 }
+details[open]>.header__menu-item{
+  text-decoration: none;
+}
