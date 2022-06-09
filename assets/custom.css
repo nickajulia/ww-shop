@@ -1170,5 +1170,5 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
 }
 .price--on-sale .price-item--regular{
   font-size: 22px;
-  font-weight: bold; 
+  font-weight: 600; 
 }
