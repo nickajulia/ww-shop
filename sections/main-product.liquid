@@ -245,7 +245,7 @@
                         <span class="shipping-tool-price shipping-tool-price-text-wrap" style="left: calc(100% - {{ freeShippingPer }}% - 50px);{% if cart.total_price == 0 %}display:none{% endif %}">
                             $ <span class="shipping-tool-price-text">{{ cart.total_price | money_without_currency }}</span>
                         </span>
-                        <span class="shipping-tool-price right" style="left: 95%;">
+                        <span class="shipping-tool-price right" style="left: auto;right: 0%;">
                             {{ freeShippingPrice | money_without_trailing_zeros }}
                         </span>
                     </span>
