@@ -17,9 +17,17 @@ img {
   max-width: 100%;
 }
 
+.text-center {
+  text-align: center;
+}
 
 main#MainContent {
   padding-top: 110px;
+}
+@media (max-width: 989px) {
+  main#MainContent {
+    padding-top: 60px;
+  }
 }
 
 
@@ -200,6 +208,12 @@ a.footer-logo {display: inline-block;top: 5px;position: relative;}
    font-size: 36px;
  }
 
+ @media (max-width: 989px) {
+  .product__info-wrapper .product__title h1 {
+    font-size: 24px;
+  }
+ }
+
   .skio-plan-picker .checked-radio-button svg path {
     fill: #F05423;
   }
@@ -325,11 +339,22 @@ a.footer-logo {display: inline-block;top: 5px;position: relative;}
  */
  .product-form shopify-payment-terms {
    font-size: 12px;
-   text-align: center;
+   text-align: left;
  }
 .product-form .product-form__submit {
   background-color: #F05423;
   --border-opacity: none;
+  text-transform: uppercase;
+  color: #fff;
+}
+.product-form .product-form__submit:after {
+  display: none;
+}
+
+@media (max-width: 989px) {
+  .button--subscription {
+    font-size: 14px;
+  }
 }
 
 .product-form__quantity-wrapper {
@@ -366,8 +391,11 @@ a.footer-logo {display: inline-block;top: 5px;position: relative;}
 }
 .product-form__quantity-wrapper .quantity .quantity__button {
   background-color: #E5E5E5;
+  width: 38px;
 }
-
+.quantity {
+  width: calc(38px * 3);
+}
 /* 
 * Truspost
  */
@@ -420,7 +448,7 @@ color: #F05423;
 
 @media (min-width: 990px) {
   .product-tabs .tab-links {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
   }
   .product-tabs .tab-links a {
     font-size: 16px;
@@ -693,6 +721,19 @@ color: #F05423;
   margin-left: 15px;
 }
 
+@media (max-width: 989px) {
+  .testimonial-grid {
+    flex-wrap: nowrap;
+  }
+  .testimonial-grid .image_text {
+    width: 100%;
+  }
+
+  .testimonial-grid .testiImage {
+    max-width: none;
+  }
+}
+
 .testimonials-wrap .grid_text {
   font-size: 14px;
 }
@@ -701,8 +742,8 @@ color: #F05423;
   background-color: #fff !important;
   opacity: 1 !important;
   border: 3px solid #000;
-  width: 20px;
-  height: 20px;
+  width: 20px !important;
+  height: 20px !important;
 }
 .flickity-page-dots .dot.is-selected {
   background-color: #F05423 !important;
@@ -776,9 +817,23 @@ color: #F05423;
 .logos-wrapper.text-center {
   text-align: center;
 }
+
+.logos-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.logos-wrapper .logo {
+  margin: 0 1em;
+}
 @media (max-width: 989px) {
   .logos-wrapper img {
     max-width: 100% !important;
+  }
+  .logos-wrapper .logo {
+    margin: 0 0.5em;
   }
 }
 
@@ -807,10 +862,12 @@ color: #F05423;
 }
 
 .section-how-do-we-stack-up table td {
-  padding: 1em;
+  padding: 0.5em;
   border: 2px solid #000;
   width: 33.33%;
 }
+
+table td p {line-height: normal;}
 
 .section-how-do-we-stack-up .section-head {
   max-width: 656px;
@@ -928,23 +985,39 @@ color: #F05423;
   }
 }
 
-/* 
-* Product Recommendations
-*/
 
 .section--product-recommendations {
   background-color: #fff;
 }
-.section--product-recommendations .price--on-sale .price-item--regular{
-  font-size: 22px !important;
+.price--on-sale .price-item--regular{
+  font-size: 13px !important;
   font-weight: 600; 
-  color: #000000;
+  color: #999 !important;
 }
-.section--product-recommendations .quick-add__submit {
-  background-color: #fff;
-  text-transform: uppercase;
+.price--on-sale .price-item--sale {
+  font-size: 22px;
   font-weight: 600;
-  font-size: 13px;
+  color: #000;
+}
+
+/* Product Media
+*
+* main-product.liquid
+ */
+@media (max-width: 989px) {
+  .product__media-list {
+    padding: 0 1em;
+  }
+  .product__media-list .product__media-item {
+    margin-left: 0 !important;
+  }
+}
+
+.product__modal-opener .product__media-icon {
+  background-color: #F05423;
+}
+.product__modal-opener .product__media-icon svg {
+  color: #fff;
 }
 
 /* 
@@ -1005,6 +1078,19 @@ form.search .field__input:focus-visible {
   border: 1px solid #fff;
 }
 
+@media (max-width: 989px) {
+  form.search .search__button {
+    display: none;
+  }
+
+  form.search .field {
+    max-width: 278px;
+  }
+  form.search .predictive-search {
+    max-width: 278px !important;
+  }
+}
+
 nav.header__inline-menu {
   text-align: left;
 }
@@ -1020,6 +1106,9 @@ nav.header__inline-menu {
 @media (max-width: 989px) {
   .header__icons .header__icon > span {
     display: none;
+  }
+  .header--has-menu:not(.header--middle-left) {
+    padding-bottom: 0;
   }
 }
 @media (min-width: 990px) {
@@ -1173,3 +1262,54 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
   color: #000;
   padding-top: 8px;
 }
+
+
+/* 
+* Product Form in Product Grid
+ */
+.add-to-cart__wrapper .button {
+  background-color: transparent;
+  padding: 0 0.5em;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* 
+* Truspost Override CSS
+*
+ */
+ .widget-review .ts-widget-avg-star.filled {
+  color: #000;
+ }
+
+ @media (max-width: 468px) {
+  #trustspot-widget-wrapper header p {
+    font-size: 12px !important;
+  }
+  .widget-review .ts-widget-avg-star.filled {
+    font-size: 18px;
+  }
+ }
+
+.shop-pay-logo path {
+  fill: red !important;
+ }
+
+
+
+
+ /* 
+ * Drawer Menu
+  */
+  /* .menu-drawer {
+    top: 0 !important;
+  }
+  .js .menu-drawer__navigation .submenu-open {
+    position: relative;
+  }
+  .menu-drawer__close-button {
+    margin: 0 !important;
+  }
+  .menu-drawer__inner-submenu .menu-drawer__menu {
+    margin-top: 0 !important;
+  } */

@@ -23,7 +23,6 @@
 <div class="section--product-recommendations color-{{ section.settings.color_scheme }} gradient page-accent--{{ section.settings.color_accent }}"">
   <product-recommendations class="product-recommendations page-width section-{{ section.id }}-padding isolate" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}">
     {% if recommendations.performed and recommendations.products_count > 0 %}
-      {%- comment -%}<h2 class="product-recommendations__heading {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>{%- endcomment -%}
 
       <div class="section-head">
         <h5>MORE LIKE THIS</h5>
@@ -38,7 +37,8 @@
               show_secondary_image: section.settings.show_secondary_image,
               show_vendor: section.settings.show_vendor,
               show_rating: section.settings.show_rating,
-              show_quick_add: true
+              show_quick_add: true,
+              normal_quick_add: true
             %}
           </li>
         {% endfor %}
