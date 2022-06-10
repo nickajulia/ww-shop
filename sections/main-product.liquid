@@ -1,3 +1,9 @@
+{% liquid
+  assign subscription_enabled = false
+  if product.selling_plan_groups != empty
+    assign subscription_enabled = true
+  endif  
+%}
 <section id="MainProduct-{{ section.id }}" class="page-width section-{{ section.id }}-padding" data-section="{{ section.id }}">
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
@@ -519,12 +525,16 @@
                         <button
                           type="submit"
                           name="add"
-                          class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+                          class="product-form__submit button button--full-width button--{% if subscription_enabled %}subscription{% endif %} {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
                         {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                         >
                             <span>
                               {%- if product.selected_or_first_available_variant.available -%}
-                                {{ 'products.product.add_to_cart' | t }}
+                                {%- if subscription_enabled -%}
+                                  {{ 'SETUP SUBSCRIPTION' }}
+                                {%- else -%}
+                                  {{ 'products.product.add_to_cart' | t }}
+                                {%- endif -%}
                               {%- else -%}
                                 {{ 'products.product.sold_out' | t }}
                               {%- endif -%}

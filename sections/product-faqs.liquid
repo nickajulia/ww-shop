@@ -30,7 +30,7 @@
           {% if title != blank%}
             <details>
               <summary>
-                {{ title | escape }}
+                {{ title | escape | strip_html }}
               </summary>
               <div class="accordion__content rte" id="feature-Accordion-{{ forloop.index }}">
                 {{ content }}
