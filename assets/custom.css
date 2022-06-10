@@ -1274,6 +1274,13 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
   font-size: 13px;
 }
 
+.quick-add__submit {
+  text-transform: uppercase;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 13px;
+}
+
 /* 
 * Truspost Override CSS
 *
