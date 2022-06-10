@@ -69,7 +69,9 @@
   
       heading.addEventListener('click', () => { handleCollapse(heading) })
       heading.addEventListener('keypress',  () => { handleCollapse(heading) })
-    })
+    });
+
+    $(".footer__list-social").insertAfter(".footer__copyright");
   
   })
   </script>
@@ -224,7 +226,7 @@
               {%- endif -%}
             </div>
             {%- if section.settings.show_social -%}
-            <h2 class="footer-block__heading">FOLLOW US</h2>
+            <h2 class="footer-block__heading social-header">FOLLOW US</h2>
             <ul class="footer__list-social list-unstyled list-social" role="list">
               {%- if settings.social_twitter_link != blank -%}
                 <li class="list-social__item">
