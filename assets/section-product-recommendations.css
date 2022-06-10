@@ -11,3 +11,9 @@
   margin: 0;
   margin-bottom: 3rem;
 }
+
+
+form.product-form {
+  position: relative;
+  z-index: 1;
+}
