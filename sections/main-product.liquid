@@ -698,6 +698,7 @@
   <script>
     $(document).ready(function() {
 
+      /*
       // Select all links with hashes
       $('a[href*="#"]')
       // Remove links that don't actually link to anything
@@ -719,7 +720,7 @@
             event.preventDefault();
             $('html, body').animate({
               scrollTop: target.offset().top
-            }, 1000, function() {
+            }, 1000, 'swing', function() {
               // Callback after animation
               // Must change focus!
               var $target = $(target);
@@ -733,6 +734,22 @@
             });
           }
         }
+      });
+      */
+
+      $(document).ready(function(){
+        $('a[href^="#"]').on('click',function (e) {
+            e.preventDefault();
+    
+            var target = this.hash,
+            $target = $(target);
+    
+            $('html, body').stop().animate({
+              'scrollTop': $target.offset().top+60
+            }, 900, 'swing', function () {
+                window.location.hash = target;
+            });
+        });
       });
 
       $(".product-form__submit").click(function() {
