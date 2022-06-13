@@ -1,0 +1,28 @@
+{
+  "name": "ww-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx mix watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickajulia/ww-shop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "laravel-mix": "^6.0.48",
+    "postcss-custom-properties": "^12.1.8",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.52.2",
+    "sass-loader": "^12.6.0"
+  },
+  "bugs": {
+    "url": "https://github.com/nickajulia/ww-shop/issues"
+  },
+  "homepage": "https://github.com/nickajulia/ww-shop#readme"
+}
