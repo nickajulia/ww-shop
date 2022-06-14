@@ -25,8 +25,8 @@
               <a 
                 href="#{%- if scroll_to_element == true -%}{{ target_element }}{%- endif -%}" 
                 data-scroll="{%- if scroll_to_element == true -%}true{%- endif -%}" 
-                data-scroll-element="{{ target_element }}" {% unless scroll_to_element == true %}id="{{ target_element }}" {% endunless %}
-                class="tabs-link {% if link_ctr == 1 %}active{% endif %}">{{ block.settings.tab_label }}</a>
+                data-scroll-element="{{ target_element }}" {% unless scroll_to_element == true %}id="{{ target_element }}"{% endunless %}
+                class="tabs-link {% unless scroll_to_element == true %}tabs-link--scroll{% endunless %} {% if link_ctr == 1 %}active{% endif %}">{{ block.settings.tab_label }}</a>
               {% assign link_ctr = link_ctr | plus: 1 %}
           {%- endcase -%}
         {%- endfor -%}

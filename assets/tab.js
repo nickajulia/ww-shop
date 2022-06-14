@@ -1,7 +1,7 @@
 class Tab {
   constructor() {
     this.classes = {
-      tabsLink: '.tabs-link',
+      tabsLink: '.tabs-link--scroll',
       tabContent: '.tab-content'
     }
 
@@ -16,9 +16,7 @@ class Tab {
       scroll_to = e.target.getAttribute('data-scroll-element');
     // make tab active  
     this.seTabActive(e.target);
-    if (scroll) {
-      console.log('scroll to', scroll_to);
-    } else {
+    if (!scroll) {
       this.removeActiveTabContent();
       document.querySelector(`#content-${e.target.id}`).classList.add('active');
     }

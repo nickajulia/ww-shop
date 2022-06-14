@@ -1,5 +1,6 @@
 html{
   scroll-behavior: smooth;
+  scroll-padding-top: 130px;
 }
 /* 
 * Utilities 
@@ -992,7 +993,7 @@ table td p {line-height: normal;}
 .section--product-recommendations {
   background-color: #fff;
 }
-.price--on-sale .price-item--regular{
+.price--on-sale .price-item--compare{
   font-size: 13px !important;
   font-weight: 600; 
   color: #999 !important;
