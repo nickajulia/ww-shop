@@ -1004,6 +1004,12 @@ table td p {line-height: normal;}
   color: #000;
 }
 
+.price:not(.price--on-sale) .price__regular {
+  font-size: 22px;
+  font-weight: 600;
+  color: #000;
+}
+
 /* Product Media
 *
 * main-product.liquid
