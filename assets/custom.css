@@ -1266,6 +1266,12 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
   padding-top: 8px;
 }
 
+.mega-menu__list--condensed .mega-menu__link {
+  font-weight: 600 !important;
+  color: #858585 !important;
+  font-size: 15px;;
+}
+
 
 /* 
 * Product Form in Product Grid

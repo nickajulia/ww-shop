@@ -738,14 +738,14 @@
       */
 
       $(document).ready(function(){
-        $('a[href^="#"]').on('click',function (e) {
+        $('a[href^="#trustspot-widget-wrapper"]').on('click',function (e) {
             e.preventDefault();
     
             var target = this.hash,
             $target = $(target);
     
             $('html, body').stop().animate({
-              'scrollTop': $target.offset().top+60
+              'scrollTop': $target.offset().top-160
             }, 900, 'swing', function () {
                 window.location.hash = target;
             });
