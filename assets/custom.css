@@ -1341,6 +1341,13 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
     margin: 0;
     padding: 0 0 5px;
   }
+  .footer-block--custom_newsletter .footer-block--newsletter h2.footer-block__heading::after{
+    content: "";
+  }
+  .footer-block--custom_newsletter  .footer-block__heading:not(.block-collapsed)::after{
+    content: "";  
+  }
+
   .newsletter-form__field-wrapper .field{
     display: block;
   }
