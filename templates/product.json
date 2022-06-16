@@ -56,6 +56,13 @@
           "type": "icons",
           "settings": {
           }
+        },
+        "fed16cc7-e99a-4669-b944-e6c1c98f866e": {
+          "type": "text",
+          "settings": {
+            "text": "Text block",
+            "text_style": "body"
+          }
         }
       },
       "block_order": [
@@ -68,7 +75,8 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "6d803d8d-f486-4b5b-b810-8c0dc041db03"
+        "6d803d8d-f486-4b5b-b810-8c0dc041db03",
+        "fed16cc7-e99a-4669-b944-e6c1c98f866e"
       ],
       "settings": {
         "enable_sticky_info": false,
