@@ -55,6 +55,12 @@
         "6d803d8d-f486-4b5b-b810-8c0dc041db03": {
           "type": "icons",
           "settings": {
+            "icon_1": "shopify:\/\/shop_images\/Free_standard_shipping.png",
+            "icon_1_text": "<p>Free standard shipping <strong>over $50<\/strong><\/p>",
+            "icon_2": "shopify:\/\/shop_images\/100_Satisfaction_guaranteed.png",
+            "icon_2_text": "<p>100% <strong>Satisfaction<\/strong> guaranteed<\/p>",
+            "icon_3": "shopify:\/\/shop_images\/Built_In_The_USA.png",
+            "icon_3_text": "<p><strong>Built In The USA<\/strong><\/p>"
           }
         }
       },
