@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: 130px;
+}
 /* 
 * Utilities 
 */
@@ -737,15 +741,22 @@ color: #F05423;
 .testimonials-wrap .grid_text {
   font-size: 14px;
 }
-
-.flickity-page-dots .dot {
+.flickity-page-dots {
+  padding: 0;
+}
+.flickity-page-dots .flickity-page-dot {
   background-color: #fff !important;
   opacity: 1 !important;
   border: 3px solid #000;
   width: 20px !important;
   height: 20px !important;
+  border-radius: 20px;
+  margin: 0 0.3em;
+  outline: none;
+  box-shadow: none !important;
 }
-.flickity-page-dots .dot.is-selected {
+
+.flickity-page-dots .flickity-page-dot.is-selected {
   background-color: #F05423 !important;
   border-color: #FFC7B6;
 }
@@ -989,12 +1000,18 @@ table td p {line-height: normal;}
 .section--product-recommendations {
   background-color: #fff;
 }
-.price--on-sale .price-item--regular{
+.price--on-sale .price-item--compare{
   font-size: 13px !important;
   font-weight: 600; 
   color: #999 !important;
 }
 .price--on-sale .price-item--sale {
+  font-size: 22px;
+  font-weight: 600;
+  color: #000;
+}
+
+.price:not(.price--on-sale) .price__regular {
   font-size: 22px;
   font-weight: 600;
   color: #000;
@@ -1263,6 +1280,12 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
   padding-top: 8px;
 }
 
+.mega-menu__list--condensed .mega-menu__link {
+  font-weight: 600 !important;
+  color: #858585 !important;
+  font-size: 15px;;
+}
+
 
 /* 
 * Product Form in Product Grid
@@ -1338,6 +1361,13 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
     margin: 0;
     padding: 0 0 5px;
   }
+  .footer-block--custom_newsletter .footer-block--newsletter h2.footer-block__heading::after{
+    content: "";
+  }
+  .footer-block--custom_newsletter  .footer-block__heading:not(.block-collapsed)::after{
+    content: "";  
+  }
+
   .newsletter-form__field-wrapper .field{
     display: block;
   }
@@ -1393,7 +1423,7 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
   .footer__content-bottom-wrapper{
     padding: 0;
   }
-  .footer__column.footer__column--info {
+  .footer__column.footer__column--info{
     padding-top: 0;
   }
   .footer__payment {

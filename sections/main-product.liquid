@@ -4,7 +4,7 @@
     assign subscription_enabled = true
   endif  
 %}
-<section id="MainProduct-{{ section.id }}" class="page-width section-{{ section.id }}-padding" data-section="{{ section.id }}">
+<section id="MainProduct-{{ section.id }}" class="page-width section-{{ section.id }}-padding" data-section="{{ section.id }}" section-type="main-product">
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
@@ -658,18 +658,6 @@
     </modal-dialog>
   {%- endfor -%}
 
-  {%- if product.media.size > 0 -%}
-    <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
-  {%- endif -%}
-
-  {%- if first_3d_model -%}
-    <script type="application/json" id="ProductJSON-{{ product.id }}">
-      {{ product.media | where: 'media_type', 'model' | json }}
-    </script>
-    <script src="{{ 'product-model.js' | asset_url }}" defer></script>
-  {%- endif -%}
-
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       function isIE() {
@@ -692,50 +680,12 @@
       });
     });
   </script>
-
-
-  <script src="{{ 'jquery.min.js' | asset_url }}"></script>
+  
   <script>
-    $(document).ready(function() {
-
-      $(".product-form__submit").click(function() {
-    
-        setTimeout(function() {
-          $.getJSON('/cart.js', function(cart) {
-              //console.log(cart);
-              console.log("processing...");
-           }).done(function( cart ) {
-              console.log("done");
-              console.log(cart);
-
-              var free_shipping_price = parseFloat("{{ freeShippingPrice }}")/100;
-              var total_price = parseFloat(cart.total_price/100 );
-
-              console.log("free_shipping_price");
-              console.log(free_shipping_price);
-
-              console.log("total_price");
-              console.log(total_price);
-
-              if( parseFloat(total_price) >= parseFloat(free_shipping_price) ){
-                console.log(">=");
-                $('.shipping-bar-bg').css('background-color', '#f15523');
-                $('.shipping-tool').hide();
-                $('span.text').html("");
-                $('span.text').html("You've got free shipping");
-              }else{
-                console.log("<");
-                $('.shipping-bar-bg').removeAttr("style");
-                $('span.text').html("");
-                $('span.text').html("Add <b>$ <span class='left-shipping-price'>{{ freeShippingPrice | minus: cart.total_price | money_without_currency }}</span></b> more to your cart for free shipping!");
-              }
-              
-           });
-         }, 900);
-         
-
-      });
-    });
+    window.ProductInfo = {
+      free_shipping_price: '{{ freeShippingPrice | divided_by: 100 }}',
+      free_shipping_left: '{{ freeShippingPrice | minus: cart.total_price | money_without_currency }}'
+    }
   </script>
 
   {%- liquid
