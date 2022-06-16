@@ -321,8 +321,20 @@
               {%- endfor -%}      
               {%- endcomment -%}
 
-              <img src="{{ block.settings.icon_1 | img_url }}" alt="{{ block.settings.icon_1_text }}" title="{{ block.settings.icon_1_text }}" />
-              <p>{{ block.settings.icon_1_text }}</p>
+              <div class="icon-with-text">
+                <img src="{{ block.settings.icon_1 | img_url }}" alt="{{ block.settings.icon_1_text }}" title="{{ block.settings.icon_1_text }}" />
+                <p>{{ block.settings.icon_1_text }}</p>
+              </div>
+
+              <div class="icon-with-text">
+                <img src="{{ block.settings.icon_2 | img_url }}" alt="{{ block.settings.icon_2_text }}" title="{{ block.settings.icon_2_text }}" />
+                <p>{{ block.settings.icon_2_text }}</p>
+              </div>
+
+              <div class="icon-with-text">
+                <img src="{{ block.settings.icon_3 | img_url }}" alt="{{ block.settings.icon_3_text }}" title="{{ block.settings.icon_3_text }}" />
+                <p>{{ block.settings.icon_3_text }}</p>
+              </div>
 
             </div>
           {%- when 'collapsible_tab' -%}
