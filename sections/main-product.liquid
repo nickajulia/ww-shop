@@ -305,6 +305,7 @@
             {{ block.settings.custom_liquid }}
           {%- when 'icons' -%}
             <div class="icon-with-text-wrap">
+              {%- comment -%}
               {% assign icon_with_text = product.metafields.pdp_icon_with_text %}
               {%- for i in (i..icon_with_text.size) -%}
                   {%- assign iconWithText = 'icon_with_text-' | append : i -%}
@@ -317,7 +318,12 @@
                           <p>{{ title }}</p>
                       </div>
                   {%- endif -%}
-              {%- endfor -%}        
+              {%- endfor -%}      
+              {%- endcomment -%}
+
+              <img src="{{ block.settings.icon_1 | img_url }}" alt="{{ block.settings.icon_1_text }}" title="{{ block.settings.icon_1_text }}" />
+              <p>{{ block.settings.icon_1_text }}</p>
+
             </div>
           {%- when 'collapsible_tab' -%}
             <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
