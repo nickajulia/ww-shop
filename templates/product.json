@@ -56,13 +56,6 @@
           "type": "icons",
           "settings": {
           }
-        },
-        "462c2e4e-b492-4144-ad0c-3e67538f25ee": {
-          "type": "text",
-          "settings": {
-            "text": "Test 123",
-            "text_style": "body"
-          }
         }
       },
       "block_order": [
@@ -75,8 +68,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "6d803d8d-f486-4b5b-b810-8c0dc041db03",
-        "462c2e4e-b492-4144-ad0c-3e67538f25ee"
+        "6d803d8d-f486-4b5b-b810-8c0dc041db03"
       ],
       "settings": {
         "enable_sticky_info": false,
