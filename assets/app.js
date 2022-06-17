@@ -189,6 +189,45 @@ var ProductTestimonial = function ProductTestimonial() {
 
 /***/ }),
 
+/***/ "./src/js/components/skio-custom.js":
+/*!******************************************!*\
+  !*** ./src/js/components/skio-custom.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SkioCustom": () => (/* binding */ SkioCustom)
+/* harmony export */ });
+var SkioCustom = function SkioCustom() {
+  var SETUP_SUBSCRIPTION_TEXT = 'SETUP SUBSCRIPTION';
+  var ADD_TO_CART_TEXT = 'ADD TO CART';
+  var selectors = {
+    skioGroup: '[skio-group-container]',
+    onetime: '[skio-one-time]',
+    submitButton: 'button[name="add"]'
+  };
+
+  var queryElement = function queryElement(elem) {
+    return document.querySelector(elem);
+  };
+
+  document.querySelectorAll(selectors.skioGroup).forEach(function (elem) {
+    elem.addEventListener('change', function (e) {
+      if (e.target.id.indexOf('skio-one-time') > -1) {
+        queryElement(selectors.submitButton).querySelector('span').innerText = ADD_TO_CART_TEXT;
+      } else {
+        queryElement(selectors.submitButton).querySelector('span').innerText = SETUP_SUBSCRIPTION_TEXT;
+      }
+    });
+  });
+};
+
+
+
+/***/ }),
+
 /***/ "./src/js/templates/product.js":
 /*!*************************************!*\
   !*** ./src/js/templates/product.js ***!
@@ -200,6 +239,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_product_testimonial__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/product-testimonial */ "./src/js/components/product-testimonial.js");
+/* harmony import */ var _components_skio_custom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/skio-custom */ "./src/js/components/skio-custom.js");
+
 
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
@@ -236,6 +277,10 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     });
   }
 });
+
+if (document.querySelector('.skio-plan-picker')) {
+  new _components_skio_custom__WEBPACK_IMPORTED_MODULE_2__.SkioCustom();
+}
 
 if (document.querySelector('.product-testimonials')) {
   new _components_product_testimonial__WEBPACK_IMPORTED_MODULE_1__.ProductTestimonial();
