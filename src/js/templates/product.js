@@ -1,5 +1,6 @@
 import $ from "jquery";
 import { ProductTestimonial } from '../components/product-testimonial';
+import { SkioCustom } from '../components/skio-custom';
 
 $(document).ready(function() {
 
@@ -40,6 +41,10 @@ $(document).ready(function() {
     });
   }
 });
+
+if (document.querySelector('.skio-plan-picker')) {
+  new SkioCustom();
+}
 
 if (document.querySelector('.product-testimonials')) {
   new ProductTestimonial();
