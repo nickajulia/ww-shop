@@ -25,8 +25,8 @@
           "settings": {
           }
         },
-        "8832f79e-8963-4d6f-83c2-954672c794f2": {
-          "type": "shopify:\/\/apps\/skio-subscriptions-yc-s20\/blocks\/app-block\/de50f7a4-0bb0-4d4c-84e2-c03dce83436d",
+        "1a0611ff-380d-4e65-ad62-3093689a80c8": {
+          "type": "skio-plan-picker",
           "settings": {
           }
         },
@@ -69,7 +69,7 @@
         "b8af8a9b-6f74-49d8-a54b-2222d5dcd2cd",
         "4fa09fbb-7582-4705-a157-9ed19c3f4a7f",
         "price",
-        "8832f79e-8963-4d6f-83c2-954672c794f2",
+        "1a0611ff-380d-4e65-ad62-3093689a80c8",
         "c4d4833d-1c83-4bfc-8d6c-c10691d7d650",
         "variant_picker",
         "quantity_selector",
