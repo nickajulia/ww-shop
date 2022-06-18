@@ -1206,11 +1206,6 @@ nav.header__inline-menu {
   padding-right: 3px;
 }
 
-.cart-notification-wrapper .cart-notification{
-  z-index: 1;
-  top: 110px;
-}
-
 .header-wrapper{
   top: 0;
 }

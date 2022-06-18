@@ -1646,3 +1646,7 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
     margin-top: 10px;
   }
 }
+.cart-notification-wrapper .cart-notification {
+  z-index: 1;
+  top: 110px;
+}
