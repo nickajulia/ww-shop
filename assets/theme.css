@@ -1655,7 +1655,7 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
   height: 0 !important;
   margin-top: 0;
   transform: unset !important;
-  transition: opacity 0.4s ease-in-out !important;
+  transition: opacity 0.4s ease-in !important;
 }
 
 .mega-menu[open] .mega-menu__content {
