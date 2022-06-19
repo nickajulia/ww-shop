@@ -1650,3 +1650,14 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
   z-index: 1;
   top: 110px;
 }
+
+.mega-menu .mega-menu__content {
+  height: 0 !important;
+  margin-top: 0;
+  transform: unset !important;
+  transition: opacity 0.4s ease-in-out !important;
+}
+
+.mega-menu[open] .mega-menu__content {
+  height: auto !important;
+}

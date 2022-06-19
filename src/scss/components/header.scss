@@ -1,0 +1,12 @@
+.mega-menu .mega-menu__content{
+    height: 0 !important;
+    margin-top: 0;
+    transform: unset !important;
+    -moz-transition: opacity 0.4s ease-in-out !important;
+    -o-transition: opacity 0.4s ease-in-out !important;
+    -webkit-transition: opacity 0.4s ease-in-out !important;
+    transition: opacity 0.4s ease-in-out !important;
+}
+.mega-menu[open] .mega-menu__content{
+    height: auto !important;
+}

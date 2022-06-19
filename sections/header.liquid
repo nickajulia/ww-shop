@@ -528,12 +528,15 @@
   console.log(items)
   items.forEach(item => {
     item.addEventListener("mouseover", () => {
+      $(item).find(".mega-menu__content").slideDown();
       item.setAttribute("open", true);
       item.querySelector("ul").addEventListener("mouseleave", () => {
         item.removeAttribute("open");
+        $(item).find(".mega-menu__content").slideUp();
       });
     item.addEventListener("mouseleave", () => {
       item.removeAttribute("open");
+      $(item).find(".mega-menu__content").slideUp();
     });
   });
   
