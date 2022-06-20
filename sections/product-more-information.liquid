@@ -83,25 +83,23 @@
         {%- if product.metafields.tabbed_image.tabbed_image_url != blank -%}
           <img alt="{{ product.title }}" image-desktop-selector src="{{ product.metafields.tabbed_image.tabbed_image_url | img_url: '388x' }}"  loading="lazy" />
         {%- endif -%}
+        
         <div class="icons-list">
-          {% assign tabbed_icon_text = product.metafields.tabbed_icon_text %}
-          {%- for i in (i..tabbed_icon_text.size) -%}
-            {%- assign iconWithText = 'tabbed_icon_with_text-' | append : i -%}
-            {% assign iconWithTextVal = product.metafields.tabbed_icon_text[iconWithText] %}
-            {%- assign image = iconWithTextVal | split: ' | ' | first -%}
-            {%- assign title = iconWithTextVal | split: ' | ' | last -%}
-            {%- if forloop.first != true -%}
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'features' %}
               <div class="list-item">
-                <div class="li_icon">
-                  <img src="{{ image }}">
-                </div>
-                <div class="li_txt">
-                  <p>{{ title }}</p>
-                </div>
+                  <div class="li_icon">
+                  <img src="{{ block.settings.image | img_url: 'x39' }}" title="{{ block.settings.label }}" alt="{{ block.settings.label }}" />
+                  </div>
+                  <div class="li_txt">
+                  <p>{{ block.settings.label }}</p>
+                  </div>
               </div>
-            {%- endif -%}
-          {%- endfor -%} 
+          {% endcase %}
+        {% endfor %}
         </div>
+        
       </div>
     </div>
   </div>
@@ -161,6 +159,9 @@
     }
   ],
   "blocks": [
+	{
+      "type": "@app"
+    },
     {
       "type": "tab",
       "name": "Tab",
@@ -185,6 +186,23 @@
           "label": "Element id",
           "info": "Place the ID of the element",
           "placeholder": "SECTION_ID"
+        }
+      ]
+    },
+	{
+      "type": "features",
+      "name": "features",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon"
+        },
+        {
+            "type": "richtext",
+            "id": "label",
+            "label": "Label"
         }
       ]
     }

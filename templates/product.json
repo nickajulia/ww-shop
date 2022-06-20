@@ -113,12 +113,36 @@
             "scroll_to_element": false,
             "target_element": "shipping"
           }
+        },
+        "f815321d-9226-4a25-951a-38151a072c0d": {
+          "type": "features",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Natural_Ingredients_whenever_possible.png",
+            "label": "<p><strong>Natural Ingredients whenever possible<\/strong><\/p>"
+          }
+        },
+        "1bb2df93-6320-4710-aabd-add9e2953a9f": {
+          "type": "features",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/No_Chemicals_Preservatives_Colorants_If_Possible.png",
+            "label": "<p><strong>No Chemicals, Preservatives & Colorants If Possible<\/strong><\/p>"
+          }
+        },
+        "01892f4f-9031-47b7-a0d3-68f7fb86e45d": {
+          "type": "features",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Proudly_Made_In_The_USA.png",
+            "label": "<p><strong>Proudly Made In The USA<\/strong><\/p>"
+          }
         }
       },
       "block_order": [
         "165378798735a83435-0",
         "165378798735a83435-1",
-        "165378798735a83435-2"
+        "165378798735a83435-2",
+        "f815321d-9226-4a25-951a-38151a072c0d",
+        "1bb2df93-6320-4710-aabd-add9e2953a9f",
+        "01892f4f-9031-47b7-a0d3-68f7fb86e45d"
       ],
       "settings": {
         "show_tabs": true,

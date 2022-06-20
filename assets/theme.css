@@ -1660,13 +1660,30 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
   top: 110px;
 }
 
-.mega-menu .mega-menu__content {
-  height: 0 !important;
-  margin-top: 0;
-  transform: unset !important;
-  transition: opacity 0.4s ease-in !important;
+.header__inline-menu .mega-menu .list-menu__item {
+  position: relative;
+  padding-right: 2.7rem;
 }
-
-.mega-menu[open] .mega-menu__content {
-  height: auto !important;
+.header__inline-menu .mega-menu .list-menu__item .icon-caret {
+  position: absolute;
+  width: 10px;
+  right: 0.8rem;
+}
+.header__inline-menu .mega-menu__list {
+  gap: 2.4rem 3rem;
+}
+.header__inline-menu .mega-menu__list a {
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+.header__inline-menu div.mega-menu__content {
+  transform: none !important;
+  max-height: 0;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+.header__inline-menu .mega-menu[open] .mega-menu__content {
+  z-index: 1;
+  max-height: 540px;
 }
