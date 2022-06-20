@@ -1,4 +1,9 @@
 .header__inline-menu {
+
+    ul li a, .header__menu-item span {
+        font-size: 14px !important;
+        line-height: 26px;
+    }
     .mega-menu {
         .list-menu__item {
             position: relative;
@@ -23,6 +28,8 @@
     div.mega-menu__content {
         transform: none !important;
         max-height: 0;
+        overflow: hidden;
+        padding: 0;
         transition-property: all;
         transition-duration: .5s;
         transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
@@ -33,6 +40,8 @@
             .mega-menu__content {
                 z-index: 1;
                 max-height: 540px;
+                padding-top: 2.4rem;
+                padding-bottom: 2.4rem;
             }
         }
     }

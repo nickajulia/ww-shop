@@ -1660,6 +1660,10 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
   top: 110px;
 }
 
+.header__inline-menu ul li a, .header__inline-menu .header__menu-item span {
+  font-size: 14px !important;
+  line-height: 26px;
+}
 .header__inline-menu .mega-menu .list-menu__item {
   position: relative;
   padding-right: 2.7rem;
@@ -1679,6 +1683,8 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
 .header__inline-menu div.mega-menu__content {
   transform: none !important;
   max-height: 0;
+  overflow: hidden;
+  padding: 0;
   transition-property: all;
   transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
@@ -1686,4 +1692,6 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
 .header__inline-menu .mega-menu[open] .mega-menu__content {
   z-index: 1;
   max-height: 540px;
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
 }
