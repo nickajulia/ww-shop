@@ -1,0 +1,60 @@
+<div class="icons-list">
+    {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'logo' %}
+
+            <div class="list-item">
+                <div class="li_icon">
+                <img src="{{ block.settings.image | img_url: 'x39' }}" title="{{ block.settings.label }}" alt="{{ block.settings.label }}" />
+                </div>
+                <div class="li_txt">
+                <p>{{ block.settings.label }}</p>
+                </div>
+            </div>
+        {% endcase %}
+    {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Product Features",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "features",
+      "name": "Features",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon",
+        },
+        {
+            "type": "richtext",
+            "id": "label",
+            "label": "Label",
+          }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Features",
+      "blocks": [
+        {
+          "type": "features"
+        },
+        {
+          "type": "features"
+        },
+        {
+          "type": "features"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
