@@ -36,33 +36,34 @@
   {%- endif -%}
 {%- endfor -%}
 
+{% if tabletFirstShow %}
+  <div class="section-how-do-we-stack-up page-accent--{{ section.settings.color_accent }}">
+    <div class="page-width isolate section-{{ section.id }}-padding">
+      <div class="section-head">
+        <h5 class="hidden-mobile">{{ section.settings.title }}</h5>
+        <h2 class="h1 hidden-mobile">{{ section.settings.subhead }}</h2>
+        <h2 class="h1 hidden-desktop line-style">
+          <span>{{ section.settings.subhead_mobile }}</span>
+        </h2>
+      </div>
 
-<div class="section-how-do-we-stack-up page-accent--{{ section.settings.color_accent }}">
-  <div class="page-width isolate section-{{ section.id }}-padding">
-    <div class="section-head">
-      <h5 class="hidden-mobile">{{ section.settings.title }}</h5>
-      <h2 class="h1 hidden-mobile">{{ section.settings.subhead }}</h2>
-      <h2 class="h1 hidden-desktop line-style">
-        <span>{{ section.settings.subhead_mobile }}</span>
-      </h2>
-    </div>
-
-    <div style="overflow-x:auto;" class="table_wrapper">
-      {%- if tabletFirstShow and section.settings.table_first_wrapper != blank -%}
-        {{ section.settings.table_first_wrapper }}
-      {%- endif -%}
-      {%- if tabletSecondShow and section.settings.table_second_wrapper != blank -%}
-        {{ section.settings.table_second_wrapper }}
-      {%- endif -%}
-      {%- if tabletThirdtShow and section.settings.table_third_wrapper != blank -%}
-        {{ section.settings.table_third_wrapper }}
-      {%- endif -%}
-      {%- if tabletFourthShow and section.settings.table_fourth_wrapper != blank -%}
-        {{ section.settings.table_fourth_wrapper }}
-      {%- endif -%}
+      <div style="overflow-x:auto;" class="table_wrapper">
+        {%- if tabletFirstShow and section.settings.table_first_wrapper != blank -%}
+          {{ section.settings.table_first_wrapper }}
+        {%- endif -%}
+        {%- if tabletSecondShow and section.settings.table_second_wrapper != blank -%}
+          {{ section.settings.table_second_wrapper }}
+        {%- endif -%}
+        {%- if tabletThirdtShow and section.settings.table_third_wrapper != blank -%}
+          {{ section.settings.table_third_wrapper }}
+        {%- endif -%}
+        {%- if tabletFourthShow and section.settings.table_fourth_wrapper != blank -%}
+          {{ section.settings.table_fourth_wrapper }}
+        {%- endif -%}
+      </div>
     </div>
   </div>
-</div>
+{% endif %}
 
 {% schema %}
 {

@@ -645,6 +645,16 @@ color: #F05423;
   display: flex;
 }
 
+.product-testimonials .page-content-wrapper {
+  &.center-mode {
+    justify-content: center;
+
+    .content-right {
+      margin-top: 0;
+    }
+  }
+}
+
 .product-testimonials .section-head {
   max-width: 100%;
 }
@@ -876,6 +886,7 @@ color: #F05423;
   padding: 0.5em;
   border: 2px solid #000;
   width: 33.33%;
+  font-size: 12px;
 }
 
 table td p {line-height: normal;}
@@ -887,6 +898,7 @@ table td p {line-height: normal;}
 @media (min-width: 990px) {
   .section-how-do-we-stack-up table td {
     padding: 1px 2em;
+    font-size: 16px;
   }
 }
 

@@ -1,9 +1,39 @@
-.mega-menu .mega-menu__content{
-    height: 0;
-    margin-top: 0;
-    transform: unset !important;
-    display: none;
-}
-.mega-menu[open] .mega-menu__content{
-    height: auto;
+.header__inline-menu {
+    .mega-menu {
+        .list-menu__item {
+            position: relative;
+            padding-right: 2.7rem;
+    
+            .icon-caret {
+                position: absolute;
+                width: 10px;
+                right: 0.8rem;
+            }
+        }
+    }
+
+    .mega-menu__list {
+        gap: 2.4rem 3rem;
+        a {
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+        }
+    }
+
+    div.mega-menu__content {
+        transform: none !important;
+        max-height: 0;
+        transition-property: all;
+        transition-duration: .5s;
+        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    }
+
+    .mega-menu {
+        &[open] {
+            .mega-menu__content {
+                z-index: 1;
+                max-height: 540px;
+            }
+        }
+    }
 }
