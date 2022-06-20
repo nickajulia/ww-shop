@@ -84,21 +84,6 @@
           <img alt="{{ product.title }}" image-desktop-selector src="{{ product.metafields.tabbed_image.tabbed_image_url | img_url: '388x' }}"  loading="lazy" />
         {%- endif -%}
         
-        <div class="icons-list">
-        {% for block in section.blocks %}
-          {% case block.type %}
-            {% when 'features' %}
-              <div class="list-item">
-                  <div class="li_icon">
-                  <img src="{{ block.settings.image | img_url: 'x39' }}" title="{{ block.settings.label }}" alt="{{ block.settings.label }}" />
-                  </div>
-                  <div class="li_txt">
-                  <p>{{ block.settings.label }}</p>
-                  </div>
-              </div>
-          {% endcase %}
-        {% endfor %}
-        </div>
         
         <div class="icons-list">
           {% assign tabbed_icon_text = product.metafields.tabbed_icon_text %}
