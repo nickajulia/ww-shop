@@ -528,15 +528,20 @@
   console.log(items)
   items.forEach(item => {
     item.addEventListener("mouseover", () => {
-      $(item).find(".mega-menu__content").slideDown();
       item.setAttribute("open", true);
+      //var getHeightMega = $(item).find(".mega-menu__content").height();
+      //console.log(getHeightMega);
+      $(item).find(".mega-menu__content").slideDown();
+
       item.querySelector("ul").addEventListener("mouseleave", () => {
-        item.removeAttribute("open");
-        $(item).find(".mega-menu__content").slideUp();
+        $(item).find(".mega-menu__content").slideUp( 'fast',function() {
+          item.removeAttribute("open");
+        });
       });
     item.addEventListener("mouseleave", () => {
-      item.removeAttribute("open");
-      $(item).find(".mega-menu__content").slideUp();
+      $(item).find(".mega-menu__content").slideUp( 'fast',function() {
+        item.removeAttribute("open");
+      });
     });
   });
   

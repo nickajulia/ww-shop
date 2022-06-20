@@ -1652,12 +1652,12 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
 }
 
 .mega-menu .mega-menu__content {
-  height: 0 !important;
+  height: 0;
   margin-top: 0;
   transform: unset !important;
-  transition: opacity 0.4s ease-in !important;
+  display: none;
 }
 
 .mega-menu[open] .mega-menu__content {
-  height: auto !important;
+  height: auto;
 }
