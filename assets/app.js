@@ -12,6 +12,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _templates_product__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./templates/product */ "./src/js/templates/product.js");
 /* harmony import */ var _components_product_tab__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/product-tab */ "./src/js/components/product-tab.js");
 /* harmony import */ var _components_product_image_description__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/product-image-description */ "./src/js/components/product-image-description.js");
+/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/header */ "./src/js/components/header.js");
+/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_header__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -23,6 +26,35 @@ if (document.querySelector('.product-tabs')) {
 if (document.querySelector('[image-desktop-selector]')) {
   new _components_product_image_description__WEBPACK_IMPORTED_MODULE_2__.ProductImageDescription();
 }
+
+/***/ }),
+
+/***/ "./src/js/components/header.js":
+/*!*************************************!*\
+  !*** ./src/js/components/header.js ***!
+  \*************************************/
+/***/ (() => {
+
+var items = document.querySelector(".header__inline-menu").querySelectorAll("details");
+console.log(items);
+items.forEach(function (item) {
+  item.addEventListener("mouseover", function () {
+    item.setAttribute("open", true); //var getHeightMega = $(item).find(".mega-menu__content").height();
+    //console.log(getHeightMega);
+
+    $(item).find(".mega-menu__content").slideDown();
+    item.querySelector("ul").addEventListener("mouseleave", function () {
+      $(item).find(".mega-menu__content").slideUp('fast', function () {
+        item.removeAttribute("open");
+      });
+    });
+    item.addEventListener("mouseleave", function () {
+      $(item).find(".mega-menu__content").slideUp('fast', function () {
+        item.removeAttribute("open");
+      });
+    });
+  });
+});
 
 /***/ }),
 
