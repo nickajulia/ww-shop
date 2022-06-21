@@ -271,30 +271,32 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   if (document.querySelector('[section-type="main-product"]')) {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".product-form__submit").click(function () {
       setTimeout(function () {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default().getJSON('/cart.js', function (cart) {
-          //console.log(cart);
-          console.log("processing...");
-        }).done(function (cart) {
-          console.log("done");
-          console.log(cart);
-          var free_shipping_price = parseFloat(window.ProductInfo.free_shipping_price);
-          var total_price = parseFloat(cart.total_price / 100);
-          console.log("free_shipping_price");
-          console.log(free_shipping_price);
-          console.log("total_price");
-          console.log(total_price);
+        jquery__WEBPACK_IMPORTED_MODULE_0___default().getJSON('/cart.js', function (data) {
+          var freeShippingPrice = window.ProductInfo.free_shipping_price * 100;
+          console.log('data.total_price', data.total_price);
+          console.log('freeShippingPrice', freeShippingPrice);
 
-          if (parseFloat(total_price) >= parseFloat(free_shipping_price)) {
-            console.log(">=");
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()('.shipping-bar-bg').css('background-color', '#f15523');
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()('.shipping-tool').hide();
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()('span.text').html("");
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()('span.text').html("You've got free shipping");
+          if (data.total_price < freeShippingPrice) {
+            console.log('pasok parin');
+            var shippingLeft = (freeShippingPrice - data.total_price) / 100 * 2;
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()(".shipping-bar-bg .shipping-tool").css({
+              "left": "calc(100% - " + shippingLeft + "%)"
+            });
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()(".shipping-tool-price-text-wrap").css({
+              "left": "calc(100% - " + shippingLeft + "% - 20px)"
+            });
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()(".shipping-tool-price-text").text(data.total_price / 100);
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()(".left-shipping-price").text((freeShippingPrice - data.total_price) / 100);
           } else {
-            console.log("<");
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()('.shipping-bar-bg').removeAttr("style");
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()('span.text').html("");
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()('span.text').html("Add <b>$ <span class='left-shipping-price'>".concat(window.ProductInfo.free_shipping_left, "</span></b> more to your cart for free shipping!"));
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()('.shipping-tool').remove();
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()(".shipping-bar-bg").css({
+              "background-color": "#f05423"
+            });
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()(".shipping-bar .text").text("You've got free shipping");
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()(".shipping-tool-price-text").text('');
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()(".shipping-tool-price-text-wrap, .shipping-bar-price").css({
+              "display": "none"
+            });
           }
         });
       }, 900);
