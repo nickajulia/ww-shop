@@ -42,18 +42,27 @@ $(document).ready(function() {
   }
 });
 
-$(window).on("load resize", checkPosition)
+$(window).on("load resize", checkPosition);
 var shopNowWrapper = $(".product-shop-now-wrapper");
 
 function checkPosition() {
-  if ($(window).width() < 500) {
+  var newWindowWidth = $(window).width();
+  console.log("newWindowWidth:"+newWindowWidth);
+  if (newWindowWidth <= 989) {
     $(window).scroll(function() {
-      if ($(window).scrollTop() > 700) {
-        $(shopNowWrapper).fadeIn();
-      } else {
-        $(shopNowWrapper).fadeOut();
+      var newWindowWidthAgain = $(window).width();
+      if (newWindowWidthAgain <= 989) {
+        if ($(window).scrollTop() > 700) {
+          $(shopNowWrapper).fadeIn();
+        } else {
+          $(shopNowWrapper).fadeOut();
+        }
+      }else{
+        $(shopNowWrapper).hide();
       }
     });
+  }else{
+    $(shopNowWrapper).hide();
   }
 }
 

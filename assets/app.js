@@ -305,14 +305,25 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on("load resize", checkPos
 var shopNowWrapper = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".product-shop-now-wrapper");
 
 function checkPosition() {
-  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() < 500) {
+  var newWindowWidth = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width();
+  console.log("newWindowWidth:" + newWindowWidth);
+
+  if (newWindowWidth <= 989) {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function () {
-      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop() > 700) {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(shopNowWrapper).fadeIn();
+      var newWindowWidthAgain = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width();
+
+      if (newWindowWidthAgain <= 989) {
+        if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop() > 700) {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(shopNowWrapper).fadeIn();
+        } else {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(shopNowWrapper).fadeOut();
+        }
       } else {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(shopNowWrapper).fadeOut();
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(shopNowWrapper).hide();
       }
     });
+  } else {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(shopNowWrapper).hide();
   }
 }
 
