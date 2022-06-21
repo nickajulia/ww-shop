@@ -18,3 +18,16 @@
     font-size: 14px;
     text-decoration: none;
 }
+
+.product__info-wrapper variant-radios{
+    padding-top: 15px;
+}
+.product__info-wrapper .product-form__input input[type='radio'] + label{
+    border: 1px solid #cccccc;
+    background-color: #fff;
+    color: #000000;
+}
+.product__info-wrapper .product-form__input input[type=radio]:checked+label {
+    border: 1px solid #000000;  
+    background-color: #fff;
+}
