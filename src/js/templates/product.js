@@ -46,7 +46,7 @@ $(window).on("load resize", checkPosition)
 var shopNowWrapper = $(".product-shop-now-wrapper");
 
 function checkPosition() {
-  if ($(window).width() < 700) {
+  if ($(window).width() < 500) {
     $(window).scroll(function() {
       if ($(window).scrollTop() > 700) {
         $(shopNowWrapper).fadeIn();

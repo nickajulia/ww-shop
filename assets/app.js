@@ -305,7 +305,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on("load resize", checkPos
 var shopNowWrapper = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".product-shop-now-wrapper");
 
 function checkPosition() {
-  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() < 700) {
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() < 500) {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function () {
       if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop() > 700) {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(shopNowWrapper).fadeIn();
