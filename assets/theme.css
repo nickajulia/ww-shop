@@ -1655,6 +1655,28 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
     margin-top: 10px;
   }
 }
+.product-shop-now-wrapper {
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  z-index: 9;
+  display: none;
+}
+
+.product-shop-now-wrapper .btn-shop-now {
+  background-color: #F05423;
+  text-transform: uppercase;
+  color: #fff;
+  max-width: 260px;
+  margin: 15px auto;
+  display: block;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
 .cart-notification-wrapper .cart-notification {
   z-index: 1;
   top: 110px;

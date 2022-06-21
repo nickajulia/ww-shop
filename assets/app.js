@@ -301,6 +301,20 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     });
   }
 });
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on("load resize", checkPosition);
+var shopNowWrapper = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".product-shop-now-wrapper");
+
+function checkPosition() {
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() < 700) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function () {
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop() > 700) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(shopNowWrapper).fadeIn();
+      } else {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(shopNowWrapper).fadeOut();
+      }
+    });
+  }
+}
 
 if (document.querySelector('.skio-plan-picker')) {
   new _components_skio_custom__WEBPACK_IMPORTED_MODULE_2__.SkioCustom();

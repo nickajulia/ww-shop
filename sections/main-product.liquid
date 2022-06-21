@@ -4,6 +4,11 @@
     assign subscription_enabled = true
   endif  
 %}
+
+<div class="product-shop-now-wrapper">
+  <a class="btn-shop-now" href="javascript:;" onclick="$('.product-form__submit').trigger('click');">Shop Now</a>
+</div>
+
 <section id="MainProduct-{{ section.id }}" class="page-width section-{{ section.id }}-padding" data-section="{{ section.id }}" section-type="main-product">
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}

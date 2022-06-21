@@ -42,6 +42,21 @@ $(document).ready(function() {
   }
 });
 
+$(window).on("load resize", checkPosition)
+var shopNowWrapper = $(".product-shop-now-wrapper");
+
+function checkPosition() {
+  if ($(window).width() < 700) {
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > 700) {
+        $(shopNowWrapper).fadeIn();
+      } else {
+        $(shopNowWrapper).fadeOut();
+      }
+    });
+  }
+}
+
 if (document.querySelector('.skio-plan-picker')) {
   new SkioCustom();
 }
