@@ -5,7 +5,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/Slider_Spring_26f083f8-e500-4d75-ba5d-1bce89189e90.jpg",
         "image_overlay_opacity": 0,
-        "image_height": "medium",
+        "image_height": "large",
         "adapt_height_first_image": true,
         "desktop_content_position": "bottom-center",
         "show_text_box": false,
