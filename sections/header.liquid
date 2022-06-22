@@ -370,7 +370,9 @@
                             </a>
                             {% for collection in collections %}
                                 {% if childlink.title == collection.title %}
-                                    <img src="{{ collection | img_url: '200x' }}" alt="{{ collection.image.alt }}" loading="lazy"/>
+                                    <a href="{{ collection.url }}">
+                                      <img src="{{ collection | img_url: '200x' }}" alt="{{ collection.image.alt }}" loading="lazy"/>
+                                    </a>
                                 {% endif %}
                           
                             {% endfor %}
