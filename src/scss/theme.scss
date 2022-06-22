@@ -3,3 +3,16 @@
 @import './components/product.scss';
 @import './components/mini-cart.scss';
 @import './components/header.scss';
+
+.resp-container{
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+.resp-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
