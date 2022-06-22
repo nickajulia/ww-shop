@@ -1750,3 +1750,7 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
 .card-wrapper {
   height: auto !important;
 }
+
+.trustspot-inline-rating {
+  text-align: left;
+}
