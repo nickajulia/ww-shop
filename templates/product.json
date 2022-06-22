@@ -93,23 +93,23 @@
         "16559069204f8590c7-0": {
           "type": "tab",
           "settings": {
-            "tab_label": "Description",
+            "tab_label": "Product Information",
             "scroll_to_element": false,
-            "target_element": ""
+            "target_element": "description"
           }
         },
         "16559069204f8590c7-1": {
           "type": "tab",
           "settings": {
             "tab_label": "Description",
-            "scroll_to_element": false,
-            "target_element": ""
+            "scroll_to_element": true,
+            "target_element": "more-reviews"
           }
         },
         "16559069204f8590c7-2": {
           "type": "tab",
           "settings": {
-            "tab_label": "Description",
+            "tab_label": "Shipping",
             "scroll_to_element": false,
             "target_element": ""
           }
@@ -125,7 +125,7 @@
         "padding_top": 40,
         "padding_bottom": 52,
         "sub_heading": "What is the deal with ...",
-        "page_content": ""
+        "page_content": "returns"
       }
     },
     "product-recommendations": {
