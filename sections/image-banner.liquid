@@ -2,6 +2,13 @@
 
 {%- if section.settings.adapt_height_first_image and section.settings.image != blank -%}
   {%- style -%}
+  .image_banner_link{
+    width: 100%;
+    display: block;
+    z-index: 9;
+    height: 100%;
+    position: absolute;
+  }
   @media screen and (max-width: 749px) {
     #Banner-{{ section.id }}::before,
     #Banner-{{ section.id }} .banner__media::before,
@@ -79,7 +86,7 @@
       >
     </div>
   {%- endif -%}
-  <a href="{{ section.settings.image_link }}">
+  <a class="image_banner_link" href="{{ section.settings.image_link }}">
   <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width">
     <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
       {%- for block in section.blocks -%}
