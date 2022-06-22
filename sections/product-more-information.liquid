@@ -34,73 +34,92 @@
     {% endif %}
     
     <div class="description-wrapper">
-      <div class="description__left">
-        <div id="content-description" class="tab-content active">
-          <span class="title_section">Ingredients</span>
-          <div class="description-content">
-            {%- if product.metafields.tabbed_header.tabbed_header_title != blank -%}
-              <h3 class="h2 header-title">{{ product.metafields.tabbed_header.tabbed_header_title }}</h3>
-            {%- endif -%}
-            {%- if product.metafields.tabbed_header.tabbed_header_content != blank -%}
-              <div class="header-content">{{ product.metafields.tabbed_header.tabbed_header_content }}</div>
-            {%- endif -%}
-    
-            <div image-mobile-selector></div>
-    
-            <div class="product-accordion">
-              {%- if section.settings.sub_heading != blank -%}
-                <h4 class="h2 title">{{ section.settings.sub_heading }}</h4>
-              {%- endif -%}
-
-              <div class="accordion">
-                {% assign desc_content_data = product.metafields.desc_content %}
-                {%- for i in (i..desc_content_data.size) -%}
-                  {%- assign descContent = 'desc_content-' | append : i -%}
-                  {% assign descArr = product.metafields.desc_content[descContent] %}
-                  {%- assign title = descArr | split: ' | ' | first -%}
-                  {%- assign content = descArr | split: ' | ' | last -%}
-                  {% if forloop.first != true %}   
-                      <details class="product-accordion__item">
-                        <summary>
-                          {{ title | escape }}
-                        </summary>
-                        <div class="accordion__content rte" id="feature-Accordion-{{ forloop.index }}">
-                          {{ content }}
-                        </div>
-                      </details>
+      {% case template %}
+        {% when 'product.custom' %}
+          <div class="description__left">
+            <div id="content-description" class="tab-content active">
+              <span class="title_section">Ingredients</span>
+              <div class="description-content">
+                {%- if product.metafields.tabbed_header.tabbed_header_title != blank -%}
+                  <h3 class="h2 header-title">{{ product.metafields.tabbed_header.tabbed_header_title }}</h3>
+                {%- endif -%}
+                {%- if product.metafields.tabbed_header.tabbed_header_content != blank -%}
+                  <div class="header-content">{{ product.metafields.tabbed_header.tabbed_header_content }}</div>
+                {%- endif -%}
+        
+                <div image-mobile-selector></div>
+        
+                <div class="product-accordion">
+                  {%- if section.settings.sub_heading != blank -%}
+                    <h4 class="h2 title">{{ section.settings.sub_heading }}</h4>
                   {%- endif -%}
-                {%- endfor -%}
+    
+                  <div class="accordion">
+                    {% assign desc_content_data = product.metafields.desc_content %}
+                    {%- for i in (i..desc_content_data.size) -%}
+                      {%- assign descContent = 'desc_content-' | append : i -%}
+                      {% assign descArr = product.metafields.desc_content[descContent] %}
+                      {%- assign title = descArr | split: ' | ' | first -%}
+                      {%- assign content = descArr | split: ' | ' | last -%}
+                      {% if forloop.first != true %}   
+                          <details class="product-accordion__item">
+                            <summary>
+                              {{ title | escape }}
+                            </summary>
+                            <div class="accordion__content rte" id="feature-Accordion-{{ forloop.index }}">
+                              {{ content }}
+                            </div>
+                          </details>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                </div>
               </div>
             </div>
+            <div id="content-shipping" class="tab-content">
+              {%- assign get_content = pages[section.settings.page_content].content -%}
+              {{  get_content }}
+            </div>
           </div>
-        </div>
-        <div id="content-shipping" class="tab-content">
-          {%- assign get_content = pages[section.settings.page_content].content -%}
-          {{  get_content }}
-        </div>
-      </div>
-      <div class="description__right">
-        {%- if product.metafields.tabbed_image.tabbed_image_url != blank -%}
-          <img alt="{{ product.title }}" image-desktop-selector src="{{ product.metafields.tabbed_image.tabbed_image_url | img_url: '388x' }}"  loading="lazy" />
-        {%- endif -%}
-        
-        <div class="icons-list">
-        {% for block in section.blocks %}
-          {% case block.type %}
-            {% when 'features' %}
-              <div class="list-item">
-                  <div class="li_icon">
-                  <img src="{{ block.settings.image | img_url: 'x39' }}" title="{{ block.settings.label }}" alt="{{ block.settings.label }}" />
+          <div class="description__right">
+            {%- if product.metafields.tabbed_image.tabbed_image_url != blank -%}
+              <img alt="{{ product.title }}" image-desktop-selector src="{{ product.metafields.tabbed_image.tabbed_image_url | img_url: '388x' }}"  loading="lazy" />
+            {%- endif -%}
+            
+            <div class="icons-list">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'features' %}
+                  <div class="list-item">
+                      <div class="li_icon">
+                      <img src="{{ block.settings.image | img_url: 'x39' }}" title="{{ block.settings.label }}" alt="{{ block.settings.label }}" />
+                      </div>
+                      <div class="li_txt">
+                      <p>{{ block.settings.label }}</p>
+                      </div>
                   </div>
-                  <div class="li_txt">
-                  <p>{{ block.settings.label }}</p>
-                  </div>
-              </div>
-          {% endcase %}
-        {% endfor %}
-        </div>
-        
-      </div>
+              {% endcase %}
+            {% endfor %}
+            </div>
+            
+          </div>
+        {% when 'product' %}
+          <div id="content-description" class="tab-content active">
+            <div class="description-content">
+              {%- if product.description != blank -%}
+                <div class="header-content">
+                  {{ product.description }}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+          <div id="content-shipping" class="tab-content">
+            {%- assign get_content = pages[section.settings.page_content].content -%}
+            {{  get_content }}
+          </div>
+         
+      {% endcase %}
+      
     </div>
   </div>
 </div>
