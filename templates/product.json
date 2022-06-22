@@ -87,6 +87,47 @@
         "padding_bottom": 12
       }
     },
+    "1655906920e89539e2": {
+      "type": "product-more-information",
+      "blocks": {
+        "16559069204f8590c7-0": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Product Information",
+            "scroll_to_element": false,
+            "target_element": "description"
+          }
+        },
+        "16559069204f8590c7-1": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Description",
+            "scroll_to_element": true,
+            "target_element": "more-reviews"
+          }
+        },
+        "16559069204f8590c7-2": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Shipping",
+            "scroll_to_element": false,
+            "target_element": "shipping"
+          }
+        }
+      },
+      "block_order": [
+        "16559069204f8590c7-0",
+        "16559069204f8590c7-1",
+        "16559069204f8590c7-2"
+      ],
+      "settings": {
+        "show_tabs": true,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "sub_heading": "What is the deal with ...",
+        "page_content": "returns"
+      }
+    },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
@@ -115,6 +156,7 @@
   },
   "order": [
     "main",
+    "1655906920e89539e2",
     "product-recommendations",
     "1653925689922fbb1d"
   ]
