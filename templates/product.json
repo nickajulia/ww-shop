@@ -111,7 +111,7 @@
           "settings": {
             "tab_label": "Shipping",
             "scroll_to_element": false,
-            "target_element": ""
+            "target_element": "shipping"
           }
         }
       },
