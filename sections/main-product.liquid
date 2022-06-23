@@ -6,7 +6,7 @@
 %}
 
 <div class="product-shop-now-wrapper">
-  <a class="btn-shop-now" href="javascript:;" onclick="$('.product-form__submit').trigger('click');">Shop Now</a>
+  <a class="btn-shop-now" href="javascript:;" onclick="$('.product-form__submit').trigger('click');">Add to Cart</a>
 </div>
 
 <section id="MainProduct-{{ section.id }}" class="page-width section-{{ section.id }}-padding" data-section="{{ section.id }}" section-type="main-product">
@@ -235,6 +235,8 @@
                     <span class="shipping-bar-bg" style="background-color : #f15523"></span>
                 {% elsif cart.total_price < freeShippingPrice %}
                     {% assign freeShippingPer =  freeShippingPrice | minus : cart.total_price | divided_by: 100 | times: 2 %}
+                    {% assign shippingToolWidth =  100 | minus : freeShippingPer %}
+
                     <span class="text">Add <b>$ <span class="left-shipping-price">{{ freeShippingPrice | minus: cart.total_price | money_without_currency }}</span></b> more to your cart for free shipping!</span>
                     <span class="shipping-bar-bg">
                         {% if cart.total_price <= 0 %}
@@ -242,7 +244,7 @@
                         {%- else -%}
                           {%- assign left_align = 30 -%}
                         {% endif %}
-                        <span class="shipping-tool" style="left: calc(100% - {{ freeShippingPer }}% - {{ left_align }}px);background-color : #999999"></span>
+                        <span class="shipping-tool" style=" width: {{ shippingToolWidth }}%;  background-color : #F05423; border-radius: 10px 0 0 10px; overflow: hidden;"></span>
                     </span>
                     <span class="shipping-bar-price">
                         <span class="shipping-tool-price" style="left: 0%;">

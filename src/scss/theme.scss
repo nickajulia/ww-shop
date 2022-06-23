@@ -24,3 +24,18 @@
 .trustspot-inline-rating{
     text-align: left;
 }
+.facets-container .facets__header{
+    background-color: #fff;   
+}
+.facets-container .facets .disclosure-has-popup[open]>summary+*{
+    background-color: #fff;
+}
+.facets-container .field__input{
+    background-color: #fff;
+}
+.facets-container .facet-checkbox > svg{
+    background-color: #fff;
+}
+.facets-container .facet-filters__sort:focus-visible{
+    box-shadow: unset;
+}

@@ -14,11 +14,15 @@ $(document).ready(function() {
           if (data.total_price<freeShippingPrice) {
             console.log('pasok parin');
             var shippingLeft = ((freeShippingPrice - data.total_price)/100)*2;
+            var shippingWidth = parseFloat(100 - shippingLeft);
+            console.log('shippingWidth:'+shippingWidth);
+
+            $(".shipping-tool-price").show();
             $(".shipping-bar-bg .shipping-tool").css({
-              "left" :"calc(100% - "+ shippingLeft +"%)"
+              "width" : shippingWidth +"%"
             });
             $(".shipping-tool-price-text-wrap").css({
-              "left": "calc(100% - "+ shippingLeft +"% - 20px)"
+              "left": "calc(100% - "+ shippingLeft +"% - 43px)"
             });
             $(".shipping-tool-price-text").text((data.total_price)/100);
             $(".left-shipping-price").text(((freeShippingPrice - data.total_price)/100));

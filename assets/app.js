@@ -279,11 +279,14 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
           if (data.total_price < freeShippingPrice) {
             console.log('pasok parin');
             var shippingLeft = (freeShippingPrice - data.total_price) / 100 * 2;
+            var shippingWidth = parseFloat(100 - shippingLeft);
+            console.log('shippingWidth:' + shippingWidth);
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()(".shipping-tool-price").show();
             jquery__WEBPACK_IMPORTED_MODULE_0___default()(".shipping-bar-bg .shipping-tool").css({
-              "left": "calc(100% - " + shippingLeft + "%)"
+              "width": shippingWidth + "%"
             });
             jquery__WEBPACK_IMPORTED_MODULE_0___default()(".shipping-tool-price-text-wrap").css({
-              "left": "calc(100% - " + shippingLeft + "% - 20px)"
+              "left": "calc(100% - " + shippingLeft + "% - 43px)"
             });
             jquery__WEBPACK_IMPORTED_MODULE_0___default()(".shipping-tool-price-text").text(data.total_price / 100);
             jquery__WEBPACK_IMPORTED_MODULE_0___default()(".left-shipping-price").text((freeShippingPrice - data.total_price) / 100);
