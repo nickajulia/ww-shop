@@ -2,9 +2,20 @@
 {{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
+  {%- if section.settings.banner_image != blank -%}
+  .collection-hero__title{
+    margin-bottom: 0;
+  }
+  {%- endif -%}
+
   @media screen and (max-width: 749px) {
     .collection-hero--with-image .collection-hero__inner {
       padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
+    }
+
+    .collection-banner-image img{
+      width: 100%;
+      height: auto;
     }
   }
 {%- endstyle -%}
@@ -21,12 +32,6 @@
         <div class="collection-hero__description rte">{{ collection.description }}</div>
       {%- endif -%}
     </div>
-
-    {%- if section.settings.banner_image != blank -%}
-    <div class="collection-banner">
-      <img src="{{ section.settings.banner_image | img_url }}" width="{{ section.settings.banner_image.width }}" height="{{ section.settings.banner_image.height }}" title="{{ collection.title | escape }}" alt="{{ collection.title | escape }}" />
-    </div>
-    {%- endif -%}
 
     {%- if section.settings.show_collection_image and collection.image -%}
       <div class="collection-hero__image-container media gradient">
@@ -47,6 +52,11 @@
       </div>
     {%- endif -%}
   </div>
+  {%- if section.settings.banner_image != blank -%}
+  <div class="collection-banner-image page-width">
+    <img src="{{ section.settings.banner_image | img_url: '1400x' }}" width="{{ section.settings.banner_image.width }}" height="{{ section.settings.banner_image.height }}" title="{{ collection.title | escape }}" alt="{{ collection.title | escape }}" />
+  </div>
+  {%- endif -%}
 </div>
 
 {% schema %}
