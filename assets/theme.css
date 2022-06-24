@@ -1823,3 +1823,11 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
 .facets-container .facet-filters__sort:focus-visible {
   box-shadow: unset;
 }
+
+.facets-container .facet-checkbox--disabled {
+  color: red;
+}
+
+.product-media-modal .product-media-modal__toggle {
+  background-color: #fff;
+}

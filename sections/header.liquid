@@ -357,7 +357,7 @@
               <div>
                 {%- if link.links != blank -%}
                   <div id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
-                    <a href="#" class="header__menu-item list-menu__item link focus-inset">
+                    <a href="{{ link.url }}" class="header__menu-item list-menu__item link focus-inset">
                       <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                       {% render 'icon-caret' %}
                     </a>
