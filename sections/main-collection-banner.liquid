@@ -22,6 +22,12 @@
       {%- endif -%}
     </div>
 
+    {%- if section.settings.banner_image != blank -%}
+    <div class="collection-banner">
+      <img src="{{ section.settings.banner_image | img_url }}" width="{{ section.settings.banner_image.width }}" height="{{ section.settings.banner_image.height }}" title="{{ collection.title | escape }}" alt="{{ collection.title | escape }}" />
+    </div>
+    {%- endif -%}
+
     {%- if section.settings.show_collection_image and collection.image -%}
       <div class="collection-hero__image-container media gradient">
         <img
@@ -48,6 +54,11 @@
   "name": "t:sections.main-collection-banner.name",
   "class": "section",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Banner Image"
+    },
     {
       "type": "paragraph",
       "content": "t:sections.main-collection-banner.settings.paragraph.content"
