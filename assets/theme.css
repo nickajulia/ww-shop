@@ -1831,3 +1831,7 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
 .product-media-modal .product-media-modal__toggle {
   background-color: #fff;
 }
+
+.badge.color-inverse {
+  color: #fff;
+}
