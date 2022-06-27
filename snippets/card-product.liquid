@@ -92,7 +92,7 @@
             </h3>
           </div>
           <div class="card__badge {{ settings.badge_position }}">
-            {%- if card_product.available == false -%}
+            {%- if card_product.available == false or card_product.selected_or_first_available_variant.inventory_quantity <= 0 -%}
               <span class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">{{ 'products.product.sold_out' | t }}</span>
             {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
               <span class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">{{ 'products.product.on_sale' | t }}</span>
@@ -201,7 +201,7 @@
         </div>
         
         <div class="card__badge {{ settings.badge_position }}">
-          {%- if card_product.available == false -%}
+          {%- if card_product.available == false or card_product.variants.first.inventory_quantity <= 0 -%}
             <span class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">{{ 'products.product.sold_out' | t }}</span>
           {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
             <span class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">{{ 'products.product.on_sale' | t }}</span>
