@@ -1835,3 +1835,21 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
 .badge.color-inverse {
   color: #fff;
 }
+
+#mybutton-wrapper {
+  width: 100%;
+  position: relative;
+  margin: 0 auto 5px;
+  overflow: hidden;
+  clear: both;
+  text-align: center;
+}
+
+#mybutton-wrapper .mybutton {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+#mybutton-wrapper .mybutton a {
+  text-decoration: none;
+}
