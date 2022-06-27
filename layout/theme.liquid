@@ -268,12 +268,14 @@
 
     <script src="{{ 'app.js' | asset_url }}" defer></script>
      <script>
-        $(document).on('DOMNodeInserted', function(e) {
+       document.addEventListener('DOMSubtreeModified', (e) => {
           const svgElement = document.querySelectorAll(".shop-pay-logo path");
           svgElement.style.fill = "green";
                //$('.shop-pay-logo path').setAttribute("fill", "red");
              console.log('1');
-          });
+          console.log(e)
+        })
+       
                     
       </script>
   </body>
