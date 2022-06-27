@@ -267,18 +267,6 @@
     {% render 'footer-script' %}
 
     <script src="{{ 'app.js' | asset_url }}" defer></script>
-     <script>
-       document.addEventListener('DOMNodeInsertedIntoDocument ', (e) => {
-       var paths = document.querySelectorAll(".shop-pay-logo path"),
-              i;
-
-          for (i = 0; i < paths.length; ++i) {
-              paths[i].setAttribute('style', 'fill:green');
-          }
-         console.log('1');
-        })
-       
-                    
-      </script>
+   
   </body>
 </html>
