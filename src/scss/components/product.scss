@@ -50,6 +50,10 @@
 .section--product-recommendations .badge{
     display: none;
 }
+.product__media.gradient.global-media-settings {
+    background: transparent;
+    background-color: transparent;
+}
 
 /* Mobile Responsive */
 @media (max-width: 767px) {
