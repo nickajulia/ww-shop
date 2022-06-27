@@ -600,6 +600,13 @@
                 */
                     
                     </style>
+                    <script>
+                      $(document).on('DOMNodeInserted', function(e) {
+                      $('.shop-pay-logo path').addClass('test123');
+                      
+                      });
+                    
+                    </script>
                     {% endunless %}
                      
                   {%- endform -%}
