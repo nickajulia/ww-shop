@@ -267,9 +267,12 @@
     {% render 'footer-script' %}
 
     <script src="{{ 'app.js' | asset_url }}" defer></script>
-    <style>
-    .shop-pay-logo { filter: grayscale(1) !important;}
-
-    </style>
+     <script>
+        $(document).on('DOMNodeInserted', function(e) {
+               $('.shop-pay-logo path').setAttribute("fill", "red");
+             console.log('1');
+          });
+                    
+      </script>
   </body>
 </html>
