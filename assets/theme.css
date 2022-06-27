@@ -1858,6 +1858,11 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
   display: none;
 }
 
+#product-grid .card__heading {
+  height: 33px;
+  overflow: hidden;
+}
+
 .trustspot-inline-category:empty {
   height: 40px;
   display: block;
@@ -1865,10 +1870,6 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
 
 /* Mobile Responsive */
 @media (max-width: 767px) {
-  #product-grid .card__heading {
-    height: 33px;
-    overflow: hidden;
-  }
   .trustspot-inline-category:empty {
     display: none;
   }
