@@ -1853,3 +1853,7 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
 #mybutton-wrapper .mybutton a {
   text-decoration: none;
 }
+
+.collection-hero__title + .collection-hero__description {
+  display: none;
+}
