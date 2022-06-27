@@ -1310,8 +1310,8 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
   }
  }
 
-.shop-pay-logo path {
-  fill: red !important;
+.shop-pay-logo {
+    filter: brightness(0);
  }
 
 
