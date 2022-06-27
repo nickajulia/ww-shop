@@ -269,15 +269,12 @@ __webpack_require__.r(__webpack_exports__);
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   if (document.querySelector('[section-type="main-product"]')) {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".product-form__submit").click(function () {
+    var fetchCartInfo = function fetchCartInfo() {
       setTimeout(function () {
         jquery__WEBPACK_IMPORTED_MODULE_0___default().getJSON('/cart.js', function (data) {
           var freeShippingPrice = window.ProductInfo.free_shipping_price * 100;
-          console.log('data.total_price', data.total_price);
-          console.log('freeShippingPrice', freeShippingPrice);
 
           if (data.total_price < freeShippingPrice) {
-            console.log('pasok parin');
             var shippingLeft = (freeShippingPrice - data.total_price) / 100 * 2;
             var shippingWidth = parseFloat(100 - shippingLeft);
             console.log('shippingWidth:' + shippingWidth);
@@ -288,7 +285,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
             jquery__WEBPACK_IMPORTED_MODULE_0___default()(".shipping-tool-price-text-wrap").css({
               "left": "calc(100% - " + shippingLeft + "% - 43px)"
             });
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()(".shipping-tool-price-text").text(data.total_price / 100);
+            var totalPriceText = data.total_price / 100;
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()(".shipping-tool-price-text").text(totalPriceText.replace('.00', ''));
             jquery__WEBPACK_IMPORTED_MODULE_0___default()(".left-shipping-price").text((freeShippingPrice - data.total_price) / 100);
           } else {
             jquery__WEBPACK_IMPORTED_MODULE_0___default()('.shipping-tool').remove();
@@ -303,6 +301,13 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
           }
         });
       }, 900);
+    };
+
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".product-form__submit").click(function () {
+      fetchCartInfo();
+    });
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', '.quick-add__submit', function () {
+      fetchCartInfo();
     });
   }
 });
@@ -311,7 +316,6 @@ var shopNowWrapper = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".product-sho
 
 function checkPosition() {
   var newWindowWidth = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width();
-  console.log("newWindowWidth:" + newWindowWidth);
 
   if (newWindowWidth <= 989) {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function () {
