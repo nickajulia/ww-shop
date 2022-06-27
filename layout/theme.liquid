@@ -267,5 +267,14 @@
     {% render 'footer-script' %}
 
     <script src="{{ 'app.js' | asset_url }}" defer></script>
+     <script>
+        $(document).on('DOMNodeInserted', function(e) {
+          const svgElement = document.querySelectorAll(".shop-pay-logo path");
+          svgElement.style.fill = "green";
+               //$('.shop-pay-logo path').setAttribute("fill", "red");
+             console.log('1');
+          });
+                    
+      </script>
   </body>
 </html>
