@@ -66,3 +66,18 @@
 .collection-hero__title + .collection-hero__description{
     display: none;
 }
+.trustspot-inline-category:empty{
+    height: 40px;
+    display: block;
+}
+
+/* Mobile Responsive */
+@media (max-width: 767px) {
+    #product-grid .card__heading{
+        height: 33px;
+        overflow: hidden;
+    }
+    .trustspot-inline-category:empty{
+        display: none;
+    }
+}
