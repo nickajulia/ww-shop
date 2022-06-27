@@ -268,7 +268,7 @@
 
     <script src="{{ 'app.js' | asset_url }}" defer></script>
      <script>
-       document.addEventListener('DOMSubtreeModified', (e) => {
+       document.addEventListener('DOMNodeInsertedIntoDocument ', (e) => {
        var paths = doc.querySelectorAll(".shop-pay-logo path"),
               i;
 
