@@ -588,9 +588,12 @@
                     <p class="shopify-installments" id="shopify-installments">
     				
                         <div class="shopify-payment-terms">
-                        {{ form | payment_terms }}
-                          <shop-pay-logo class="testing" role="img" aria-label="Shop Pay"></shop-pay-logo>
-                          
+                      
+                        
+                          <shopify-payment-terms >
+                              <shop-pay-logo class="testing" role="img" aria-label="Shop Pay"></shop-pay-logo>
+                              {{ form | payment_terms }}
+                          </shopify-payment-terms>
                       </div>
                     <style>
                       
