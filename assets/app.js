@@ -286,7 +286,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
               "left": "calc(100% - " + shippingLeft + "% - 43px)"
             });
             var totalPriceText = data.total_price / 100;
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()(".shipping-tool-price-text").text(totalPriceText.replace('.00', ''));
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()(".shipping-tool-price-text").text(totalPriceText);
             jquery__WEBPACK_IMPORTED_MODULE_0___default()(".left-shipping-price").text((freeShippingPrice - data.total_price) / 100);
           } else {
             jquery__WEBPACK_IMPORTED_MODULE_0___default()('.shipping-tool').remove();

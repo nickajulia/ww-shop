@@ -22,7 +22,7 @@ $(document).ready(function() {
               "left": "calc(100% - "+ shippingLeft +"% - 43px)"
             });
             const totalPriceText = (data.total_price)/100;
-            $(".shipping-tool-price-text").text(totalPriceText.replace('.00', ''));
+            $(".shipping-tool-price-text").text(totalPriceText);
             $(".left-shipping-price").text(((freeShippingPrice - data.total_price)/100));
           } else {
             $('.shipping-tool').remove();
