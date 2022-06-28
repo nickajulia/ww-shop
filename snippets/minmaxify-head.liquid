@@ -1,3 +1,4 @@
+{% comment %}
 {% if content_for_header contains 'shopifyorderlimits.s3.amazonaws.com' %}
 {% if shop.permanent_domain == 'wild-willies.myshopify.com' %}
 <script src="https://shopifyorderlimits.s3.amazonaws.com/limits/wild-willies.myshopify.com?v=77a&r=20220516163902&shop=wild-willies.myshopify.com"></script>
@@ -5,3 +6,4 @@
 {% else %}
 <script type="text/javascript">console.error("MinMaxify is deactivated for this website. Please don't forget to remove minmaxify-head.liquid still being referenced by theme.liquid")</script>
 {% endif %}
+{% endcomment %}
