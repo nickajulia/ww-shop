@@ -1,5 +1,5 @@
 {% comment %}
-  Updated: 2022/06/27
+  Updated: 2022/06/30
 {% endcomment %}
 
 {% unless oneclickupsellapp %}
@@ -288,15 +288,26 @@
   }
 {% endcapture %}
 
+{% capture extend_snippet %}
+  {% render 'oneclickupsellapp-extend' %}
+{% endcapture %}
+
+{% unless extend_snippet contains "Liquid error" %}
+  {{ extend_snippet }}
+{% endunless %}
+
 <style>.ocu-hidden.ocu-hidden.ocu-hidden,.bold_hidden.bold_hidden.bold_hidden{display:none !important}</style>
 <script>
 !function(){
 if (window.performance) {
     const navEntries = window.performance.getEntriesByType && window.performance.getEntriesByType('navigation');
+    const reload = () => {
+        if (window.OCUApi && !OCUApi.preventReloadOnNavigate) location.reload();
+    };
     if (navEntries && navEntries.length > 0 && navEntries[0].type === 'back_forward') {
-      location.reload();
+        reload();
     } else if (window.performance.navigation && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
-      location.reload();
+        reload();
     }
 }
 
@@ -616,7 +627,8 @@ if (!window.OCUApi) window.OCUApi = {
     customCheckoutButton: null,
     customAddToCartButton: null,
     customAddToCartEvent: null,
-    getCustomAddToCartData: null
+    getCustomAddToCartData: null,
+    preventReloadOnNavigate: false
 };
 
 if (OCUApi.customCheckoutButton) {
