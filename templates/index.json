@@ -6,14 +6,14 @@
         "12e3b75c-91a1-4133-b082-1ef4567425d6": {
           "type": "heading",
           "settings": {
-            "heading": "For the Bearded Bada**",
+            "heading": "Grow a beard to be jealous of",
             "heading_size": "h0"
           }
         },
         "9b26215f-fbf2-470d-86a6-bf7e42971d3e": {
           "type": "text",
           "settings": {
-            "text": "Grow a beard that turns heads...",
+            "text": "Turns heads...",
             "text_style": "subtitle"
           }
         },
@@ -35,9 +35,9 @@
         "849db04f-2745-4bb8-88ce-75487ac5fc22"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Kit-1_Main.jpg",
+        "image": "shopify:\/\/shop_images\/HD_Banner.jpg",
         "image_link": "shopify:\/\/pages\/product-recommendation-quiz",
-        "image_overlay_opacity": 50,
+        "image_overlay_opacity": 30,
         "image_height": "medium",
         "adapt_height_first_image": false,
         "desktop_content_position": "top-center",
