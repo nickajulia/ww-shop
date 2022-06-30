@@ -410,6 +410,15 @@ a.footer-logo {
   max-width: 100%;
 }
 
+
+/* 
+* Home Page 
+*/
+
+.image_banner_link{
+text-decoration:none;
+}
+
 /* 
 * Product Page
 * 
