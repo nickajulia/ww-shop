@@ -439,6 +439,15 @@ background-color:#FF6600;
     box-shadow: none;
 }
 
+/*****
+Shopify other pages
+*****/
+
+/*remove page title*/
+.main-page-title{
+display:none;
+}
+
 /* 
 * Product Page
 * 
