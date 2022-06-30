@@ -35,16 +35,16 @@
         "849db04f-2745-4bb8-88ce-75487ac5fc22"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/HD_Banner.jpg",
+        "image": "shopify:\/\/shop_images\/tire-flip-1_-_min.png",
         "image_link": "shopify:\/\/pages\/product-recommendation-quiz",
         "image_overlay_opacity": 30,
         "image_height": "medium",
         "adapt_height_first_image": false,
-        "desktop_content_position": "top-center",
+        "desktop_content_position": "top-left",
         "show_text_box": false,
         "desktop_content_alignment": "center",
         "color_scheme": "background-1",
-        "mobile_content_alignment": "center",
+        "mobile_content_alignment": "left",
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
