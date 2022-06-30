@@ -433,9 +433,8 @@ background-color:#FF6600;
   
 }
 
-.banner__buttons a:nth-of-type(2):before, .banner__buttons a:nth-of-type(2):after{
-border-color:#FF6600;
-  
+.banner__buttons a:nth-of-type(2):after{
+    box-shadow: none;
 }
 
 /* 
