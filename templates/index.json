@@ -36,7 +36,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/tire-flip-1_-_min.png",
-        "image_link": "shopify:\/\/pages\/product-recommendation-quiz",
+        "image_link": "",
         "image_overlay_opacity": 30,
         "image_height": "medium",
         "adapt_height_first_image": false,
