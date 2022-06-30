@@ -42,7 +42,7 @@
         "adapt_height_first_image": false,
         "desktop_content_position": "top-left",
         "show_text_box": false,
-        "desktop_content_alignment": "center",
+        "desktop_content_alignment": "left",
         "color_scheme": "background-1",
         "mobile_content_alignment": "left",
         "stack_images_on_mobile": false,
