@@ -430,6 +430,8 @@ font-weight:600;
 
 .banner__buttons a:nth-of-type(2){
 background-color:#FF6600;
+  font-weight: 600;
+    font-size: 1.1em;
   
 }
 
