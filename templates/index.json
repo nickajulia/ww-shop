@@ -2,13 +2,45 @@
   "sections": {
     "image_banner": {
       "type": "image-banner",
+      "blocks": {
+        "12e3b75c-91a1-4133-b082-1ef4567425d6": {
+          "type": "heading",
+          "settings": {
+            "heading": "For the Bearded Bada**",
+            "heading_size": "h0"
+          }
+        },
+        "9b26215f-fbf2-470d-86a6-bf7e42971d3e": {
+          "type": "text",
+          "settings": {
+            "text": "Grow a beard that turns heads...",
+            "text_style": "subtitle"
+          }
+        },
+        "849db04f-2745-4bb8-88ce-75487ac5fc22": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Take The Beard quiz",
+            "button_link_1": "shopify:\/\/pages\/product-recommendation-quiz",
+            "button_style_secondary_1": false,
+            "button_label_2": "Shop Beard Kits",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "12e3b75c-91a1-4133-b082-1ef4567425d6",
+        "9b26215f-fbf2-470d-86a6-bf7e42971d3e",
+        "849db04f-2745-4bb8-88ce-75487ac5fc22"
+      ],
       "settings": {
         "image": "shopify:\/\/shop_images\/Kit-1_Main.jpg",
-        "image_link": "shopify:\/\/products\/the-ritual-shower-set",
-        "image_overlay_opacity": 0,
+        "image_link": "shopify:\/\/pages\/product-recommendation-quiz",
+        "image_overlay_opacity": 50,
         "image_height": "large",
         "adapt_height_first_image": false,
-        "desktop_content_position": "bottom-center",
+        "desktop_content_position": "top-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
         "color_scheme": "background-1",
