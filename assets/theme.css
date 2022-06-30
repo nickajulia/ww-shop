@@ -419,6 +419,14 @@ a.footer-logo {
 text-decoration:none;
 }
 
+.banner__heading{
+font-weight:600;
+}
+.banner__text .subtitle{
+    font-weight: 600;
+    color: #ffffff;
+}
+
 /* 
 * Product Page
 * 
