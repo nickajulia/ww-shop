@@ -38,7 +38,7 @@
         "image": "shopify:\/\/shop_images\/Kit-1_Main.jpg",
         "image_link": "shopify:\/\/pages\/product-recommendation-quiz",
         "image_overlay_opacity": 50,
-        "image_height": "large",
+        "image_height": "medium",
         "adapt_height_first_image": false,
         "desktop_content_position": "top-center",
         "show_text_box": false,
