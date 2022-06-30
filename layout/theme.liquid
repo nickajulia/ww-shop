@@ -1,13 +1,22 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
-{% include 'limespot' %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    {% comment %}Begin Render Better redirect code{% endcomment %}
+      {% if request.host == 'shop.wild-willies.com' %}
+        {% unless content_for_header contains "previewBarInjector.init()" or content_for_header contains "Shopify.designMode" %}
+          <meta http-equiv="refresh" content="0;url=https://www.wild-willies.com{{ request.path }}" />
+          <script type="text/javascript" data-host="{{request.host}}" src="//origin-script.renderbetter.app/shopify-v1.js?to=www.wild-willies.com&from=shop.wild-willies.com"></script>
+    	  <script type="text/javascript" src="//origin-script.renderbetter.app/shopify-v1.js?to=www.wild-willies.com&from=wild-willies.com"></script>
+        {% endunless %}
+      {% endif %}
+    {% comment %}End Render Better redirect code{% endcomment %}
+    
     {% if content_for_header contains 'skiocheck.com' %}{% render 'skio-manage-subscription-link' %}{% endif %}{% if content_for_header contains 'skiocheck.com' %}{% render 'skio-head' %}{% endif %}
 
     {%- if settings.favicon != blank -%}
