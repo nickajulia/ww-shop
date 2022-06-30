@@ -6,14 +6,14 @@
         "12e3b75c-91a1-4133-b082-1ef4567425d6": {
           "type": "heading",
           "settings": {
-            "heading": "Grow a beard to be jealous of",
+            "heading": "For The Bearded Beast",
             "heading_size": "h0"
           }
         },
         "9b26215f-fbf2-470d-86a6-bf7e42971d3e": {
           "type": "text",
           "settings": {
-            "text": "Turns heads...",
+            "text": "Bulk up your beard",
             "text_style": "subtitle"
           }
         },
@@ -23,7 +23,7 @@
             "button_label_1": "Take The Beard quiz",
             "button_link_1": "shopify:\/\/pages\/product-recommendation-quiz",
             "button_style_secondary_1": false,
-            "button_label_2": "Shop Beard Kits",
+            "button_label_2": "Shop Beard \"workout\" Kits",
             "button_link_2": "",
             "button_style_secondary_2": false
           }
