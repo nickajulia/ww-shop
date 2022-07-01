@@ -19,6 +19,10 @@
     
     {% if content_for_header contains 'skiocheck.com' %}{% render 'skio-manage-subscription-link' %}{% endif %}{% if content_for_header contains 'skiocheck.com' %}{% render 'skio-head' %}{% endif %}
 
+    {% comment %} Drop in blog {% endcomment %}
+    {%- if dropinblog == 1 -%}{{ dropinblog_head_top }}{%- endif -%}
+
+    
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -229,6 +233,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   {% render 'shogun-head' %}
+    {% comment %} Drop in blog {% endcomment %}
+    {%- if dropinblog == 1 -%}{{ dropinblog_head_bottom }}{%- endif -%}
 </head>
 
   <body class="gradient">
