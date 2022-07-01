@@ -39,8 +39,8 @@
     {% endif %}
 
     {% render 'meta-tags' %}
-
-    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    
+    <script src="{{ 'global.js' | asset_url }}" async></script>
 
     {{ content_for_header }}
 
