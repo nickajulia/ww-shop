@@ -1,0 +1,83 @@
+@import 'flickity/dist/flickity.min';
+@import './vendor/index';
+@import './components/product.scss';
+@import './components/mini-cart.scss';
+@import './components/header.scss';
+
+.resp-container{
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+.resp-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card-wrapper{
+    height: auto !important;
+}
+
+.trustspot-inline-rating{
+    text-align: left;
+}
+.facets-container .facets__header{
+    background-color: #fff;   
+}
+.facets-container .facets .disclosure-has-popup[open]>summary+*{
+    background-color: #fff;
+}
+.facets-container .field__input{
+    background-color: #fff;
+}
+.facets-container .facet-checkbox > svg{
+    background-color: #fff;
+}
+.facets-container .facet-filters__sort:focus-visible{
+    box-shadow: unset;
+}
+.facets-container .facet-checkbox--disabled{
+    color: red;
+}
+.product-media-modal .product-media-modal__toggle{
+    background-color: #fff;
+}
+.badge.color-inverse{
+    color: #fff;
+}
+#mybutton-wrapper{
+    width: 100%;
+    position: relative;
+    margin: 0 auto 5px;
+    overflow: hidden;
+    clear: both;
+    text-align: center;
+}
+#mybutton-wrapper .mybutton{
+    display: inline-block;
+    margin: 0 5px;
+}
+#mybutton-wrapper .mybutton a{
+    text-decoration: none;
+}
+.collection-hero__title + .collection-hero__description{
+    display: none;
+}
+#product-grid .card__heading{
+    height: 33px;
+    overflow: hidden;
+}
+.trustspot-inline-category:empty{
+    height: 40px;
+    display: block;
+}
+
+/* Mobile Responsive */
+@media (max-width: 767px) {
+    .trustspot-inline-category:empty{
+        display: none;
+    }
+}
