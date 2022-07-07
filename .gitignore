@@ -1,0 +1,17 @@
+# Compiled files
+# assets/app.js
+# assets/app.css
+assets/mix-manifest.json
+
+# Node artifact files
+node_modules/
+dist/
+
+# From Dawn
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

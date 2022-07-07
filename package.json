@@ -4,8 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npx mix watch"
+    "start": "run-p -sr shopify:serve mix:watch",
+	"test": "echo \"Error: no test specified\" && exit 1",
+    "mix:dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "mix:watch": "npm run mix:dev -- --watch",
+    "mix:build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
+	"shopify:serve": "shopify theme serve --theme-editor-sync",
+	"shopify:pull": "shopify theme pull",
+    "deploy": "run-s mix:build && shopify theme push",
+    "deploy:new": "npm run deploy -- --unpublished"
   },
   "repository": {
     "type": "git",
@@ -26,7 +33,9 @@
   },
   "homepage": "https://github.com/nickajulia/ww-shop#readme",
   "dependencies": {
+    "cross-env": "^7.0.3",
     "flickity": "^3.0.0",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "npm-run-all": "^4.1.5"
   }
 }
