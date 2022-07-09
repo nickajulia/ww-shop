@@ -1,0 +1,204 @@
+{%- assign tile_blocks = section.blocks | where: "type", "tile" -%}
+{%- capture tiles_html -%}
+	{%- for block in tile_blocks -%}
+		{%- assign tile_settings = block.settings -%}
+		{%- assign tile_class = 'hero-grid__tile' -%}
+		{%- capture tile_classlist -%}
+			{{- tile_class }} {{ tile_class }}--{{- tile_settings.size_d }}-d
+			{{- }} {{ tile_class }}--{{- tile_settings.size_m }}-m
+		{%- endcapture -%}
+
+		<div class="{{tile_classlist}}" data-block-id="{{ block.id }}">
+			<div class="hero-grid__tile-content">
+				<div class="hero-grid__image image is-1by1">
+					{%- capture tile_img_html -%}
+						{%- if tile_settings.image_d == tile_settings.image_m and tile_settings.image_d != blank -%}
+							<img class="has-ratio"
+								src="{{ tile_settings.image_d | img_url: '625x' }}"
+								alt="{{ tile_settings.image_d.alt | escape }}"
+							>
+						{%- else -%}
+							{%- if tile_settings.image_d != blank -%}
+									<img class="is-hidden-mobile has-ratio"
+										src="{{ tile_settings.image_d | img_url: '625x' }}"
+										alt="{{ tile_settings.image_d.alt | escape }}"
+									>
+							{%- endif -%}
+							{%- if tile_settings.image_m != blank -%}
+									<img class="is-hidden-tablet has-ratio"
+										src="{{ tile_settings.image_m | img_url: '625x' }}"
+										alt="{{ tile_settings.image_m.alt | escape }}"
+									>								
+							{%- endif -%}
+						{%- endif -%}
+					{%- endcapture -%}
+
+					{%- if tile_img_html != blank -%}
+						{{ tile_img_html }}
+					{%- else -%}
+						<div class="hero-grid__placeholder has-ratio"></div>
+					{%- endif -%}
+				</div>
+				<div class="hero-grid__text">
+					{%- if tile_settings.title != blank -%}
+						{%- capture mobile_title_class -%}
+							{%- if tile_settings.size_m == 'landscape' -%}
+								h1
+							{%- else -%}
+								h2
+							{%- endif -%}
+						{%- endcapture -%}
+						{%- capture tile_inner_title -%}
+							<span class="is-hidden-tablet {{ mobile_title_class }}">
+								{{- tile_settings.title -}}
+							</span>{{- -}}
+							<span class="is-hidden-mobile h1">
+								{{- tile_settings.title -}}
+							</span>
+						{%- endcapture -%}
+						<h3 class="hero-grid__tile-title">{{ tile_inner_title }}</h3>
+					{%- endif -%}
+					{%- if tile_settings.cta_text != blank and tile_settings.cta_url != blank -%}
+						<a href="{{tile_settings.cta_url}}" class="btn is-primary">
+							<span class="is-hidden-mobile">
+								{{- tile_settings.cta_text -}}
+							</span>
+
+							{%- capture mobile_cta_inner_text -%}
+								{%- if tile_settings.size_m == 'landscape' -%}
+									{{- tile_settings.cta_text -}}
+								{%- else -%}
+									{{- tile_settings.cta_text_short | default: tile_settings.cta_text -}}
+								{%- endif -%}
+							{%- endcapture -%}
+							
+							<span class="is-hidden-tablet">
+								{{- mobile_cta_inner_text -}}
+							</span>
+						</a>
+					{%- endif -%}
+				</div>
+			</div>
+		</div>
+	{%- endfor -%}		
+{%- endcapture -%}
+
+{%- if tiles_html != blank -%}
+	<section class="section-hero-grid" data-section-id="{{section.id}}">
+		<div class="hero-grid">
+			<div class="hero-grid__tiles">
+				{{ tiles_html }}
+			</div>
+		</div>
+	</section>
+{%- endif -%}
+
+
+{% schema %}
+{
+	"name": "Hero Boxes",
+	"tag": "section",
+	"class": "section",
+	"settings": [
+		{
+			"type": "checkbox",
+			"id": "is_cta_full",
+			"label": "Full-tile CTA hotspot",
+			"default": true
+		}
+	],
+	"blocks": [
+		{
+			"type": "tile",
+			"name": "Tile",
+			"settings": [
+				{
+					"type": "header",
+					"content": "Text Content"
+				},
+				{
+					"type": "text",
+					"id": "title",
+					"label": "Title",
+					"default": "Title"
+				},
+				{
+					"type": "text",
+					"id": "cta_text",
+					"label": "CTA Text",
+					"default": "Shop Products"
+				},
+				{
+					"type": "text",
+					"id": "cta_text_short",
+					"label": "Shortened CTA Text",
+					"default": "Shop",
+					"info": "Displayed in mobile for small tiles"
+				},
+				{
+					"type": "url",
+					"id": "cta_url",
+					"label": "CTA URL",
+					"default": "/"
+				},
+
+				{
+					"type": "header",
+					"content": "Image"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_d",
+					"label": "Desktop"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_m",
+					"label": "Mobile"
+				},
+				{
+					"type": "header",
+					"content": "Sizing"
+				},
+				{
+					"type": "select",
+					"id": "size_d",
+					"label": "Desktop",
+					"options": [
+						{
+							"value": "default",
+							"label": "Default"
+						},
+						{
+							"value": "landscape",
+							"label": "Landscape"
+						}
+					],
+					"default": "default"
+				},
+				{
+					"type": "select",
+					"id": "size_m",
+					"label": "Mobile",
+					"options": [
+						{
+							"value": "default",
+							"label": "Default"
+						},
+						{
+							"value": "landscape",
+							"label": "Landscape"
+						}
+					],
+					"default": "default"
+				}
+			]
+		}
+	],
+  "presets": [
+    {
+      "name": "Hero Boxes"
+    }
+  ]
+}
+{% endschema %}
