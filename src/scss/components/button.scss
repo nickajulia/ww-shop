@@ -1,0 +1,6 @@
+.btn {
+  border-radius: 0;
+  &:not(.is-link) {
+    text-decoration: none;
+  }
+}

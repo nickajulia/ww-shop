@@ -1,0 +1,21 @@
+.s-multicolumn .multicolumn {
+  $self: &;
+  
+  .title-wrapper-with-link {
+    justify-content: center;
+  }
+
+  slider-component {
+    margin-top: 58px;
+  }
+
+  .multicolumn-list__item .media--adapt {
+    .multicolumn-card__image {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      position: static;
+      display: inline-block;
+    }
+  }
+}

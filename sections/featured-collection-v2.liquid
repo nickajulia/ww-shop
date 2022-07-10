@@ -49,7 +49,9 @@
   <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
       <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
         {%- if section.settings.title != blank -%}
-          <h2 class="title {{ section.settings.heading_size }}">{{ section.settings.title | escape }}</h2>
+          <h2 class="title 
+						{{ section.settings.heading_size }}
+						has-text-{{section.settings.heading_align}}" >{{ section.settings.title | escape }}</h2>
         {%- endif -%}
         {%- if section.settings.description != blank or section.settings.show_description and section.settings.collection.description != empty -%}
           <div class="collection__description {{ section.settings.description_style }}">{%- if section.settings.show_description -%}{{ section.settings.collection.description }}{%- else -%}{{ section.settings.description }}{% endif %}</div>
@@ -108,9 +110,9 @@
 
 {% schema %}
 {
-  "name": "t:sections.featured-collection.name",
+  "name": "Featured Collection v2",
   "tag": "section",
-  "class": "section",
+  "class": "section s-featured-collection s-featured-collection--v2",
   "settings": [
     {
       "type": "text",
@@ -137,6 +139,26 @@
       ],
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_align",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "centered",
+          "label": "Centered"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "centered",
+      "label": "Heading Horizontal Alignment"
     },
     {
       "type": "richtext",
@@ -298,16 +320,16 @@
     {
       "type": "checkbox",
       "id": "show_rating",
-      "default": true,
+      "default": false,
       "label": "t:sections.featured-collection.settings.show_rating.label",
       "info": "t:sections.featured-collection.settings.show_rating.info"
     },
     {
       "type": "checkbox",
       "id": "show_price",
-      "default": true,
+      "default": false,
       "label": "Show Prices"
-    },		
+    },
     {
       "type": "checkbox",
       "id": "enable_quick_add",
@@ -367,7 +389,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.featured-collection.presets.name"
+      "name": "Featured Collection v2"
     }
   ]
 }

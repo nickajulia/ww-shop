@@ -115,9 +115,13 @@
 
             <span class="caption-large light">{{ block.settings.description | escape }}</span>
             
-            <div class="trustspot-inline-category" data-product-sku="{{ card_product.id }}"></div>
+            {%- if show_rating -%}
+							<div class="trustspot-inline-category" data-product-sku="{{ card_product.id }}"></div>
+						{%- endif -%}
             
-            {% render 'price', product: card_product, price_class: '' %}
+						{%- if show_price -%}
+            	{% render 'price', product: card_product, price_class: '' %}
+						{%- endif -%}
             
             {%- if show_quick_add -%}
               {%- if normal_quick_add == empty or normal_quick_add == false -%}
