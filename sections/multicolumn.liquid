@@ -28,7 +28,7 @@
   <div class="page-width section-{{ section.id }}-padding isolate">
     {%- unless section.settings.title == blank -%}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
-        <h2 class="title {{ section.settings.heading_size }}">
+        <h2 class="title has-text-centered {{ section.settings.heading_size }}">
           {{ section.settings.title | escape }}
         </h2>
         {%- if section.settings.button_label != blank and show_mobile_slider -%}
@@ -36,6 +36,11 @@
         {%- endif -%}
       </div>
     {%- endunless -%}
+		{%- if section.settings.subheading != blank -%}
+			<p class="subtitle has-text-centered">{{ section.settings.subheading | escape }}</p>
+		{%- endif -%}
+
+
     <slider-component class="slider-mobile-gutter">
       <ul class="multicolumn-list contains-content-container grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop{% if show_mobile_slider %} slider slider--mobile grid--peek{% endif %}"
         id="Slider-{{ section.id }}"
@@ -56,7 +61,7 @@
           {%- endif -%}
 
           <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}" {{ block.shopify_attributes }}>            
-            <div class="multicolumn-card content-container">
+            <div class="multicolumn-card content-container has-text-centered">
 
               {%- if block.settings.image != blank and block.settings.link != blank -%}
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
@@ -64,10 +69,7 @@
                 {% endif %}
                 <a href="{{ block.settings.link }}">
                 <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}">
-                  <div class="media media--transparent media--{{ section.settings.image_ratio }}"
-                    {% if section.settings.image_ratio == 'adapt' %}
-                      style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
-                    {% endif %}>
+                  <div class="media media--transparent media--{{ section.settings.image_ratio }}" >
                     <img
                       class="multicolumn-card__image"
                       srcset="{%- if block.settings.image.width >= 275 -%}{{ block.settings.image | image_url: width: 275 }} 275w,{%- endif -%}
@@ -93,10 +95,7 @@
                     {% assign spaced_image = true %}
                   {% endif %}
                   <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}">
-                    <div class="media media--transparent media--{{ section.settings.image_ratio }}"
-                      {% if section.settings.image_ratio == 'adapt' %}
-                        style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
-                      {% endif %}>
+                    <div class="media media--transparent media--{{ section.settings.image_ratio }}" >
                       <img
                         class="multicolumn-card__image"
                         srcset="{%- if block.settings.image.width >= 275 -%}{{ block.settings.image | image_url: width: 275 }} 275w,{%- endif -%}
@@ -148,7 +147,7 @@
     </slider-component>
     <div class="center{% if show_mobile_slider %} small-hide medium-hide{% endif %}">
       {%- if section.settings.button_label != blank -%}
-        <a class="button button--primary"{% if section.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.button_link }}"{% endif %}>
+        <a class="btn is-primary is-large"{% if section.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.button_link }}"{% endif %}>
           {{ section.settings.button_label | escape }}
         </a>
       {%- endif -%}
@@ -159,7 +158,7 @@
 {% schema %}
 {
   "name": "t:sections.multicolumn.name",
-  "class": "section",
+  "class": "section s-multicolumn",
   "tag": "section",
   "settings": [
     {
@@ -188,6 +187,11 @@
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
     },
+		{
+			"type": "textarea",
+			"id": "subheading",
+			"label": "Subheading"
+		},
     {
       "type": "select",
       "id": "image_width",

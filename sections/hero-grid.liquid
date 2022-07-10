@@ -84,13 +84,13 @@
 {%- endcapture -%}
 
 {%- if tiles_html != blank -%}
-	<section class="section-hero-grid" data-section-id="{{section.id}}">
+	<div data-section-id="{{section.id}}">
 		<div class="hero-grid">
 			<div class="hero-grid__tiles">
 				{{ tiles_html }}
 			</div>
 		</div>
-	</section>
+	</div>
 {%- endif -%}
 
 
@@ -98,7 +98,7 @@
 {
 	"name": "Hero Boxes",
 	"tag": "section",
-	"class": "section",
+	"class": "section s-hero-grid",
 	"settings": [
 		{
 			"type": "checkbox",

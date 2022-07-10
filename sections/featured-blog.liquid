@@ -80,17 +80,7 @@
       {%- endif -%}
     {%- else -%}
       <div class="blog-placeholder">
-        <div class="placeholder media media--landscape">
-          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-        </div>
-        <div class="blog-placeholder__content">
-          <h2>
-            {{ 'sections.featured_blog.onboarding_title' | t }}
-          </h2>
-          <p class="rte-width">
-            {{ 'sections.featured_blog.onboarding_content' | t }}
-          </p>
-        </div>
+        <p>No published articles found in selected blog.</p>
       </div>
     {%- endif -%}
   </div>
@@ -100,7 +90,7 @@
 {
   "name": "t:sections.featured-blog.name",
   "tag": "section",
-  "class": "section",
+  "class": "section s-featured-blog",
   "settings": [
     {
       "type": "text",
@@ -128,6 +118,26 @@
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
     },
+    {
+      "type": "select",
+      "id": "heading_align",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "centered",
+          "label": "Centered"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Heading Horizontal Alignment"
+    },		
     {
       "type": "blog",
       "id": "blog",
