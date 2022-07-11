@@ -1,8 +1,62 @@
 {% comment %}
-  Updated: 2022/06/30
+  Updated: 2022/07/11
 {% endcomment %}
 
-{% unless oneclickupsellapp %}
+{% unless content_for_header contains 'zipify-oneclickupsell' %}
+  {% assign app_disabled = true %}
+{% endunless %}
+
+{% if app_disabled %}
+{% capture skip_cart_only %}
+  {% assign metafields = shop.metafields.zipifyoneclickupsell %}
+
+  {% for metafield in metafields %}
+    {% if metafield.first == 'general' %}
+      {% assign general = metafield.last | split: ',' %}
+
+      {% for fields in general %}
+        {% assign field = fields | split: '{' %}
+
+        {% if field contains '"skip_cart":"true"}' %}
+          {{ true }}
+        {% endif %}
+        
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+
+{% assign skip_cart_only = skip_cart_only | strip %}
+
+{% if skip_cart_only %}
+  {% assign app_disabled = false %}
+{% endif %}
+
+{% else %}
+{% assign app_disabled = true %}
+
+{% unless allowed_templates.size %}
+  {% assign metafields = shop.metafields.zipifyoneclickupsell %}
+  {% assign allowed_templates = metafields.general.allowed_templates %}
+  {% assign excluded_templates = 'register,account,login,reset_password,search,article,""' %}
+
+  {% unless allowed_templates.size %}
+    {% assign allowed_templates = 'all_templates' %}
+  {% endunless %}
+{% endunless %}
+
+{% assign allowed_templates = allowed_templates | split: ',' %}
+{% assign excluded_templates = excluded_templates | split: ',' %}
+
+{% if allowed_templates contains 'all_templates' or allowed_templates contains template.name %}
+  {% unless excluded_templates contains template.name %}
+    {% assign app_disabled = false %}
+  {% endunless %}
+{% endif %}
+
+{% endif %}
+
+{% unless oneclickupsellapp or app_disabled %}
 {% capture upsell_cart_includes %}
 {% assign upsellapp_proxy_url = shop.metafields.zipifyoneclickupsell.general.settings.proxy_url %}
 {% assign skip_cart = shop.metafields.zipifyoneclickupsell.general.integrations.skip_cart %}
@@ -299,6 +353,21 @@
 <style>.ocu-hidden.ocu-hidden.ocu-hidden,.bold_hidden.bold_hidden.bold_hidden{display:none !important}</style>
 <script>
 !function(){
+const OCU_SCRIPT_TAGS = [];
+
+{% unless skip_cart_only %}
+  OCU_SCRIPT_TAGS.push('zipify-oneclickupsell-vendor');
+{% endunless %}
+
+{% assign scriptTags = 'zipify-oneclickupsell-single,zipify-oneclickupsell-multiple' | split: ',' %}
+
+{% for name in scriptTags %}
+  {% if content_for_header contains name %}
+    OCU_SCRIPT_TAGS.push('{{ name }}');
+  {% endif %}
+{% endfor %}
+
+var ocuCdn="https://d1u9wuqimc88kc.cloudfront.net",APP_HOST="https://".concat("ocu.zipify.com");OCU_SCRIPT_TAGS.forEach(function(c){var t=document.createElement("script");t.src="".concat("https://d1npnstlfekkfz.cloudfront.net","/").concat(c,".js"),document.head.append(t)}),function(){var c=document.createElement("link");c.rel="preconnect",c.href=APP_HOST,document.head.append(c)}();
 if (window.performance) {
     const navEntries = window.performance.getEntriesByType && window.performance.getEntriesByType('navigation');
     const reload = () => {
@@ -628,7 +697,10 @@ if (!window.OCUApi) window.OCUApi = {
     customAddToCartButton: null,
     customAddToCartEvent: null,
     getCustomAddToCartData: null,
-    preventReloadOnNavigate: false
+    preventReloadOnNavigate: false,
+    customLineItemAttributes: null,
+    excludeActionButton: null,
+    originFetch: null
 };
 
 if (OCUApi.customCheckoutButton) {
@@ -1097,6 +1169,8 @@ PopupDispatcher.prototype = {
     },
 
     get isProductAction() {
+        if (lqd.skip_cart_only) return false;
+
         return this.getTriggerAction() === 'product';
     },
 
@@ -1291,6 +1365,15 @@ class CartDispatcher {
                 this.renderDiscounts(res.data.token, res.data.items, selectors);
             })
     }
+
+    removePrivateAttributes(selector) {
+        if (!selector) return;
+
+        const nodes = Array.from(document.querySelectorAll(selector));
+        const targetNodes = nodes.filter((node) => /^_ocu_/.test(node.innerHTML));
+
+        targetNodes.forEach((node) => node.remove());
+    }
 }
 
 const cart = new Cart();
@@ -1304,6 +1387,7 @@ const openReplacement = function(method, url) {
             cart.get('?ocu')
                 .then(function(res) {
                     cartDispatcher.renderDiscounts(res.data.token, res.data.items);
+                    cartDispatcher.removePrivateAttributes(OCUApi.customLineItemAttributes);
                 });
         }
     });
@@ -1609,6 +1693,7 @@ var lqd = {
     template_name: '{{ template.name }}',
     shop_currency: '{{ shop.currency }}',
     skip_cart: OCUIncart.metafields.general.integrations.skip_cart === 'true',
+    skip_cart_only: '{{ skip_cart_only }}' === 'true',
     cart_products_json: JSON.parse({{ cart_products_json | prepend: '[' | append: ']' | json }}),
     cart_collections_json: [{{ cart_collections_json }}],
     cart_variants_json: [{{ cart_variants_json }}],
@@ -1671,7 +1756,6 @@ utils.shareableDiscount({ clear:false });
 
 if (lqd.is_precheckout) replaceCurrencyFormat();
 
-var ocuCdn="https://d1u9wuqimc88kc.cloudfront.net";
 function Application() {
     ajax = axios.create({ timeout: 8000 });
     ajax.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
@@ -1680,7 +1764,7 @@ function Application() {
     new SkipCart();
     new HistoryApi();
 
-    this.setAttributes();
+    if (!lqd.skip_cart_only) this.setAttributes();
 }
 
 Application.prototype = {
@@ -1704,7 +1788,9 @@ Application.prototype = {
         const links = document.querySelectorAll('a'); // for ios
 
         forEach.call(checkoutButtons, function(item) {
-            if (item.name === 'update') return;
+            if (item.name === 'update' ||
+                item.closest(OCUApi.excludeActionButton)) return;
+
             item.dataset.ocuCheckout = true;
         });
 
@@ -1772,6 +1858,7 @@ Application.prototype = {
         const anyPrePurchases = window.OCUIncart && (OCUIncart.singleUpsells || OCUIncart.multipleUpsells);
         if (anyPrePurchases) {
             // self.prevent(event, true);
+            if (OCUApi.originFetch) fetch = OCUApi.originFetch;
             return this.popupDispatcher.proceed(event, target, self);
         }
 
@@ -3325,7 +3412,7 @@ function SkipCart() {
                 if (/plus|minus|zpa-quantity/.test(button.className)) return;
                 if (/error_txt|quantity|sold-out/i.test(button.id)) return;
                 if (/amount|review/i.test(button.value)) return;
-
+                if (button.dataset.zpLinkType === 'product') return;
                 button.removeAttribute('onclick');
                 button.dataset.skipCart = true;
                 button.type = 'button';
@@ -3670,6 +3757,7 @@ function Helpers() {
     };
 
     this.checkSelector = function(target) {
+        if (target.closest(OCUApi.excludeActionButton)) return null;
         if (target.dataset.ocuCheckout === 'true') return target;
 
         const checkoutButtons = document.querySelectorAll(self.ocuSelectors);
