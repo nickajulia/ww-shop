@@ -453,6 +453,8 @@ display:none;
 
 /*Tables for blog */
 
+/* remove if new blog table styling works
+
 .blogProdTableWrap{
 overflow:auto;
 }
@@ -482,6 +484,40 @@ overflow:auto;
   background-color: rgb(255 102 0 / 10%);
 }
 .blogProdTable tr:nth-of-type(1){
+background-color: #ff6600;
+  font-weight:700;
+}
+
+*/
+
+/*new blog table styling for dropinblog */
+
+.dib table{
+overflow:auto;
+  width: 800px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.dib table td{
+  padding: 15px;
+	color: #000000;
+}
+.dib table td p{
+	color: #000000;
+}
+.dib table tr:nth-of-type(2n){
+	
+}
+
+.dib table td:nth-of-type(1){
+	font-weight:700;
+  background-color: rgb(255 102 0 / 10%);
+}
+.dib table tr:nth-of-type(1){
 background-color: #ff6600;
   font-weight:700;
 }
