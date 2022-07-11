@@ -31,7 +31,7 @@
               <input type="hidden" name="contact[tags]" value="newsletter">
               <div class="newsletter-form__field-wrapper">
                 <div class="field">
-									<div class="columns is-vcentered">
+									<div class="columns">
 										<div class="column">
 											<div class="is-relative">
 												<input
@@ -54,13 +54,11 @@
 													placeholder="Your Email"
 													required
 												>
-												<label class="field__label" for="NewsletterForm--{{ section.id }}">
-													{{ 'newsletter.label' | t }}
-												</label>
+												<label class="field__label" for="NewsletterForm--{{ section.id }}">Your Email</label>
 											</div>
 										</div>
 										<div class="column is-narrow">
-											<button type="submit" class="btn is-primary is-large" name="commit" aria-label="{{ 'newsletter.button_label' | t }}">
+											<button type="submit" class="newsletter__form-submit  btn is-primary is-large" name="commit" aria-label="{{ 'newsletter.button_label' | t }}">
 												{%- comment -%}{% render 'icon-arrow' %}{%- endcomment -%}
 												Sign Up
 											</button>
@@ -85,7 +83,7 @@
 {
   "name": "t:sections.newsletter.name",
   "tag": "section",
-  "class": "section",
+  "class": "section s-newsletter",
   "settings": [
     {
       "type": "select",

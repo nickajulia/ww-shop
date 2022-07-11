@@ -1,0 +1,18 @@
+.newsletter {
+  $self: &;
+
+  .s-newsletter & {
+    // overrides here
+  }
+
+  input[type="email"].field__input {
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    padding: 16px 24px;
+    color: $color-mono-1;
+  }
+
+  &__form-submit {
+    height: 100%;
+  }
+}
