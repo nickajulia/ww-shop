@@ -9,9 +9,12 @@
 // Sections
 // TODO: output sections in multiple css files and only import when needed
 @import './sections/featured-blog';
+@import './sections/featured-collection';
 @import './sections/featured-reviews';
 @import './sections/hero-grid';
+@import './sections/image-with-text';
 @import './sections/multicolumn';
+@import './sections/newsletter';
 @import './sections/usp';
 
 // Shopify templates

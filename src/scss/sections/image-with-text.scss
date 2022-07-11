@@ -1,0 +1,49 @@
+.image-with-text {
+  $self: &;
+
+  .s-image-with-text & {
+    // overrides here
+  }
+  &--scheme {
+    &-background-1 {
+      background: $color-brand-dark;
+    }
+    &-background-2 {
+    }
+  }
+  &__container {
+    #{ $self }--scheme-accent-1 &,
+    #{ $self }--scheme-accent-2 & {
+      @include tablet {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+      @include mobile {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+      }
+    }
+    #{ $self }--scheme-accent-1 & {
+      background: $color-brand-dark;
+    }
+    #{ $self }--scheme-accent-2 & {
+      background: $color-brand-light;
+    }
+  }
+  &__content {
+    #{ $self }--scheme-background-1 &,
+    #{ $self }--scheme-accent-1 & {
+      color: #fff;
+    }
+  }
+  &__heading {
+    color: inherit;
+  }
+  &__text--caption {
+    color: $primary;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: -0.01em;    
+  }
+}
