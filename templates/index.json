@@ -235,7 +235,7 @@
         "view_all_style": "solid",
         "enable_desktop_slider": false,
         "color_scheme": "background-2",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
@@ -305,14 +305,14 @@
         "165741791350e76de8-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/bundles-are-here.jpg",
+        "image": "shopify:\/\/shop_images\/PRODUCT.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
-        "color_scheme": "background-1",
+        "color_scheme": "accent-2",
         "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
@@ -399,7 +399,7 @@
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
-        "color_scheme": "background-2",
+        "color_scheme": "accent-1",
         "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
