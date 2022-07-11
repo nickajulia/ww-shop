@@ -571,7 +571,7 @@ background-color: #ff7143;
 }
 
 /*blog single and blogroll page text color */
-.mce-toc ul li a, .dib-post-category-text a, .dib-cat-menu a{
+.mce-toc ul li a, .dib-post-category-text a, .dib-cat-menu a, .dib-post-title a {
 color:#ff6600;
 }
 
