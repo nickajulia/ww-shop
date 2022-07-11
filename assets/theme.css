@@ -534,6 +534,10 @@ background-color: #ff7143;
     box-shadow: rgb(255 102 0 / 10%) 0px 1px 1px 0px inset, rgb(255 102 0 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px;
 }
 
+.mce-toc ul li a{
+color:#ff6600;
+}
+
 /* 
 * Product Page
 * 
