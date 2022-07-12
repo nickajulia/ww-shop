@@ -10,14 +10,6 @@
       "settings": {
       }
     },
-    "banner": {
-      "type": "main-collection-banner",
-      "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-2"
-      }
-    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -36,6 +28,14 @@
         "padding_bottom": 36
       }
     },
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-2"
+      }
+    },
     "shogun-below": {
       "type": "shogun-below",
       "settings": {
@@ -45,8 +45,8 @@
   "order": [
     "shogun-helper",
     "shogun-above",
-    "banner",
     "product-grid",
+    "banner",
     "shogun-below"
   ]
 }
