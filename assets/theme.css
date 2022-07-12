@@ -2031,9 +2031,10 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
   text-decoration: none;
 }
 
-.collection-hero__title + .collection-hero__description {
+/*.collection-hero__title + .collection-hero__description {
   display: none;
 }
+*/
 
 #product-grid .card__heading {
   height: 33px;
