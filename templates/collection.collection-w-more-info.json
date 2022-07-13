@@ -10,15 +10,6 @@
       "settings": {
       }
     },
-    "banner": {
-      "type": "main-collection-banner",
-      "settings": {
-        "banner_image": "shopify:\/\/shop_images\/LIFESTYLE_Page_Header_1400x.progressive_1b3a21e7-b77f-48d8-838e-ae8203994af0.jpg",
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-2"
-      }
-    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -37,6 +28,14 @@
         "padding_bottom": 36
       }
     },
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-2"
+      }
+    },
     "shogun-below": {
       "type": "shogun-below",
       "settings": {
@@ -46,8 +45,8 @@
   "order": [
     "shogun-helper",
     "shogun-above",
-    "banner",
     "product-grid",
+    "banner",
     "shogun-below"
   ]
 }

@@ -453,6 +453,8 @@ display:none;
 
 /*Tables for blog */
 
+
+
 .blogProdTableWrap{
 overflow:auto;
 }
@@ -482,6 +484,39 @@ overflow:auto;
   background-color: rgb(255 102 0 / 10%);
 }
 .blogProdTable tr:nth-of-type(1){
+background-color: #ff6600;
+  font-weight:700;
+}
+
+
+/*new blog table styling for dropinblog */
+
+.dib table{
+overflow:auto;
+  width: 800px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.dib table td{
+  padding: 15px;
+	color: #000000;
+}
+.dib table td p{
+	color: #000000;
+}
+.dib table tr:nth-of-type(2n){
+	
+}
+
+.dib table td:nth-of-type(1){
+	font-weight:700;
+  background-color: rgb(255 102 0 / 10%);
+}
+.dib table tr:nth-of-type(1){
 background-color: #ff6600;
   font-weight:700;
 }
@@ -533,6 +568,14 @@ background-color: #ff7143;
     background-color: #212529;
     box-shadow: rgb(255 102 0 / 10%) 0px 1px 1px 0px inset, rgb(255 102 0 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px;
 }
+
+/*blog single and blogroll page text color */
+.mce-toc ul li a, .dib-post-category-text a, .dib-cat-menu a, .dib-post-title a, .dib-post-content a {
+color:#ff6600;
+}
+
+.dib h2{
+font-weight:600;}
 
 /* 
 * Product Page
@@ -1987,9 +2030,10 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
   text-decoration: none;
 }
 
-.collection-hero__title + .collection-hero__description {
+/*.collection-hero__title + .collection-hero__description {
   display: none;
 }
+*/
 
 #product-grid .card__heading {
   height: 33px;
