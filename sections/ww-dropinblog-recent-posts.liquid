@@ -1,0 +1,55 @@
+<div class="ww-dib-recent-posts">
+  <div class="page-width">
+    <h2 class="h1 has-text-left">{{section.settings.title}}</h2>
+    <div id="dropinblogRecent"
+      data-num-posts="{{section.settings.num_posts}}"
+      data-display="{{section.settings.display}}"
+      data-shop="{{shop.permanent_domain}}">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "WW Recent Post",
+  "tag": "section",
+  "class": "section s-ww-dib-recent-posts",        
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "Heading Title",
+      "default": "From the Blog"
+    },
+    {
+      "type": "range",
+      "id": "num_posts",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Number of posts to display",
+      "default": 3
+    },
+    {
+      "id": "display",
+      "type": "select",
+      "label": "Display",
+      "options": [
+        {
+          "value": "1",
+          "label": "List"
+        },
+        {
+          "value": "2",
+          "label": "Posts"
+        }
+      ],
+      "default": "2"
+    }
+  ],
+  "presets": [{
+    "name": "WW Recent Posts",
+    "category": "DropInBlog"
+  }]
+}
+{% endschema %}
