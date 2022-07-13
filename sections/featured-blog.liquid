@@ -80,6 +80,15 @@
       {%- endif -%}
     {%- else -%}
       <div class="blog-placeholder">
+				{% render 'article-card',
+					blog: section.settings.blog,
+					article: article,
+					media_aspect_ratio: 1.66,
+					title: section.settings.show_image,
+					show_image: section.settings.show_image,
+					show_date: false,
+					show_author: false,
+					show_excerpt: false %}
         <p>No published articles found in selected blog.</p>
       </div>
     {%- endif -%}
