@@ -36,6 +36,7 @@
         
         .dib-post-title {
           margin-top: 0;
+          margin-bottom: 16px;
           // font-family: 'Now';
           font-style: normal;
           font-weight: 500;
@@ -56,7 +57,27 @@
         }
 
         .dib-post-content {
-  
+          font-size: 0;
+          position: relative;
+          height: 22px;
+          
+          .dib-more {
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            &:before {
+              content: 'Read article';
+              // font-family: 'Now';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 1.38;
+              letter-spacing: -0.01em;
+              text-decoration-line: underline;
+              color: #F05423;
+            }
+          }
         }
       }
     }
