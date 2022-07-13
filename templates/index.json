@@ -179,6 +179,61 @@
         "padding_top": 48,
         "padding_bottom": 36
       }
+    },
+    "16577412393d2b461b": {
+      "type": "multicolumn",
+      "disabled": true,
+      "blocks": {
+        "1657741239ea9fa27a-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/50-50-Maximize_e9a47ec9-0fff-4547-9317-04300aa4e55f.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1657741239ea9fa27a-1": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1657741239ea9fa27a-2": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1657741239ea9fa27a-0",
+        "1657741239ea9fa27a-1",
+        "1657741239ea9fa27a-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
@@ -186,6 +241,7 @@
     "16563512444b04bc2d",
     "1655826256c65769d1",
     "165524831270599b86",
-    "featured_collection"
+    "featured_collection",
+    "16577412393d2b461b"
   ]
 }
