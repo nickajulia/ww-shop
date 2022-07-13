@@ -249,6 +249,7 @@
     },
     "1657418788a9c153ba": {
       "type": "featured-blog",
+      "disabled": true,
       "settings": {
         "heading": "From the Blog",
         "heading_size": "h1",
@@ -263,6 +264,14 @@
         "show_view_all": true,
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "1657730210a6695dfe": {
+      "type": "ww-dropinblog-recent-posts",
+      "settings": {
+        "title": "From the Blog",
+        "num_posts": 3,
+        "display": "2"
       }
     },
     "16574179145510a577": {
@@ -482,6 +491,7 @@
     "16574178161834015c",
     "1657422816e931d42e",
     "1657418788a9c153ba",
+    "1657730210a6695dfe",
     "16574179145510a577",
     "16574454446cd34658",
     "165741929892b108e6",
