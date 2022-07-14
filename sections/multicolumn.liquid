@@ -24,20 +24,28 @@
   endif
 -%}
 
-<div class="multicolumn color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
+<div class="multicolumn
+	multicolumn--scheme-{{ section.settings.color_scheme }}
+	gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
   <div class="page-width section-{{ section.id }}-padding isolate">
-    {%- unless section.settings.title == blank -%}
+    {% comment %} {%- unless section.settings.title == blank -%}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
-        <h2 class="title has-text-centered {{ section.settings.heading_size }}">
+        <h2 class="title has-text-{{section.settings.heading_align}}" {{ section.settings.heading_size }}">
           {{ section.settings.title | escape }}
         </h2>
         {%- if section.settings.button_label != blank and show_mobile_slider -%}
           <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">{{ section.settings.button_label | escape }}</a>
         {%- endif -%}
       </div>
-    {%- endunless -%}
+    {%- endunless -%} {% endcomment %}
+
+		{%- if section.settings.title != blank -%}
+			<h2 class="title has-text-{{section.settings.heading_align}} {{ section.settings.heading_size }}">
+				{{ section.settings.title | escape }}
+			</h2>
+		{%- endif -%}
 		{%- if section.settings.subheading != blank -%}
-			<p class="subtitle has-text-centered">{{ section.settings.subheading | escape }}</p>
+			<p class="subtitle has-text-{{section.settings.heading_align}}">{{ section.settings.subheading | escape }}</p>
 		{%- endif -%}
 
 
@@ -192,6 +200,26 @@
 			"id": "subheading",
 			"label": "Subheading"
 		},
+    {
+      "type": "select",
+      "id": "heading_align",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "centered",
+          "label": "Centered"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "centered",
+      "label": "Heading Horizontal Alignment"
+    },
     {
       "type": "select",
       "id": "image_width",
