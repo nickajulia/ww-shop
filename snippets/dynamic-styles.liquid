@@ -15,6 +15,26 @@
 	{{ body_font_bold_italic | font_face: font_display: 'swap' }}
 	{{ settings.type_header_font | font_face: font_display: 'swap' }}
 
+	@font-face {
+		font-family: 'Now Regular';
+		src: url({{'Now-Regular.woff' | asset_url }}) format('woff');
+		font-style: normal;
+		font-weight: normal;
+	}	
+	@font-face {
+		font-family: 'Now';
+		src: url({{'Now-Regular.woff' | asset_url }}) format('woff');
+		font-style: normal;
+		font-weight: normal;
+	}
+	@font-face {
+		font-family: 'Now';
+		src: url({{'Now-Medium.woff' | asset_url }}) format('woff');
+		font-style: normal;
+		font-weight: 500;
+	}
+
+
 	:root {
 		--font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
 		--font-body-style: {{ settings.type_body_font.style }};
