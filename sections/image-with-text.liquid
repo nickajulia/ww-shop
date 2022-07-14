@@ -1,21 +1,43 @@
 {{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .section-{{ section.id }}-padding {
+  /* .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
+  .section-{{ section.id }}-inner-padding {
+    padding-top: {{ section.settings.content_padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.content_padding_bottom | times: 0.75 | round: 0 }}px;
+  } */
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+    .section-{{ section.id }}-inner-padding {
+      padding-top: {{ section.settings.content_padding_top }}px;
+      padding-bottom: {{ section.settings.content_padding_bottom }}px;
+    }
   }
 {%- endstyle -%}
 
-<div class="image-with-text image-with-text--{{ section.settings.content_layout }} image-with-text--scheme-{{ section.settings.color_scheme }} isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == 'background-1' and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %} section-{{ section.id }}-padding">
-	<div class="image-with-text__container page-width">
+<div class="image-with-text
+	image-with-text--{{ section.settings.content_layout }}
+	image-with-text--scheme-{{ section.settings.color_scheme }}
+	isolate
+	{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 -%}
+		collapse-borders
+	{%- endif %}
+	{% unless section.settings.color_scheme == 'background-1'
+		and settings.media_border_thickness > 0
+		and settings.text_boxes_shadow_opacity == 0
+		and settings.text_boxes_border_thickness == 0
+		or settings.text_boxes_border_opacity == 0 -%}
+		collapse-corners
+	{%- endunless %}
+	section-{{ section.id }}-padding" >
+	<div class="image-with-text__container page-width section-{{ section.id }}-inner-padding">
 		<div class="image-with-text__grid grid grid--gapless grid--1-col grid--{% if section.settings.desktop_image_width == 'medium' %}2-col-tablet{% else %}3-col-tablet{% endif %}{% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
 			<div class="image-with-text__media-item
 				image-with-text__media-item--{{ section.settings.desktop_image_width }}
@@ -63,6 +85,19 @@
 								<p class="image-with-text__text image-with-text__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}" {{ block.shopify_attributes }}>{{ block.settings.caption | escape }}</p>
 							{%- when 'text' -%}
 								<div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+							{%- when 'list' -%}
+								{%- if block.settings.items != blank -%}
+									{% comment %} Convert textarea lines into array items {% endcomment %}
+									{%- assign list_items = block.settings.items | newline_to_br | strip_newlines | split: '<br />' -%}
+									<div class="image-with-text__list rte" {{ block.shopify_attributes }}>
+										<ul>
+											{%- for list_item in list_items -%}
+												<li>{{ list_item }}</li>
+											{%- endfor -%}
+										</ul>
+									</div>
+								
+								{%- endif -%}
 							{%- when 'button' -%}
 								{%- if block.settings.button_label != blank -%}
 									<a{% if block.settings.button_link == blank %}
@@ -263,23 +298,27 @@
       "content": "t:sections.all.padding.section_padding_heading"
     },
     {
-      "type": "range",
+      "type": "number",
       "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
       "label": "t:sections.all.padding.padding_top",
       "default": 36
     },
     {
-      "type": "range",
+      "type": "number",
       "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "number",
+      "id": "content_padding_top",
+      "label": "Inner Top Padding",
+      "default": 36
+    },
+    {
+      "type": "number",
+      "id": "content_padding_bottom",
+      "label": "Inner Bottom Padding",
       "default": 36
     }
   ],
@@ -395,6 +434,21 @@
         }
       ]
     },
+    {
+      "type": "list",
+      "name": "Bulleted List",
+      "limit": 1,
+      "settings": [
+				{
+					"type": "textarea",
+					"id": "items",
+					"label": "List Items",
+					"info": "Enter one per line"
+				}
+      ]
+    },
+
+		
     {
       "type": "button",
       "name": "t:sections.image-with-text.blocks.button.name",
