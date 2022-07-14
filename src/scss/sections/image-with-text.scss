@@ -35,10 +35,27 @@
       background: $color-brand-light;
     }
   }
+  &__text-item {
+    @include mobile {      
+      // TODO: allow different ordering of elements in desktop and mobile in theme customiser
+      #{ $self }__grid--reverse & {
+        order: -1;
+      }
+    }
+  }
   &__content {
     #{ $self }--scheme-background-1 &,
     #{ $self }--scheme-accent-1 & {
       color: #fff;
+    }
+    #{ $self }__text-item & {
+      @include mobile {
+        padding: 24px 0 0;
+
+        #{ $self }__grid--reverse & {
+          padding: 0 0 24px;
+        }
+      }
     }
   }
   &__heading {
