@@ -11,7 +11,12 @@
     &-background-2 {
     }
   }
+
   &__container {
+    @include mobile {
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
     #{ $self }--scheme-accent-1 &,
     #{ $self }--scheme-accent-2 & {
       @include tablet {

@@ -1,6 +1,16 @@
 .s-featured-reviews .reviews {
+  @include mobile {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
   .section-title {
-    margin-bottom: 56px;
+    margin-top: 0;
+    @include desktop {
+      margin-bottom: 56px;
+    }
+    @include touch {
+      margin-bottom: 34px;
+    }
   }
   &__item {
     padding: 0;
