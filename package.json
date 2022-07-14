@@ -11,6 +11,7 @@
     "mix:build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
     "shopify:serve": "shopify theme serve --theme-editor-sync",
     "shopify:pull": "shopify theme pull",
+    "theme-sync": "run-s mix:build shopify:pull",
     "deploy": "run-s mix:build && shopify theme push",
     "deploy:new": "npm run deploy -- --unpublished"
   },
