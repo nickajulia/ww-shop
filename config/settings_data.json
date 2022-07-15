@@ -183,6 +183,42 @@
         "settings": {
           "color_scheme": "background-1"
         }
+      },
+      "global-product-badges": {
+        "type": "global-product-badges",
+        "blocks": {
+          "global-product-badges-0": {
+            "type": "badge",
+            "settings": {
+              "title": "Best Sellers",
+              "text_color": "#10a072",
+              "bg_color": "#e7f4ec"
+            }
+          },
+          "global-product-badges-1": {
+            "type": "badge",
+            "settings": {
+              "title": "New",
+              "text_color": "#f05423",
+              "bg_color": "#ffefea"
+            }
+          },
+          "global-product-badges-2": {
+            "type": "badge",
+            "settings": {
+              "title": "Sale",
+              "text_color": "#f05423",
+              "bg_color": "#ffefea"
+            }
+          }
+        },
+        "block_order": [
+          "global-product-badges-0",
+          "global-product-badges-1",
+          "global-product-badges-2"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [
