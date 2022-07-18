@@ -209,7 +209,7 @@
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
-        "desktop_content_position": "top",
+        "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
         "color_scheme": "background-1",
@@ -217,7 +217,8 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "content_padding_top": 56,
-        "content_padding_bottom": 56
+        "content_padding_bottom": 56,
+        "is_v_compressed": false
       }
     },
     "1657422816e931d42e": {
@@ -320,7 +321,7 @@
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
-        "desktop_content_position": "top",
+        "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
         "color_scheme": "accent-2",
@@ -328,7 +329,8 @@
         "padding_top": 0,
         "padding_bottom": 86,
         "content_padding_top": 56,
-        "content_padding_bottom": 56
+        "content_padding_bottom": 56,
+        "is_v_compressed": false
       }
     },
     "16574454446cd34658": {
@@ -416,7 +418,7 @@
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
-        "desktop_content_position": "top",
+        "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
         "color_scheme": "accent-1",
@@ -424,7 +426,8 @@
         "padding_top": 104,
         "padding_bottom": 125,
         "content_padding_top": 66,
-        "content_padding_bottom": 66
+        "content_padding_bottom": 66,
+        "is_v_compressed": true
       }
     },
     "1657434746e5adb033": {
@@ -495,6 +498,25 @@
         "padding_top": 56,
         "padding_bottom": 56
       }
+    },
+    "1657843681fe8caa40": {
+      "type": "apps",
+      "blocks": {
+        "56551344-c803-4d3d-a2d5-a4b97006dfe0": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "56551344-c803-4d3d-a2d5-a4b97006dfe0"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -510,6 +532,7 @@
     "16574454446cd34658",
     "165741929892b108e6",
     "165743442023a243eb",
-    "1657434746e5adb033"
+    "1657434746e5adb033",
+    "1657843681fe8caa40"
   ]
 }
