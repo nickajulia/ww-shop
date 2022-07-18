@@ -11,106 +11,112 @@
   } */
 
   @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
+    [data-section-id="{{ section.id }}"] .section-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
-    .section-{{ section.id }}-inner-padding {
+    [data-section-id="{{ section.id }}"] .section-inner-padding {
       padding-top: {{ section.settings.content_padding_top }}px;
       padding-bottom: {{ section.settings.content_padding_bottom }}px;
     }
   }
 {%- endstyle -%}
 
-<div class="image-with-text
-	image-with-text--{{ section.settings.content_layout }}
-	image-with-text--scheme-{{ section.settings.color_scheme }}
-	isolate
-	{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 -%}
-		collapse-borders
-	{%- endif %}
-	{% unless section.settings.color_scheme == 'background-1'
-		and settings.media_border_thickness > 0
-		and settings.text_boxes_shadow_opacity == 0
-		and settings.text_boxes_border_thickness == 0
-		or settings.text_boxes_border_opacity == 0 -%}
-		collapse-corners
-	{%- endunless %}
-	section-{{ section.id }}-padding" >
-	<div class="image-with-text__container page-width section-{{ section.id }}-inner-padding">
-		<div class="image-with-text__grid grid grid--gapless grid--1-col grid--{% if section.settings.desktop_image_width == 'medium' %}2-col-tablet{% else %}3-col-tablet{% endif %}{% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
-			<div class="image-with-text__media-item
-				image-with-text__media-item--{{ section.settings.desktop_image_width }}
-				image-with-text__media-item--{{ section.settings.desktop_content_position }}
-				grid__item">
-				<div class="image-with-text__media image-with-text__media--{{ section.settings.height }} {% if section.settings.image != blank %}media{% else %}image-with-text__media--placeholder placeholder{% endif %}"
-					{% if section.settings.height == 'adapt' and section.settings.image != blank %} style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"{% endif %}
-				>
-					{%- if section.settings.image != blank -%}
-						<img
-							srcset="{%- if section.settings.image.width >= 165 -%}{{ section.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
-								{%- if section.settings.image.width >= 360 -%}{{ section.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
-								{%- if section.settings.image.width >= 535 -%}{{ section.settings.image | image_url: width: 535 }} 535w,{%- endif -%}
-								{%- if section.settings.image.width >= 750 -%}{{ section.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
-								{%- if section.settings.image.width >= 1070 -%}{{ section.settings.image | image_url: width: 1070 }} 1070w,{%- endif -%}
-								{%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
-								{{ section.settings.image | image_url }} {{ section.settings.image.width }}w"
-							src="{{ section.settings.image | image_url: width: 1500 }}"
-							sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-							alt="{{ section.settings.image.alt | escape }}"
-							loading="lazy"
-							width="{{ section.settings.image.width }}"
-							height="{{ section.settings.image.height }}"
-						>
-					{%- else -%}
-						{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-					{%- endif -%}
+<div data-section-id="{{ section.id }}">
+	<div class="image-with-text
+		image-with-text--{{ section.settings.content_layout }}
+		image-with-text--scheme-{{ section.settings.color_scheme }}
+		{% if section.settings.is_v_compressed %}
+			image-with-text--v-compressed
+		{% endif %}
+		image-with-text--scheme-{{ section.settings.color_scheme }}
+		isolate
+		{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 -%}
+			collapse-borders
+		{%- endif %}
+		{% unless section.settings.color_scheme == 'background-1'
+			and settings.media_border_thickness > 0
+			and settings.text_boxes_shadow_opacity == 0
+			and settings.text_boxes_border_thickness == 0
+			or settings.text_boxes_border_opacity == 0 -%}
+			collapse-corners
+		{%- endunless %}
+		section-padding" >
+		<div class="image-with-text__container page-width section-inner-padding">
+			<div class="image-with-text__grid grid grid--gapless grid--1-col grid--{% if section.settings.desktop_image_width == 'medium' %}2-col-tablet{% else %}3-col-tablet{% endif %}{% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
+				<div class="image-with-text__media-item
+					image-with-text__media-item--{{ section.settings.desktop_image_width }}
+					image-with-text__media-item--{{ section.settings.desktop_content_position }}
+					grid__item">
+					<div class="image-with-text__media image-with-text__media--{{ section.settings.height }} {% if section.settings.image != blank %}media{% else %}image-with-text__media--placeholder placeholder{% endif %}"
+						{% if section.settings.height == 'adapt' and section.settings.image != blank %} style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"{% endif %}
+					>
+						{%- if section.settings.image != blank -%}
+							<img
+								srcset="{%- if section.settings.image.width >= 165 -%}{{ section.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+									{%- if section.settings.image.width >= 360 -%}{{ section.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+									{%- if section.settings.image.width >= 535 -%}{{ section.settings.image | image_url: width: 535 }} 535w,{%- endif -%}
+									{%- if section.settings.image.width >= 750 -%}{{ section.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
+									{%- if section.settings.image.width >= 1070 -%}{{ section.settings.image | image_url: width: 1070 }} 1070w,{%- endif -%}
+									{%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+									{{ section.settings.image | image_url }} {{ section.settings.image.width }}w"
+								src="{{ section.settings.image | image_url: width: 1500 }}"
+								sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+								alt="{{ section.settings.image.alt | escape }}"
+								loading="lazy"
+								width="{{ section.settings.image.width }}"
+								height="{{ section.settings.image.height }}"
+							>
+						{%- else -%}
+							{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+						{%- endif -%}
+					</div>
 				</div>
-			</div>
-			<div class="image-with-text__text-item grid__item">
-				<div id="ImageWithText--{{ section.id }}"
-					class="image-with-text__content
-						image-with-text__content--{{ section.settings.desktop_content_position }}
-						image-with-text__content--desktop-{{ section.settings.desktop_content_alignment }}
-						image-with-text__content--mobile-{{ section.settings.mobile_content_alignment }}
-						image-with-text__content--{{ section.settings.height }} 
-						content-container">
-					{%- for block in section.blocks -%}
-						{% case block.type %}
-							{%- when 'heading' -%}
-								<h2 class="image-with-text__heading {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
-									{{ block.settings.heading | escape }}
-								</h2>
-							{%- when 'caption' -%}
-								<p class="image-with-text__text image-with-text__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}" {{ block.shopify_attributes }}>{{ block.settings.caption | escape }}</p>
-							{%- when 'text' -%}
-								<div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
-							{%- when 'list' -%}
-								{%- if block.settings.items != blank -%}
-									{% comment %} Convert textarea lines into array items {% endcomment %}
-									{%- assign list_items = block.settings.items | newline_to_br | strip_newlines | split: '<br />' -%}
-									<div class="image-with-text__list rte" {{ block.shopify_attributes }}>
-										<ul>
-											{%- for list_item in list_items -%}
-												<li>{{ list_item }}</li>
-											{%- endfor -%}
-										</ul>
-									</div>
-								
-								{%- endif -%}
-							{%- when 'button' -%}
-								{%- if block.settings.button_label != blank -%}
-									<a{% if block.settings.button_link == blank %}
-										role="link"
-										aria-disabled="true"{% else %}
-										href="{{ block.settings.button_link }}"{% endif %}
-										class="btn is-primary is-large"
-										{{ block.shopify_attributes }}>
-										{{ block.settings.button_label | escape }}
-									</a>
-								{%- endif -%}
-						{%- endcase -%}
-					{%- endfor -%}
+				<div class="image-with-text__text-item grid__item">
+					<div id="ImageWithText--{{ section.id }}"
+						class="image-with-text__content
+							image-with-text__content--{{ section.settings.desktop_content_position }}
+							image-with-text__content--desktop-{{ section.settings.desktop_content_alignment }}
+							image-with-text__content--mobile-{{ section.settings.mobile_content_alignment }}
+							image-with-text__content--{{ section.settings.height }} 
+							content-container">
+						{%- for block in section.blocks -%}
+							{% case block.type %}
+								{%- when 'heading' -%}
+									<h2 class="image-with-text__heading {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
+										{{ block.settings.heading | escape }}
+									</h2>
+								{%- when 'caption' -%}
+									<p class="image-with-text__text image-with-text__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}" {{ block.shopify_attributes }}>{{ block.settings.caption | escape }}</p>
+								{%- when 'text' -%}
+									<div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+								{%- when 'list' -%}
+									{%- if block.settings.items != blank -%}
+										{% comment %} Convert textarea lines into array items {% endcomment %}
+										{%- assign list_items = block.settings.items | newline_to_br | strip_newlines | split: '<br />' -%}
+										<div class="image-with-text__list rte" {{ block.shopify_attributes }}>
+											<ul>
+												{%- for list_item in list_items -%}
+													<li>{{ list_item }}</li>
+												{%- endfor -%}
+											</ul>
+										</div>
+									
+									{%- endif -%}
+								{%- when 'button' -%}
+									{%- if block.settings.button_label != blank -%}
+										<a{% if block.settings.button_link == blank %}
+											role="link"
+											aria-disabled="true"{% else %}
+											href="{{ block.settings.button_link }}"{% endif %}
+											class="btn is-primary is-large"
+											{{ block.shopify_attributes }}>
+											{{ block.settings.button_label | escape }}
+										</a>
+									{%- endif -%}
+							{%- endcase -%}
+						{%- endfor -%}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -320,7 +326,14 @@
       "id": "content_padding_bottom",
       "label": "Inner Bottom Padding",
       "default": 36
-    }
+    },
+		{
+			"type": "checkbox",
+			"id": "is_v_compressed",
+			"label": "Compress Vertically",
+			"default": false,
+			"info": "Make vertical spacing between text elements a little smaller"
+		}
   ],
   "blocks": [
     {

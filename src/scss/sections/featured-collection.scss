@@ -3,6 +3,9 @@
 
   .s-featured-collection--v2 & {
     // overrides here
+    .title {
+      margin-bottom: 56px;
+    }
   }
 
   .card__media .media {
@@ -46,6 +49,11 @@
       line-height: 150%;
       letter-spacing: -0.03em;
       color: #000000;
+    }
+    .card__heading {
+      @include desktop {
+        padding-bottom: 0;
+      }
     }
   }
 }

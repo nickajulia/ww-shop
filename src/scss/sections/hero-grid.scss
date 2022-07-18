@@ -2,6 +2,16 @@
   $self: &;
   padding: 10px;
 
+  .s-hero-grid & {
+    .btn {
+      @include desktop {
+        padding: 16px 59.5px;
+        height: 54px;
+        font-size: 18px;
+      }      
+    }
+  }
+
   &__tiles {
     display: flex;
     flex-wrap: wrap;
