@@ -12,6 +12,14 @@
       margin-bottom: 34px;
     }
   }
+  &__columns {
+    @include desktop {
+      margin: -16px;
+      > .column {
+        padding: 16px;
+      }
+    }
+  }
   &__item {
     padding: 0;
     margin: 0;
@@ -33,5 +41,10 @@
     footer {
       margin-top: 8px;
     }
+  }
+
+  &__item-rating {
+    line-height: 0;
+    margin-bottom: 16px;
   }
 }

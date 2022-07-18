@@ -3,20 +3,33 @@
 
   .s-ww-dib-recent-posts & {
     // overrides here
+    .h1, .h2, .h0 {
+      margin-top: 43px;
+      margin-bottom: 56px;
+    }
   }
   #dib-template-3 {
     width: 100%;
     max-width: 100%;
+    margin-top: 0;
     
     #dib-posts-col {
       .dib-post-wrap {
         @extend .columns;
+
+        @include tablet {
+          margin: 0 -14px;
+        }
       }
       .dib-post {
         @extend .column;
         display: flex;
         flex-direction: column;
         margin-bottom: 0;
+
+        @include tablet {
+          padding: 0 14px;
+        }
         
         .dib-post-featured-image {
           float: none;

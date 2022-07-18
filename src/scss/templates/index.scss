@@ -47,12 +47,17 @@
         > li {
           position: relative;
           padding-left: 36px;
-          margin-bottom: 28px;
           font-style: normal;
           font-size: 20px;
           line-height: 1.1;
           letter-spacing: -0.01em;
 
+          &:not(:last-child) {
+            margin-bottom: 27.5px;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
           &:before {
             content: "";
             height: 1.25em;

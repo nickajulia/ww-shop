@@ -18,6 +18,11 @@
 
     .field .columns {
       width: calc(100% + 1.5rem);
+      margin: -10px;
+
+      .column {
+        padding: 10px;
+      }
     }
 
     &__form-submit.is-large {
