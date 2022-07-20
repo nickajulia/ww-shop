@@ -239,7 +239,7 @@
       },
       "6810535121229352664": {
         "type": "shopify:\/\/apps\/cart-upsell-free-gift-monster\/blocks\/app-embed\/a1b8e58a-bf1d-4e0f-8768-a387c3f643c0",
-        "disabled": false,
+        "disabled": true,
         "settings": {
         }
       }
