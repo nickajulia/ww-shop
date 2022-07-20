@@ -1,0 +1,117 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+{%- capture usp_html -%}
+	{%- for block in section.blocks -%}
+		{%- capture usp_item_html -%}
+			{%- if block.settings.image != blank -%}
+				<img class="usp__item-image" 
+					src="{{ block.settings.image | img_url: '100x100'}}"
+					alt="{{ block.settings.image.alt }}" >
+			{%- endif -%}
+			{%- if block.settings.title != blank -%}
+				<h3 class="usp__item-title">{{ block.settings.title | replace: '[', '<em>' | replace: ']', '</em>' }}</h3>
+			{%- endif -%}
+		{%- endcapture -%}
+
+		{%- if usp_item_html != blank -%}
+			<div class="column is-6-touch is-one-quarter-desktop">
+				<div class="usp__item">{{ usp_item_html }}</div>
+			</div>
+		{%- endif -%}
+	{%- endfor -%}
+{%- endcapture -%}
+
+{%- if usp_html != blank -%}
+	<div class="usp">
+		<div class="page-width isolate section-{{ section.id }}-padding">
+			<div class="usp__columns columns is-multiline is-mobile is-centered">{{ usp_html }}</div>
+		</div>
+	</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "USPs",
+  "tag": "section",
+  "class": "section s-usp",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Color"
+    },
+    {
+      "type": "select",
+      "id": "color_accent",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ],
+      "default": "dark",
+      "label": "Color accent"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "number",
+      "id": "padding_top",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+
+	"blocks": [
+		{
+			"type": "item",
+			"name": "USP Item",
+			"limit": 8,
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "image",
+					"label": "Image"
+				},
+				{
+					"type": "text",
+					"id": "title",
+					"label": "Title",
+					"default": "Lorem [ipsum] dolor",
+					"info": "Use [brackets] to emphasize text"
+				}
+			]
+		}
+	],
+	
+  "presets": [
+    {
+      "name": "USPs"
+    }
+  ]
+}
+{% endschema %}

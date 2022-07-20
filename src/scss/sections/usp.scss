@@ -1,0 +1,79 @@
+.s-usp .usp {
+  background: $color-brand-seashell;
+
+  .page-width {
+    @include desktop {
+      padding-left: 51.5px;
+      padding-right: 51.5px;
+    }
+  }
+
+  &__columns {
+    @include tablet {
+      align-items: center;
+    }
+    @include fullhd {
+      margin: -48.5px;
+      > .column {
+        padding: 48.5px;
+      }
+    }
+  }
+  &__item {
+    @include tablet {
+      display: flex;
+      align-items: center;
+    }
+    @include mobile {
+      text-align: center;
+    }    
+    
+    &-image {
+      min-width: 40px;
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      
+      @include mobile {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @include desktop-only {
+        min-width: 35px;
+        width: 35px;
+        height: 35px;
+      }      
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      margin-top: 0;
+      margin-bottom: 0;
+
+      @include tablet {
+        padding-left: 24px;
+        padding-right: 33px;
+      }
+      @include desktop-only {
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 12px;
+      }
+      @include widescreen {
+        padding-right: 20px;
+      }
+      @include fullhd {
+        padding-right: 0;
+      }
+  
+      em {
+        color: $primary;
+        font-style: inherit;
+      }
+    }
+  }
+}

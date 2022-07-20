@@ -1,0 +1,50 @@
+.s-featured-reviews .reviews {
+  @include mobile {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .section-title {
+    margin-top: 0;
+    @include desktop {
+      margin-bottom: 56px;
+    }
+    @include touch {
+      margin-bottom: 34px;
+    }
+  }
+  &__columns {
+    @include desktop {
+      margin: -16px;
+      > .column {
+        padding: 16px;
+      }
+    }
+  }
+  &__item {
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #000;
+
+    &-author {
+      font: inherit;
+      font-size: 16px;
+      line-height: inherit;
+      letter-spacing: inherit;
+      color: inherit;
+    }
+    footer {
+      margin-top: 8px;
+    }
+  }
+
+  &__item-rating {
+    line-height: 0;
+    margin-bottom: 16px;
+  }
+}

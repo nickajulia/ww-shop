@@ -11,6 +11,9 @@
     "gradient_background_1": "",
     "colors_background_2": "#ffffff",
     "gradient_background_2": "",
+    "is_gfonts_enabled": true,
+    "gfonts_import_html": "<link rel=\"preconnect\" href=\"https:\/\/fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https:\/\/fonts.gstatic.com\" crossorigin=\"\">\n<link href=\"https:\/\/fonts.googleapis.com\/css2?family=Noto+Sans:wght@700&amp;display=swap\" rel=\"stylesheet\">",
+    "type_header_font_custom": "'Noto Sans', sans-serif",
     "type_header_font": "montserrat_n4",
     "heading_scale": 105,
     "type_body_font": "montserrat_n4",
@@ -78,7 +81,7 @@
     "drawer_shadow_horizontal_offset": 0,
     "drawer_shadow_vertical_offset": 4,
     "drawer_shadow_blur": 5,
-    "badge_position": "bottom left",
+    "badge_position": "top left",
     "badge_corner_radius": 40,
     "sale_badge_color_scheme": "accent-2",
     "sold_out_badge_color_scheme": "inverse",
@@ -179,6 +182,42 @@
         "type": "main-password-footer",
         "settings": {
           "color_scheme": "background-1"
+        }
+      },
+      "global-product-badges": {
+        "type": "global-product-badges",
+        "blocks": {
+          "global-product-badges-0": {
+            "type": "badge",
+            "settings": {
+              "title": "Best Sellers",
+              "text_color": "#10a072",
+              "bg_color": "#e7f4ec"
+            }
+          },
+          "global-product-badges-1": {
+            "type": "badge",
+            "settings": {
+              "title": "New",
+              "text_color": "#f05423",
+              "bg_color": "#ffefea"
+            }
+          },
+          "global-product-badges-2": {
+            "type": "badge",
+            "settings": {
+              "title": "Sale",
+              "text_color": "#f05423",
+              "bg_color": "#ffefea"
+            }
+          }
+        },
+        "block_order": [
+          "global-product-badges-0",
+          "global-product-badges-1",
+          "global-product-badges-2"
+        ],
+        "settings": {
         }
       }
     },

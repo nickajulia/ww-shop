@@ -91,7 +91,33 @@
     "settings": [
       {
         "type": "header",
+        "content": "Google Fonts"
+      },
+      {
+        "type": "checkbox",
+        "id": "is_gfonts_enabled",
+        "label": "Use Google Fonts",
+        "default": true
+      },
+      {
+        "type": "html",
+        "id": "gfonts_import_html",
+        "label": "Import snippet",
+        "default": "<link rel=\"preconnect\" href=\"https:\/\/fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https:\/\/fonts.gstatic.com\" crossorigin=\"\">\n<link href=\"https:\/\/fonts.googleapis.com\/css2?family=Noto+Sans:wght@700&amp;display=swap\" rel=\"stylesheet\">"
+      },
+      {
+        "type": "paragraph",
+        "content": "Warning: the following configuration will only be used as fallback if you aren using google\/custom webfonts."
+      },
+      {
+        "type": "header",
         "content": "t:settings_schema.typography.settings.header__1.content"
+      },
+      {
+        "type": "text",
+        "id": "type_header_font_custom",
+        "label": "Custom Header Font",
+        "default": "'Noto Sans', sans-serif"
       },
       {
         "type": "font_picker",

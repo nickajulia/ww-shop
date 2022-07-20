@@ -1,0 +1,102 @@
+.image-with-text {
+  $self: &;
+
+  .s-image-with-text & {
+    &--v-compressed {
+      #{ $self }__content > * {
+        margin-top: 0;
+        
+        &:not(:last-child) {
+          margin-bottom: 19px;          
+        }
+        &#{ $self }__list:not(:last-child) {
+          margin-bottom: 42px;
+        }
+      }
+    }
+  }
+  &--scheme {
+    &-background-1 {
+      background: $color-brand-dark;
+    }
+    &-background-2 {
+    }
+  }
+
+  &__container {
+    @include mobile {
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+    #{ $self }--scheme-accent-1 &,
+    #{ $self }--scheme-accent-2 & {
+      @include tablet {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+      @include mobile {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+      }
+    }
+    #{ $self }--scheme-accent-1 & {
+      background: $color-brand-dark;
+    }
+    #{ $self }--scheme-accent-2 & {
+      background: $color-brand-light;
+    }
+  }
+  &__text-item {
+    @include mobile {      
+      // TODO: allow different ordering of elements in desktop and mobile in theme customiser
+      #{ $self }__grid--reverse & {
+        order: -1;
+      }
+    }
+
+    .rte.body {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: -0.03em;
+    }
+
+    #{ $self }__content > * {
+      margin-top: 0;
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
+  }
+  &__content {
+    #{ $self }--scheme-background-1 &,
+    #{ $self }--scheme-accent-1 & {
+      color: #fff;
+    }
+    #{ $self }__text-item & {
+      @include mobile {
+        padding: 24px 0 0;
+
+        #{ $self }__grid--reverse & {
+          padding: 0 0 24px;
+        }
+      }
+    }
+  }
+  &__heading {
+    color: inherit;
+  }
+  &__text--caption {
+    color: $primary;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: -0.01em;
+  }
+  &__list {
+    ul {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}

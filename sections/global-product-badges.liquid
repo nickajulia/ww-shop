@@ -1,0 +1,79 @@
+{%- if section.blocks.size > 0 -%}
+	{% style %}
+		{% for block in section.blocks %}
+			.featured-collection .badge[data-badge-content="{{ block.settings.title | downcase | strip }}"] {
+				color: {{ block.settings.text_color }};
+				background-color: {{ block.settings.bg_color }};
+			}
+		{% endfor %}
+	
+	{% endstyle %}
+{%- endif -%}
+
+
+{% schema %}
+{
+	"name": "Global Product Badges",
+	"settings": [
+		{
+			"type": "paragraph",
+			"content": "Customize the colors of the product badges in this section"
+		}
+	],
+	"blocks": [
+		{
+			"type": "badge",
+			"name": "Badge Style",
+			"settings": [
+				{
+					"type": "text",
+					"id": "title",
+					"label": "Badge Content",
+					"default": "New",
+					"info": "This is case insensitive. Please DO NOT include the 'badge:' prefix"
+				},
+				{
+					"type": "color",
+					"id": "text_color",
+					"label": "Text Color",
+					"default": "#F05423"
+				},
+				{
+					"type": "color",
+					"id": "bg_color",
+					"label": "Background Color",
+					"default": "#FFEFEA"
+				}
+			]
+		}
+	],
+	"default": {
+		"blocks": [
+			{
+				"type": "badge",
+				"settings": {
+					"title": "Best Sellers",
+					"text_color": "#10A072",
+					"bg_color": "#E7F4EC"
+				}
+			},
+			{
+				"type": "badge",
+				"settings": {
+					"title": "New",
+					"text_color": "#F05423",
+					"bg_color": "#FFEFEA"
+				}
+			},
+			{
+				"type": "badge",
+				"settings": {
+					"title": "Sale",
+					"text_color": "#F05423",
+					"bg_color": "#FFEFEA"
+				}
+			}
+		]
+	}
+}
+{% endschema %}

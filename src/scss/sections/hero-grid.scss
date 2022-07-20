@@ -1,0 +1,108 @@
+.hero-grid {
+  $self: &;
+  padding: 10px;
+
+  .s-hero-grid & {
+    .btn {
+      @include desktop {
+        padding: 16px 59.5px;
+        height: 54px;
+        font-size: 18px;
+      }      
+    }
+  }
+
+  &__tiles {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -5px;
+  }
+  &__tile {
+    flex-grow: 1;
+    padding: 5px;
+    
+    &--default-d {
+      @include tablet {
+        min-width: 33.3333%;
+
+        #{ $self }__image {
+          padding-top: 100% !important;
+        }
+      }
+    }
+    &--default-m {
+      @include mobile {
+        min-width: 50%;
+
+        #{ $self }__image {
+          padding-top: 104.71% !important;
+        }
+        .btn {
+          font-size: 1.25rem;
+        }
+      }
+    }
+    &--landscape-d {
+      @include tablet {
+        min-width: 50%;
+        #{ $self }__image {
+          padding-top: 50% !important;
+        }
+      }
+    }
+    &--landscape-m {
+      @include mobile {
+        min-width: 100%;
+
+        #{ $self }__image {
+          padding-top: 62.38% !important;
+        }
+        .btn {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  &__tile-content {
+    background: $color-brand-dark;
+    color: #fff;
+    position: relative;
+  }
+  &__image {
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    @include desktop {
+      padding: 54px 58px;
+    }
+    @include touch {
+      padding: 26px 28px;
+    }
+  }
+
+  &__tile-title {
+    &, .h1, .h2 {
+      color: inherit;
+    }
+  }
+
+  .btn {
+    @include tablet {
+      font-size: 1.5rem;
+    }
+  }
+}

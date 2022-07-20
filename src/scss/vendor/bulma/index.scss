@@ -1,0 +1,18 @@
+$color-brand-light: #F5F5F5;
+$color-brand-dark: #141414;
+$color-brand-orange: #F05423;
+$color-brand-seashell: #FFF2EE;
+$color-mono-1: #5A5A5A;
+
+$primary: $color-brand-orange;
+// @import "~bulma/bulma";
+
+
+$tablet: 750px;
+$desktop: 991px;
+
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/helpers/_all.sass";
+@import "~bulma/sass/grid/columns.sass";
+@import "./button";
+@import "~bulma/sass/elements/image.sass";
