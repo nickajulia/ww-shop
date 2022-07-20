@@ -127,7 +127,7 @@ This file can be re-written at any time.
   {% render 'shogun-head' %}
     {% comment %} Drop in blog {% endcomment %}
     {%- if dropinblog == 1 -%}{{ dropinblog_head_bottom }}{%- endif -%}
-
+{% include 'MonsterUpsell-shopify-prod-head' %}
 </head>
 
 	{%- capture body_classlist -%}template-{{ template.name | handleize }}{%- endcapture -%}
