@@ -1,0 +1,37 @@
+<script>
+	{% if product %}
+      window.mu_product = {
+        ...{{ product | json }},
+		collections: {{ product.collections | json }},
+		inventory:{
+      		{%- for variant in product.variants -%}
+        	"{{variant.id}}": {{variant.inventory_quantity}} ,
+            {%- endfor -%}
+      	},
+        has_only_default_variant: {{ product.has_only_default_variant }},
+        {% if recommendations.performed == true %}
+        recommendations: {{ recommendations.products | json }}
+        {% endif %}
+      }
+	{% endif %}
+    window.mu_currencies = [
+    {%- for currency in shop.enabled_currencies -%}
+      {"name": "{{currency.name}}", "iso_code": "{{currency.iso_code}}", "symbol": "{{currency.symbol}}"},
+    {%- endfor -%}
+    ];
+    window.mu_origin = '{{ shop.domain }}';
+    window.mu_myshopify_domain = '{{ shop.permanent_domain }}';
+    window.mu_cart_currency= '{{ cart.currency.iso_code }}';
+    window.mu_cart_items = {{ cart.items | json }};
+    window.mu_cart_note = '{{ cart.note }}';
+    window.mu_money_format = '{{ shop.money_format | replace: "'",'"'  }}';
+    window.mu_custom_links = []
+    window.mu_custom_atcs = []
+    window.mu_custom_atcs = []
+</script>
+
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+<link rel="stylesheet" href="https://d21yesh77pw85v.cloudfront.net/static/css/cart.css">
+<script src="https://d21yesh77pw85v.cloudfront.net/static/js/script_tags/cart_renderer.gz.js"></script>

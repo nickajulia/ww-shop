@@ -3,26 +3,13 @@
     "1657203279708ba715": {
       "type": "hero-grid",
       "blocks": {
-        "f978e3ff-bcf3-4eab-9753-bbf9ce6f7187": {
-          "type": "tile",
-          "settings": {
-            "title": "Beard Growth",
-            "cta_text": "Shop Products",
-            "cta_text_short": "Shop",
-            "cta_url": "\/",
-            "image_d": "shopify:\/\/shop_images\/hero-1-d.jpg",
-            "image_m": "shopify:\/\/shop_images\/hero-1-m.jpg",
-            "size_d": "default",
-            "size_m": "landscape"
-          }
-        },
         "bde4fe5e-88d6-470e-bc99-510f8cf0b006": {
           "type": "tile",
           "settings": {
-            "title": "Beard Care",
-            "cta_text": "Shop Products",
-            "cta_text_short": "Shop",
-            "cta_url": "\/",
+            "title": "New to Wild Willies?",
+            "cta_text": "Start Here",
+            "cta_text_short": "Start",
+            "cta_url": "shopify:\/\/pages\/product-recommendation-quiz",
             "image_d": "shopify:\/\/shop_images\/hero-2-d.jpg",
             "image_m": "shopify:\/\/shop_images\/hero-2-d.jpg",
             "size_d": "default",
@@ -33,13 +20,26 @@
           "type": "tile",
           "settings": {
             "title": "Beard Kits",
-            "cta_text": "Shop Products",
+            "cta_text": "Shop Kits",
             "cta_text_short": "Shop",
-            "cta_url": "\/",
+            "cta_url": "shopify:\/\/collections\/beard-growth-kits",
             "image_d": "shopify:\/\/shop_images\/hero-3-d.jpg",
             "image_m": "shopify:\/\/shop_images\/hero-3-d.jpg",
             "size_d": "default",
             "size_m": "default"
+          }
+        },
+        "f978e3ff-bcf3-4eab-9753-bbf9ce6f7187": {
+          "type": "tile",
+          "settings": {
+            "title": "Beard Growth",
+            "cta_text": "Shop Growth",
+            "cta_text_short": "Shop",
+            "cta_url": "shopify:\/\/collections\/beard-growth",
+            "image_d": "shopify:\/\/shop_images\/hero-1-d.jpg",
+            "image_m": "shopify:\/\/shop_images\/hero-1-m.jpg",
+            "size_d": "default",
+            "size_m": "landscape"
           }
         },
         "8c015c65-612f-4a29-998f-009ff71dbed5": {
@@ -56,9 +56,9 @@
         }
       },
       "block_order": [
-        "f978e3ff-bcf3-4eab-9753-bbf9ce6f7187",
         "bde4fe5e-88d6-470e-bc99-510f8cf0b006",
         "46c5e55b-40c2-4a2c-8242-dd699dcbbf14",
+        "f978e3ff-bcf3-4eab-9753-bbf9ce6f7187",
         "8c015c65-612f-4a29-998f-009ff71dbed5"
       ],
       "settings": {
@@ -71,7 +71,7 @@
         "1655826256c8053d61-0": {
           "type": "heading",
           "settings": {
-            "heading": "We make the internet's best-smelling, hardest-working men's products. No harmful chemicals and made in the USA.",
+            "heading": "We make the world's best-smelling, hardest-working men's products. No harmful chemicals and built in the USA.",
             "heading_size": "h2"
           }
         }
@@ -93,14 +93,14 @@
           "type": "item",
           "settings": {
             "image": "shopify:\/\/shop_images\/usp-1.png",
-            "title": "Proudly [Made In The USA]"
+            "title": "Proudly [Built In The USA]"
           }
         },
         "f57a33f7-d356-40de-af82-a3bef2d20780": {
           "type": "item",
           "settings": {
             "image": "shopify:\/\/shop_images\/usp-2.png",
-            "title": "100% Blend of [Natural Ingredients]"
+            "title": "[Natural Ingredients] whenever possible"
           }
         },
         "8d34c749-2a64-4133-981d-75fd07c3d6bf": {
@@ -114,7 +114,7 @@
           "type": "item",
           "settings": {
             "image": "shopify:\/\/shop_images\/usp-4.png",
-            "title": "[Free Returns] No Questions Ask"
+            "title": "[100%] Satisfaction Guarantee"
           }
         }
       },
@@ -128,6 +128,150 @@
         "color_accent": "light",
         "padding_top": 24,
         "padding_bottom": 24
+      }
+    },
+    "16581679841329fc0b": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "background-2",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "16574178161834015c": {
+      "type": "image-with-text",
+      "blocks": {
+        "1657417816de536618-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Don’t Know Where to Start?",
+            "heading_size": "h1"
+          }
+        },
+        "1657417816de536618-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Answer 4 quick questions about your beard and lifestyle and we'll give you a recommendation of what can help.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "1657417816de536618-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Take the quiz",
+            "button_link": "shopify:\/\/pages\/product-recommendation-quiz"
+          }
+        }
+      },
+      "block_order": [
+        "1657417816de536618-0",
+        "1657417816de536618-1",
+        "1657417816de536618-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/dont-know-where.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "content_padding_top": 56,
+        "content_padding_bottom": 56,
+        "is_v_compressed": false
+      }
+    },
+    "1657434746e5adb033": {
+      "type": "multicolumn",
+      "blocks": {
+        "1657434745812313dc-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/subscribe-1.png",
+            "title": "Choose your product",
+            "text": "<p>Find your favorites + click 'subscribe + save'<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1657434745812313dc-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/subscribe-2.png",
+            "title": "Select delivery frequency",
+            "text": "<p>Tell us how often you'd like to receive your product<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1657434745812313dc-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/subscribe-3.png",
+            "title": "Sign + seal the deal",
+            "text": "<p>Head to checkout and secure your subscription<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "a8779bac-4eb7-46c5-ae13-060fbb3a61e0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/subscribe-4.png",
+            "title": "You are in control",
+            "text": "<p>No commitment. Cancel or change anytime.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1657434745812313dc-0",
+        "1657434745812313dc-1",
+        "1657434745812313dc-2",
+        "a8779bac-4eb7-46c5-ae13-060fbb3a61e0"
+      ],
+      "settings": {
+        "title": "Subscribe and Save",
+        "heading_size": "h1",
+        "subheading": "Send it. Skip it. Pause it. Nudge it. You make the rules.",
+        "heading_align": "centered",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "Shop Now",
+        "button_link": "shopify:\/\/collections\/fathers-day-kits",
+        "color_scheme": "background-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "1657843681fe8caa40": {
+      "type": "apps",
+      "blocks": {
+        "56551344-c803-4d3d-a2d5-a4b97006dfe0": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "56551344-c803-4d3d-a2d5-a4b97006dfe0"
+      ],
+      "settings": {
+        "include_margins": true
       }
     },
     "1657434174b239fd4c": {
@@ -157,8 +301,8 @@
         "8c0e22f3-8bf1-4012-8377-9773016c2030": {
           "type": "review",
           "settings": {
-            "message": "This product so heavy that my dermatologist even noticed!",
-            "title": "Charles R"
+            "message": "This is my new favorite beard oil! Great scent and my hair feels nice and soft. This and my Wild Willies beard straightener are my staples to a great beard!",
+            "title": "Joseph R"
           }
         }
       },
@@ -170,55 +314,8 @@
       ],
       "settings": {
         "color_accent": "light",
-        "padding_top": 151,
+        "padding_top": 80,
         "padding_bottom": 89
-      }
-    },
-    "16574178161834015c": {
-      "type": "image-with-text",
-      "blocks": {
-        "1657417816de536618-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Don’t Know Where to Start?",
-            "heading_size": "h1"
-          }
-        },
-        "1657417816de536618-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Answer 4 quick questions about your beard and lifestyle and we'll give you a recommendation of what can help.<\/p>",
-            "text_style": "body"
-          }
-        },
-        "1657417816de536618-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "start quiz",
-            "button_link": "shopify:\/\/pages\/product-recommendation-quiz"
-          }
-        }
-      },
-      "block_order": [
-        "1657417816de536618-0",
-        "1657417816de536618-1",
-        "1657417816de536618-2"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/dont-know-where.jpg",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "left",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "content_padding_top": 56,
-        "content_padding_bottom": 56,
-        "is_v_compressed": false
       }
     },
     "1657422816e931d42e": {
@@ -239,7 +336,7 @@
         "enable_desktop_slider": false,
         "color_scheme": "background-2",
         "image_ratio": "square",
-        "show_secondary_image": false,
+        "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "show_price": false,
@@ -247,7 +344,7 @@
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 81,
-        "padding_bottom": 0
+        "padding_bottom": 80
       }
     },
     "1657418788a9c153ba": {
@@ -269,6 +366,40 @@
         "padding_bottom": 36
       }
     },
+    "165741929892b108e6": {
+      "type": "newsletter",
+      "blocks": {
+        "1657419298b0329a1f-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join the Club",
+            "heading_size": "h1"
+          }
+        },
+        "1657419298b0329a1f-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Sign up today and get 10% off your first purchase and be the first to know about exclusive launches, news & offers.<\/p>"
+          }
+        },
+        "1657419298b0329a1f-2": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "1657419298b0329a1f-0",
+        "1657419298b0329a1f-1",
+        "1657419298b0329a1f-2"
+      ],
+      "settings": {
+        "color_scheme": "accent-1",
+        "full_width": true,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
     "1657730210a6695dfe": {
       "type": "ww-dropinblog-recent-posts",
       "settings": {
@@ -279,6 +410,7 @@
     },
     "16574179145510a577": {
       "type": "image-with-text",
+      "disabled": true,
       "blocks": {
         "2caa84fe-9bc5-4ee0-b2bf-3dc4c143e636": {
           "type": "caption",
@@ -342,42 +474,9 @@
         "padding_bottom": 52
       }
     },
-    "165741929892b108e6": {
-      "type": "newsletter",
-      "blocks": {
-        "1657419298b0329a1f-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Join the Club",
-            "heading_size": "h1"
-          }
-        },
-        "1657419298b0329a1f-1": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Sign up today and get 10% off your first purchase and be the first to know about exclusive launches, news & offers.<\/p>"
-          }
-        },
-        "1657419298b0329a1f-2": {
-          "type": "email_form",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "1657419298b0329a1f-0",
-        "1657419298b0329a1f-1",
-        "1657419298b0329a1f-2"
-      ],
-      "settings": {
-        "color_scheme": "accent-1",
-        "full_width": true,
-        "padding_top": 56,
-        "padding_bottom": 56
-      }
-    },
     "165743442023a243eb": {
       "type": "image-with-text",
+      "disabled": true,
       "blocks": {
         "16574344208d156877-0": {
           "type": "heading",
@@ -430,92 +529,13 @@
         "is_v_compressed": true
       }
     },
-    "1657434746e5adb033": {
-      "type": "multicolumn",
-      "blocks": {
-        "1657434745812313dc-0": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/subscribe-1.png",
-            "title": "Choose your product",
-            "text": "<p>Find your favourites + click 'subscribe + save'<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "1657434745812313dc-1": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/subscribe-2.png",
-            "title": "Select delivery frequency",
-            "text": "<p>Tell us how often you'd like to receive your product<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "1657434745812313dc-2": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/subscribe-3.png",
-            "title": "Sign + seal the deal",
-            "text": "<p>Head to checkout and secure your subscription<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "a8779bac-4eb7-46c5-ae13-060fbb3a61e0": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/subscribe-4.png",
-            "title": "You are in control",
-            "text": "<p>No commitment. Cancel or change anytime.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "1657434745812313dc-0",
-        "1657434745812313dc-1",
-        "1657434745812313dc-2",
-        "a8779bac-4eb7-46c5-ae13-060fbb3a61e0"
-      ],
+    "16582549049419f8fc": {
+      "type": "custom-liquid",
       "settings": {
-        "title": "Subscribe and Save",
-        "heading_size": "h1",
-        "subheading": "Send it. Skip it. Pause it. Nudge it. You make the rules.",
-        "heading_align": "centered",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 4,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "Shop Now",
-        "button_link": "shopify:\/\/collections\/all",
+        "custom_liquid": "",
         "color_scheme": "background-2",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 56,
-        "padding_bottom": 56
-      }
-    },
-    "1657843681fe8caa40": {
-      "type": "apps",
-      "blocks": {
-        "56551344-c803-4d3d-a2d5-a4b97006dfe0": {
-          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
-          "settings": {
-            "heading_size": 20,
-            "feed_width": 100,
-            "html_area": ""
-          }
-        }
-      },
-      "block_order": [
-        "56551344-c803-4d3d-a2d5-a4b97006dfe0"
-      ],
-      "settings": {
-        "include_margins": true
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
@@ -523,16 +543,18 @@
     "1657203279708ba715",
     "1655826256c65769d1",
     "165743412601b9f244",
-    "1657434174b239fd4c",
+    "16581679841329fc0b",
     "16574178161834015c",
+    "1657434746e5adb033",
+    "1657843681fe8caa40",
+    "1657434174b239fd4c",
     "1657422816e931d42e",
     "1657418788a9c153ba",
+    "165741929892b108e6",
     "1657730210a6695dfe",
     "16574179145510a577",
     "16574454446cd34658",
-    "165741929892b108e6",
     "165743442023a243eb",
-    "1657434746e5adb033",
-    "1657843681fe8caa40"
+    "16582549049419f8fc"
   ]
 }

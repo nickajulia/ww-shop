@@ -120,7 +120,7 @@
   {% render 'shogun-head' %}
     {% comment %} Drop in blog {% endcomment %}
     {%- if dropinblog == 1 -%}{{ dropinblog_head_bottom }}{%- endif -%}
-</head>
+{% include 'MonsterUpsell-shopify-prod-head' %}</head>
 	{%- capture body_classlist -%}template-{{ template.name | handleize }}{%- endcapture -%}
 	{%- capture template_suffix -%}
 		{%- if template.suffix != blank -%}--{{ template.suffix }}{%- endif -%}
@@ -180,8 +180,8 @@
     <script src="{{ 'app.js' | asset_url }}" defer></script>
    
   
+{% include 'adroll' %}
 {% render 'oneclickupsellapp-theme', oneclickupsellapp: oneclickupsellapp %}
 {% assign oneclickupsellapp = true %}
-{% include 'adroll' %}
-</body>
+{% include 'MonsterUpsell-shopify-prod-body' %}</body>
 </html>
