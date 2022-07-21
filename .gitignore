@@ -1,7 +1,13 @@
 # Compiled files
-# assets/app.js
-# assets/app.css
-# mix-manifest.json
+assets/app.js
+assets/app.css
+mix-manifest.json
+assets/component-*.css
+assets/section-*.css
+assets/template-*.css
+assets/ww-s-*.css
+assets/ww-c-*.css
+
 
 # Node artifact files
 node_modules/
