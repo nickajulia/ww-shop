@@ -1,0 +1,15 @@
+.ww-collapsed {
+  $self: &;
+  &__cta {
+
+  }
+  &__content {
+    transition: max-height var(--duration-short) ease;
+    max-height: 500px;
+    
+    #{ $self }:not(#{ $self }--active) & {
+      max-height: 0;
+      overflow: hidden;
+    }
+  }
+}
