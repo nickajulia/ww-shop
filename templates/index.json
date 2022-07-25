@@ -162,7 +162,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/dont-know-where.jpg",
-        "height": "adapt",
+        "height": "small",
         "desktop_image_width": "medium",
         "layout": "text_first",
         "desktop_content_position": "middle",
