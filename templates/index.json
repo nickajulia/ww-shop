@@ -1,5 +1,14 @@
 {
   "sections": {
+    "165879101208ae6d13": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "background-2",
+        "padding_top": 12,
+        "padding_bottom": 0
+      }
+    },
     "1657203279708ba715": {
       "type": "hero-grid",
       "blocks": {
@@ -531,6 +540,7 @@
     }
   },
   "order": [
+    "165879101208ae6d13",
     "1657203279708ba715",
     "1655826256c65769d1",
     "165743412601b9f244",
