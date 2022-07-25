@@ -124,8 +124,8 @@
         "type": "header",
         "settings": {
           "color_scheme": "accent-1",
-          "logo": "shopify:\/\/shop_images\/logo.webp",
-          "logo_width": 180,
+          "logo": "shopify:\/\/shop_images\/logo-new-2022.png",
+          "logo_width": 250,
           "logo_position": "top-left",
           "menu": "new-main-menu",
           "menu_type_desktop": "mega",
