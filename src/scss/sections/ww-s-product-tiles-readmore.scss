@@ -20,6 +20,18 @@
     .card__media img {
       object-fit: cover;
     }
+    .product-form__quantity-wrapper {
+      width: 100%;
+      display: block;
+      .product-form__buttons {
+        width: 100%;
+      }
+    }
+    .product-form .product-form__submit {
+      text-transform: none;
+      width: 100%;
+      box-sizing: border-box;
+    }
 	}
 
   .add-to-cart__wrapper .btn {
@@ -62,6 +74,4 @@
     padding-top: 13px;
     padding-bottom: 7px;
   }
-  
-
 }

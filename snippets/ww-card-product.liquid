@@ -50,6 +50,12 @@
 					id="{{ cta_id }}"
 					class="ww-collapsed__cta">
 					{{- read_more_cta | default: 'Learn More' -}}
+
+					<i class="ww-collapsed__cta-icon">
+						<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M6 15.0001H8.91V9.03012H14.88V6.09012H8.91V0.120117H6V6.09012H0V9.03012H6V15.0001Z" fill="currentColor"/>
+						</svg>
+					</i>
 				</button>
 				
 				<div class="ww-collapsed__content" aria-labelledby="{{ cta_id }}">
@@ -278,13 +284,14 @@
 							{%- capture product_form_id -%}
 								product-form-{{section_id}}-{{card_product.id}}
 							{%- endcapture -%}
-							
-							{% render 'skio-plan-picker',
-									product: card_product,
-									form_id: product_form_id,
-									radio_type: 'square',
-									start_onetime: false,
-									onetime_first: false %}
+							<div class="visually-hidden">
+								{% render 'skio-plan-picker',
+										product: card_product,
+										form_id: product_form_id,
+										radio_type: 'square',
+										start_onetime: false,
+										onetime_first: false %}
+							</div>
 							
 							<product-form class="product-form">
 								<div class="product-form__error-message-wrapper visually-hidden" role="alert" hidden>
@@ -320,15 +327,11 @@
 												type="submit"
 												name="add"
 												class="product-form__submit button button--full-width button--{% if subscription_enabled %}subscription{% endif %} button--primary"
-											{% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+											{% if card_product.selected_or_first_available_variant.available == false %}disabled{% endif %}
 											>
 													<span>
 														{%- if card_product.selected_or_first_available_variant.available -%}
-															{%- if subscription_enabled -%}
-																{{ 'SETUP SUBSCRIPTION' }}
-															{%- else -%}
-																{{ 'products.product.add_to_cart' | t }}
-															{%- endif -%}
+															{{ 'products.product.add_to_cart' | t }}
 														{%- else -%}
 															{{ 'products.product.sold_out' | t }}
 														{%- endif -%}
