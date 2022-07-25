@@ -130,15 +130,6 @@
         "padding_bottom": 24
       }
     },
-    "16581679841329fc0b": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "",
-        "color_scheme": "background-2",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "16574178161834015c": {
       "type": "image-with-text",
       "blocks": {
@@ -543,7 +534,6 @@
     "1657203279708ba715",
     "1655826256c65769d1",
     "165743412601b9f244",
-    "16581679841329fc0b",
     "16574178161834015c",
     "1657434746e5adb033",
     "1657843681fe8caa40",
