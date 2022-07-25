@@ -7,11 +7,11 @@
           "type": "tile",
           "settings": {
             "title": "New to Wild Willies?",
-            "cta_text": "Start Here",
+            "cta_text": "START HERE",
             "cta_text_short": "Start",
             "cta_url": "shopify:\/\/pages\/product-recommendation-quiz",
-            "image_d": "shopify:\/\/shop_images\/hero-2-d.jpg",
-            "image_m": "shopify:\/\/shop_images\/hero-2-d.jpg",
+            "image_d": "shopify:\/\/shop_images\/new-to-ww.jpg",
+            "image_m": "shopify:\/\/shop_images\/new-to-ww.jpg",
             "size_d": "default",
             "size_m": "default"
           }
@@ -20,11 +20,11 @@
           "type": "tile",
           "settings": {
             "title": "Beard Kits",
-            "cta_text": "Shop Kits",
+            "cta_text": "SHOP KITS",
             "cta_text_short": "Shop",
             "cta_url": "shopify:\/\/collections\/beard-growth-kits",
-            "image_d": "shopify:\/\/shop_images\/hero-3-d.jpg",
-            "image_m": "shopify:\/\/shop_images\/hero-3-d.jpg",
+            "image_d": "shopify:\/\/shop_images\/Beard-Kits_dad3833e-cee2-4047-80bc-1676dca817a5.jpg",
+            "image_m": "shopify:\/\/shop_images\/Beard-Kits_dad3833e-cee2-4047-80bc-1676dca817a5.jpg",
             "size_d": "default",
             "size_m": "default"
           }
@@ -33,11 +33,11 @@
           "type": "tile",
           "settings": {
             "title": "Beard Growth",
-            "cta_text": "Shop Growth",
+            "cta_text": "SHOP GROWTH",
             "cta_text_short": "Shop",
             "cta_url": "shopify:\/\/collections\/beard-growth",
-            "image_d": "shopify:\/\/shop_images\/hero-1-d.jpg",
-            "image_m": "shopify:\/\/shop_images\/hero-1-m.jpg",
+            "image_d": "shopify:\/\/shop_images\/shop-growth.jpg",
+            "image_m": "shopify:\/\/shop_images\/shop-growth.jpg",
             "size_d": "default",
             "size_m": "landscape"
           }
