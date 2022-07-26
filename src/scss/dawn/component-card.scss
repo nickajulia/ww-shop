@@ -122,6 +122,33 @@
   align-self: flex-end;
   grid-row-start: 3;
   justify-self: flex-start;
+
+  .card-wrapper--product & {
+    .badge {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-family: 'Noto Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      display: inline-block;
+
+      &__icon-wrapper {
+        display: inline-block;
+        width: 12px;
+        height: 16px;
+        margin-right: 11px;
+        svg {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }    
+  }
 }
 
 .card__badge.top {
