@@ -86,10 +86,7 @@
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'theme.css' | asset_url | stylesheet_tag }}
-		{% comment %} TODO: Apply bundled css globally {% endcomment %}
-		{%- if template.name == 'index' -%}
-			{{ 'app.css' | asset_url | stylesheet_tag }}
-		{%- endif -%}
+		{{ 'app.css' | asset_url | stylesheet_tag }}
 
 		{%- section 'global-product-badges' -%}
 

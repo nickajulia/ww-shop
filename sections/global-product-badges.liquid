@@ -1,7 +1,7 @@
 {%- if section.blocks.size > 0 -%}
 	{% style %}
 		{% for block in section.blocks %}
-			.featured-collection .badge[data-badge-content="{{ block.settings.title | downcase | strip }}"] {
+			.badge[data-badge-content="{{ block.settings.title | downcase | strip }}"] {
 				color: {{ block.settings.text_color }};
 				background-color: {{ block.settings.bg_color }};
 			}

@@ -1,5 +1,14 @@
 {
   "sections": {
+    "165879101208ae6d13": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "background-2",
+        "padding_top": 12,
+        "padding_bottom": 0
+      }
+    },
     "1657203279708ba715": {
       "type": "hero-grid",
       "blocks": {
@@ -7,11 +16,11 @@
           "type": "tile",
           "settings": {
             "title": "New to Wild Willies?",
-            "cta_text": "Start Here",
+            "cta_text": "START HERE",
             "cta_text_short": "Start",
             "cta_url": "shopify:\/\/pages\/product-recommendation-quiz",
-            "image_d": "shopify:\/\/shop_images\/hero-2-d.jpg",
-            "image_m": "shopify:\/\/shop_images\/hero-2-d.jpg",
+            "image_d": "shopify:\/\/shop_images\/new-to-ww.jpg",
+            "image_m": "shopify:\/\/shop_images\/new-to-ww.jpg",
             "size_d": "default",
             "size_m": "default"
           }
@@ -20,11 +29,11 @@
           "type": "tile",
           "settings": {
             "title": "Beard Kits",
-            "cta_text": "Shop Kits",
+            "cta_text": "SHOP KITS",
             "cta_text_short": "Shop",
             "cta_url": "shopify:\/\/collections\/beard-growth-kits",
-            "image_d": "shopify:\/\/shop_images\/hero-3-d.jpg",
-            "image_m": "shopify:\/\/shop_images\/hero-3-d.jpg",
+            "image_d": "shopify:\/\/shop_images\/Beard-Kits_dad3833e-cee2-4047-80bc-1676dca817a5.jpg",
+            "image_m": "shopify:\/\/shop_images\/Beard-Kits_dad3833e-cee2-4047-80bc-1676dca817a5.jpg",
             "size_d": "default",
             "size_m": "default"
           }
@@ -33,11 +42,11 @@
           "type": "tile",
           "settings": {
             "title": "Beard Growth",
-            "cta_text": "Shop Growth",
+            "cta_text": "SHOP GROWTH",
             "cta_text_short": "Shop",
             "cta_url": "shopify:\/\/collections\/beard-growth",
-            "image_d": "shopify:\/\/shop_images\/hero-1-d.jpg",
-            "image_m": "shopify:\/\/shop_images\/hero-1-m.jpg",
+            "image_d": "shopify:\/\/shop_images\/shop-growth.jpg",
+            "image_m": "shopify:\/\/shop_images\/shop-growth.jpg",
             "size_d": "default",
             "size_m": "landscape"
           }
@@ -71,7 +80,7 @@
         "1655826256c8053d61-0": {
           "type": "heading",
           "settings": {
-            "heading": "We make the world's best-smelling, hardest-working men's products. No harmful chemicals and built in the USA.",
+            "heading": "WE MAKE THE WORLD'S BEST-SELLING, HARDEST-WORKING, MEN'S PRODUCTS. NO HARMFUL CHEMICALS AND BUILT IN THE USA.",
             "heading_size": "h2"
           }
         }
@@ -82,8 +91,8 @@
       "settings": {
         "color_scheme": "background-2",
         "full_width": true,
-        "padding_top": 58,
-        "padding_bottom": 44
+        "padding_top": 48,
+        "padding_bottom": 55
       }
     },
     "165743412601b9f244": {
@@ -126,17 +135,8 @@
       ],
       "settings": {
         "color_accent": "light",
-        "padding_top": 24,
-        "padding_bottom": 24
-      }
-    },
-    "16581679841329fc0b": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "",
-        "color_scheme": "background-2",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 35,
+        "padding_bottom": 35
       }
     },
     "16574178161834015c": {
@@ -171,7 +171,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/dont-know-where.jpg",
-        "height": "adapt",
+        "height": "small",
         "desktop_image_width": "medium",
         "layout": "text_first",
         "desktop_content_position": "middle",
@@ -255,25 +255,6 @@
         "padding_bottom": 56
       }
     },
-    "1657843681fe8caa40": {
-      "type": "apps",
-      "blocks": {
-        "56551344-c803-4d3d-a2d5-a4b97006dfe0": {
-          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
-          "settings": {
-            "heading_size": 20,
-            "feed_width": 100,
-            "html_area": ""
-          }
-        }
-      },
-      "block_order": [
-        "56551344-c803-4d3d-a2d5-a4b97006dfe0"
-      ],
-      "settings": {
-        "include_margins": true
-      }
-    },
     "1657434174b239fd4c": {
       "type": "featured-reviews",
       "blocks": {
@@ -318,6 +299,25 @@
         "padding_bottom": 89
       }
     },
+    "1657843681fe8caa40": {
+      "type": "apps",
+      "blocks": {
+        "56551344-c803-4d3d-a2d5-a4b97006dfe0": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "56551344-c803-4d3d-a2d5-a4b97006dfe0"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "1657422816e931d42e": {
       "type": "featured-collection-v2",
       "settings": {
@@ -343,8 +343,8 @@
         "enable_quick_add": false,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 81,
-        "padding_bottom": 80
+        "padding_top": 75,
+        "padding_bottom": 75
       }
     },
     "1657418788a9c153ba": {
@@ -596,14 +596,14 @@
     }
   },
   "order": [
+    "165879101208ae6d13",
     "1657203279708ba715",
     "1655826256c65769d1",
     "165743412601b9f244",
-    "16581679841329fc0b",
     "16574178161834015c",
     "1657434746e5adb033",
-    "1657843681fe8caa40",
     "1657434174b239fd4c",
+    "1657843681fe8caa40",
     "1657422816e931d42e",
     "1657418788a9c153ba",
     "165741929892b108e6",
