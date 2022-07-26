@@ -25,6 +25,7 @@
   "devDependencies": {
     "bulma": "^0.9.4",
     "laravel-mix": "^6.0.48",
+    "laravel-mix-glob": "^1.1.10",
     "postcss-custom-properties": "^12.1.8",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.52.2",
