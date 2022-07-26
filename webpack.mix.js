@@ -5,3 +5,4 @@ mixGlob
   .js('src/js/app.js', 'assets')
   .sass('src/scss/app.scss', 'assets')
   .sass('src/scss/dawn/**.scss', 'assets')
+  .mix('options')({processCssUrls: false});
