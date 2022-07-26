@@ -19,7 +19,7 @@
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 
 {%- if card_product and card_product != empty -%}
-  {%- liquid
+  {% comment %} {%- liquid
     assign ratio = 1
     if card_product.featured_media and media_aspect_ratio == 'portrait'
       assign ratio = 0.8
@@ -29,7 +29,52 @@
     if ratio == 0 or ratio == nil
       assign ratio = 1
     endif
-  -%}
+  -%} {% endcomment %}
+	{%- assign ratio = 1.38 -%}
+
+	{%- capture product_desc -%}
+		{%- if card_product.metafields.subscription_kit.short_desc.value != blank -%}
+			<div class="card__product-desc">
+				<p>{{ card_product.metafields.subscription_kit.short_desc.value }}</p>
+			</div>
+		{%- endif -%}
+	{%- endcapture -%}
+	
+	{%- capture collapsed_content -%}
+		{%- if show_read_more and card_product.metafields.subscription_kit.collapsed_content.value != blank -%}
+			{%- capture cta_id -%}
+				CollapseCta-{{ card_product.id }}-{{ section_id }}
+			{%- endcapture -%}
+			<div class="ww-collapsed"  data-collapse-group="[data-section-id='{{ section_id }}']">
+				<button
+					id="{{ cta_id }}"
+					class="ww-collapsed__cta">
+					{{- read_more_cta | default: 'Learn More' -}}
+
+					<i class="ww-collapsed__cta-icon">
+						<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M6 15.0001H8.91V9.03012H14.88V6.09012H8.91V0.120117H6V6.09012H0V9.03012H6V15.0001Z" fill="currentColor"/>
+						</svg>
+					</i>
+				</button>
+				
+				<div class="ww-collapsed__content" aria-labelledby="{{ cta_id }}">
+					<div class="rte">
+						{{ card_product.metafields.subscription_kit.collapsed_content.value }}
+					</div>
+				</div>
+			</div>
+		{%- endif -%}
+	{%- endcapture -%}
+
+	{% liquid
+		assign subscription_enabled = false
+		if card_product.selling_plan_groups != empty
+			assign subscription_enabled = true
+		endif  
+	%}	
+	
+
   <div class="card-wrapper card-wrapper--product underline-links-hover">
     <div class="card
       card--{{ settings.card_style }}
@@ -90,6 +135,7 @@
                 {{ card_product.title | escape }}
               </a>
             </h3>
+						{{- product_desc -}}
           </div>
           <div class="card__badge {{ settings.badge_position }}">
 						{%- capture product_badge_icon -%}
@@ -134,6 +180,9 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
+
+					{{- product_desc -}}
+
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
@@ -149,8 +198,10 @@
 						{%- if show_price -%}
             	{% render 'price', product: card_product, price_class: '' %}
 						{%- endif -%}
+						
+						{{- collapsed_content -}}
             
-            {%- if show_quick_add -%}
+            {%- if show_quick_add and show_skio_add == false -%}
               {%- if normal_quick_add == empty or normal_quick_add == false -%}
                 <div class="quick-add">
                   {%- assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id -%}
@@ -220,14 +271,83 @@
               {%- else -%}
                 <form action="/cart/add" method="post" enctype="multipart/form-data" id="product-form-{{ card_product.id }}" class="product-form">
                   <div class="add-to-cart__wrapper" style="margin-top:0px; margin-bottom: 10px;">
-                    <button type="submit" name="add" class="button button--full-width button--secondary">
-                      <span id="AddToCartText">ADD TO CART</span>
+                    <button type="submit" name="add" class="btn is-primary is-large">
+                      <span id="AddToCartText">Add to Cart</span>
                     </button>
                   </div>
                   <input type="hidden" id="variant-select" name="id" value="{{ card_product.variants.first.id }}" />
                 </form>
               {%- endif -%}
             {%- endif -%}
+
+						{%- if show_skio_add -%}
+							{%- capture product_form_id -%}
+								product-form-{{section_id}}-{{card_product.id}}
+							{%- endcapture -%}
+							<div class="visually-hidden">
+								{% render 'skio-plan-picker',
+										product: card_product,
+										form_id: product_form_id,
+										radio_type: 'square',
+										start_onetime: false,
+										onetime_first: false %}
+							</div>
+							
+							<product-form class="product-form">
+								<div class="product-form__error-message-wrapper visually-hidden" role="alert" hidden>
+									<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-error" viewBox="0 0 13 13">
+										<circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
+										<circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
+										<path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
+										<path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
+									</svg>
+									<span class="product-form__error-message"></span>
+								</div>
+	
+								{%- form 'product',
+									card_product,
+									id: product_form_id,
+									class: 'form',
+									novalidate: 'novalidate',
+									data-type: 'add-to-cart-form' -%}
+
+									<input type="hidden" name="id" value="{{ card_product.selected_or_first_available_variant.id }}" disabled>
+									<input class="quantity__input"
+										type="hidden"
+										name="quantity"
+										id="Quantity-{{ section.id }}"
+										min="1"
+										value="1"
+										form="{{ product_form_id }}"
+									>
+					
+									<div class="product-form__quantity-wrapper">
+										<div class="product-form__buttons">
+											<button
+												type="submit"
+												name="add"
+												class="product-form__submit button button--full-width button--{% if subscription_enabled %}subscription{% endif %} button--primary"
+											{% if card_product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+											>
+													<span>
+														{%- if card_product.selected_or_first_available_variant.available -%}
+															{{ 'products.product.add_to_cart' | t }}
+														{%- else -%}
+															{{ 'products.product.sold_out' | t }}
+														{%- endif -%}
+													</span>
+													<div class="loading-overlay__spinner hidden">
+														<svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+															<circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+														</svg>
+													</div>
+											</button>
+										</div>
+									</div>
+								{%- endform -%}
+							</product-form>						
+						{%- endif -%}
+
           </div>
         </div>
         
@@ -260,6 +380,8 @@
               </a>
             </h3>
           </div>
+
+					{{- product_desc -}}					
         </div>
       </div>
       <div class="card__content">
@@ -269,7 +391,10 @@
               {{ 'onboarding.product_title' | t }}
             </a>
           </h3>
-          <div class="card-information">
+					
+					{{- product_desc -}}
+          
+					<div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
               <div class="caption-with-letter-spacing light">{{ 'products.product.vendor' | t }}</div>
