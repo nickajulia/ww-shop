@@ -1,0 +1,22 @@
+{% comment %}
+    Renders a css font face declaration
+
+    Accepts:
+    - family: {String} The Font family to be used.
+    - src: {String} The filename of webfont located in the assets folder. Currently supports woff only.
+    - weight: {Number} The font-weight to be declared for the current family.
+
+    Usage:
+    {% render 'font-face-declare'
+			family: 'Now',
+			src: 'Now-Regular.woff',
+			weight: '400' %}
+{% endcomment %}
+
+
+@font-face {
+	font-family: '{{ family }}';
+	src: url({{ src | asset_url }}) format('woff');
+	font-style: normal;
+	font-weight: {{ weight }};
+}
