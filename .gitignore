@@ -7,7 +7,7 @@ assets/section-*.css
 assets/template-*.css
 assets/ww-s-*.css
 assets/ww-c-*.css
-
+assets/skio-plan-picker.css
 
 # Node artifact files
 node_modules/
