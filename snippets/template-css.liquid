@@ -1,0 +1,8 @@
+{%- assign existing_templates = 'product' | split: ',' -%}
+{%- if existing_templates contains template.name -%}
+	{%- capture template_css_file -%}
+		template-{{template.name}}.css
+	{%- endcapture -%}
+	{{ template_css_file | asset_url | stylesheet_tag }}
+{%- endif -%}
+

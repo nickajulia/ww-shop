@@ -1,0 +1,82 @@
+@import '../vendor/bulma/utils';
+
+.template-product {
+  // Typography ----------------------------------
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4 {
+    font-family: 'Now';
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  h1, .h1 {
+    // font-size: 48px;
+    font-size: 42px;
+    line-height: 110%;
+  }
+  h2, .h2 {
+    font-size: 36px;
+    line-height: 110%;
+  }
+  h3, .h3 {
+    font-size: 24px;
+    line-height: 150%;
+  }
+  h4, .h4 {
+    font-size: 18px;
+    line-height: 150%;
+  }
+
+  // Customizations ----------------------------------
+  .product__title {
+    margin-bottom: 16px;
+  }
+  .trustspot-inline-product {
+    margin-bottom: 16px;
+    .trustspot-inline-rating .ts-star {
+      font-size: 19px;
+    }
+    .trustspot-inline-rating,
+    .trustspot-inline-star,
+    .ts-reviews-rating-options {
+      line-height: 0;
+    }
+  }
+  .product__guarantee {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    a {
+      font-size: inherit;
+    }
+  }
+  .skio-plan-picker {
+    margin-bottom: 16px;
+    select[skio-selling-plans] {
+
+    }
+  }
+  .shipping-bar {
+    margin-bottom: 24px;
+  }
+  .product-form__quantity-wrapper {
+    margin-bottom: 16px;
+  }
+  shopify-payment-terms {
+    margin-bottom: 32px;
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+  }
+  .icon-with-text-wrap {
+    .icon-with-text img {
+      margin-bottom: 8px;
+    }
+  }
+
+}
