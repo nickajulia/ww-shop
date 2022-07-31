@@ -1,27 +1,61 @@
+@import '../vendor/bulma/utils';
+
 .skio-plan-picker {
+  font-family: 'Now';
   display: flex;
   flex-direction: column;
-  gap: 10px;
   padding: 0;
   border: 0;
+
+  select[skio-selling-plans] {
+    font-family: inherit;
+    margin-top: 0;
+    margin-bottom: 8px;
+    padding: 12.5px 16px;
+    
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000000;
+    border-radius: 0;
+
+    &:focus-visible {
+      outline-offset: none;
+      box-shadow: none;
+    }
+  }
+  .skio-details summary {
+    padding: 0;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    /* identical to box height, or 21px */
+    color: #000000;
+
+    svg {
+      display: none;
+    }
+  }
+  
 }
 
 .skio-group-container {
   display: none;
-}
-.skio-group-container--available {
-  display: block;
-  position: relative;
-  /* box-shadow: 0 0 5px rgba(23, 24, 24, 0.05), 0 1px 2px rgba(0, 0, 0, 0.07); */
-  border-radius: 3px;
-  border-width: 1px;
-  border-color: transparent;
-  border-style: solid; 
-  transition: border-color 0.2s ease;
-}
-.skio-group-container--selected {
-  border-color: #DCDCDC;
-  background-color: #f2f2f2;
+
+  &--available {
+    display: block;
+    position: relative;
+    transition: border-color 0.2s ease;
+  }
+  &--selected {
+    background-color: $color-mono-2;
+  }
+  &:not(&--selected) {
+    border: 1px solid $color-mono-2;
+  }
 }
 
 .skio-group-input {
@@ -40,7 +74,7 @@
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  padding: 10px;
+  padding: 16px;
   overflow: hidden;
 }
 
@@ -49,14 +83,28 @@
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
+
+  font-style: normal;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
+  line-height: 150%;
+  color: #000000;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
 }
 
 .skio-radio__container {
   display: flex;
-  margin-right: 10px;
-  color: var(--gradient-base-accent-2);
+  margin-right: 12px;
+  
+  .skio-group-container.skio-group-container--selected & {
+    color: var(--gradient-base-accent-2);
+  }
+  .skio-group-container:not(.skio-group-container--selected) & {
+    color: #999;
+  }
 }
 
 .skio-radio {
@@ -74,16 +122,11 @@
   opacity: 1;
 }
 
-.skio-price {
-  margin-left: 0.5em;
-}
-
 .skio-group-content {
   width: auto;
-  margin-left: 30px;
   transition: max-height 0.25s cubic-bezier(0.4,0,0.2,1),
               opacity 0.25s cubic-bezier(0.4,0,0.2,1);
-  max-height: 38px;
+  max-height: 100vh;
   opacity: 1;
 }
 
@@ -96,15 +139,21 @@
 
 .skio-group-title {
   min-width: max-content;
-  font-weight: 700;
 }
 
 .skio-save {
   color: #fff;
   /* border: 1px #0fa573 solid;  */
-  background-color: var(--gradient-base-accent-2);
-  padding: 0px 8px;
-  border-radius: 20px;
+  background-color: $color-brand-orange;
+  padding: 6px 14px;
+  border-radius: 6px;
+  margin: 0 8px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
 }
 
 .skio-frequency {
