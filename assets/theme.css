@@ -586,16 +586,6 @@ font-weight:600;}
   margin: 0 !important;
 }
 
-.product__info-wrapper .product__title h1 {
-  font-weight: 700;
-  font-size: 36px;
-}
-
-@media (max-width: 989px) {
-  .product__info-wrapper .product__title h1 {
-    font-size: 24px;
-  }
-}
 .skio-plan-picker .checked-radio-button svg path {
   fill: #F05423;
 }
@@ -609,14 +599,17 @@ font-weight:600;}
 */
 .product__info-wrapper .icon-with-text-wrap {
   display: flex;
-  align-items: center;
   text-align: center;
   margin-top: 30px;
   flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 
 .product__info-wrapper .icon-with-text-wrap .icon-with-text {
   width: 33.33%;
+  max-width: 120px;
   padding: 0 10px;
 }
 
@@ -634,10 +627,6 @@ font-weight:600;}
 /* 
 * Guarantee Text
 */
-.product__info-container .product__guarantee {
-  margin: 0 !important;
-}
-
 .product__info-container .product__title {
   margin-bottom: 0;
 }
@@ -1897,9 +1886,6 @@ input#NewsletterForm--footer:hover, input#NewsletterForm--footer:focus {
 @media (max-width: 767px) {
   .breadcrumbs {
     display: none;
-  }
-  .skio-group-container--selected {
-    margin-top: 5px;
   }
   .button--subscription {
     font-size: 13px;
