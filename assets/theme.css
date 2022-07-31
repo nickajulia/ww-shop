@@ -586,16 +586,6 @@ font-weight:600;}
   margin: 0 !important;
 }
 
-.product__info-wrapper .product__title h1 {
-  font-weight: 700;
-  font-size: 36px;
-}
-
-@media (max-width: 989px) {
-  .product__info-wrapper .product__title h1 {
-    font-size: 24px;
-  }
-}
 .skio-plan-picker .checked-radio-button svg path {
   fill: #F05423;
 }
@@ -634,10 +624,6 @@ font-weight:600;}
 /* 
 * Guarantee Text
 */
-.product__info-container .product__guarantee {
-  margin: 0 !important;
-}
-
 .product__info-container .product__title {
   margin-bottom: 0;
 }
