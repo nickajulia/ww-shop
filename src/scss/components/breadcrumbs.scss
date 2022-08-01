@@ -1,0 +1,28 @@
+.breadcrumbs {
+  ul {
+    display: flex;
+    margin-bottom: 2rem;
+
+    li {
+      &, a {
+        font-family: 'Now';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 150%;
+        color: #000000;
+        letter-spacing: normal;
+      }
+      &:not(:first-child)::before {
+        content: "›";
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      a:not(:hover) {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+

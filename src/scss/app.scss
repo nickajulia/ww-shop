@@ -6,8 +6,7 @@
 
 // @import './base/typography';
 
-// TODO: compile sections and components css files and only import when needed
-
+@import './components/breadcrumbs';
 @import './components/button';
 @import './components/ww-c-collapsed';
 

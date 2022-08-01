@@ -146,18 +146,16 @@
     }
     .payment-terms-wrapper {
       margin-bottom: 32px;
-  
+      font-family: 'Now';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 150%;
+      color: #2E374D;
+      letter-spacing: normal;
+      
       @include mobile {
         margin-bottom: 24px;
-      }
-  
-      .shopify-installments__content {
-        font-family: 'Now';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 150%;
-        color: #2E374D;      
       }
     }
     .icon-with-text-wrap {
