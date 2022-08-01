@@ -1275,79 +1275,6 @@ table td p {
     font-size: 16px;
   }
 }
-/* 
-* Instruction
-* sections/product-instruction.liquid
-*/
-.instruction-list {
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.instruction-content {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  width: 33%;
-}
-
-.instruction-image {
-  width: 110px;
-  position: relative;
-}
-
-.instruction-image .stepsImage {
-  max-height: 110px;
-  max-width: none;
-  height: 110px;
-  width: 110px;
-  border-radius: 50%;
-  border: solid 4px #ffc5b5;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.instruction-image .index {
-  width: 32px;
-  height: 32px;
-  position: absolute;
-  right: -5px;
-  top: 0px;
-  border: 2px solid #FFFFFF;
-  background: #F05423;
-  border-radius: 100%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.instruction-text {
-  width: 65%;
-  max-width: 266px;
-  margin-left: 15px;
-  text-align: right;
-}
-
-.instruction-text .text-title {
-  position: relative;
-  padding-right: 25px;
-  border-bottom: 1px solid #f05423;
-  margin-bottom: 10px;
-  padding-bottom: 15px;
-  font-size: 16px;
-  line-height: 1.2em;
-  font-weight: bold;
-}
-
-.instruction-text p {
-  font-size: 12px;
-}
 
 .text-title span {
   position: absolute;
@@ -1357,21 +1284,6 @@ table td p {
 }
 
 @media (max-width: 989px) {
-  .instruction-list {
-    flex-direction: column;
-  }
-  .instruction-content {
-    width: 100%;
-  }
-  .instruction-text {
-    max-width: 100%;
-    width: 100%;
-    padding-right: 28px;
-    margin-left: 30px;
-  }
-  .instruction-text .text-title {
-    padding-right: 0;
-  }
   .text-title span {
     right: -35px;
   }
@@ -1571,22 +1483,6 @@ nav.header__inline-menu {
 .footer__subscription input[type=email]:focus {
   background-color: #fff;
   color: #141414;
-}
-
-.breadcrumbs ul {
-  display: flex;
-  margin-bottom: 2rem;
-}
-
-.breadcrumbs ul li, .breadcrumbs ul li a {
-  color: #000;
-  font-size: 13px;
-}
-
-.breadcrumbs li:not(:first-child)::before {
-  content: ">";
-  padding-left: 3px;
-  padding-right: 3px;
 }
 
 .cart-notification-wrapper .cart-notification {

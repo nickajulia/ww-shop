@@ -1,0 +1,114 @@
+@import '../vendor/bulma/utils';
+
+.section-instruction {
+  .section-head {
+    margin-bottom: 56px;
+
+    .overline {
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+  }
+
+  .instruction-list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include desktop {
+      column-gap: 36px;
+    }
+  }
+
+  // From theme.scss
+  .instruction-content {
+    display: flex;
+    flex-wrap: nowrap;
+    width: calc(33.33% - 36px);
+  }
+
+  .instruction-image {
+    width: 110px;
+    position: relative;
+  }
+
+  .instruction-image .stepsImage {
+    max-height: 110px;
+    max-width: none;
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    border: solid 4px #ffc5b5;
+    -o-object-fit: cover;
+      object-fit: cover;
+  }
+
+  .instruction-image .index {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: -5px;
+    top: 0px;
+    border: 2px solid #FFFFFF;
+    background: #F05423;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .instruction-text {
+    width: 65%;
+    max-width: 266px;
+    margin-left: 16px;
+    text-align: right;
+  }
+
+  .instruction-text .text-title {
+    position: relative;
+    border-bottom: 1px solid #FFC7B6;
+    margin-bottom: 8px;
+    padding: 0 27px 8px 0;
+
+    font-family: 'Now';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: right;
+  }
+
+  .instruction-text p {
+    font-family: 'Now';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: normal;
+    margin-top: 0;
+  }
+
+  @include touch {
+    .instruction-list {
+      flex-direction: column;
+    }
+    .instruction-content {
+      width: 100%;
+    }
+    .instruction-text {
+      max-width: 100%;
+      width: 100%;
+      padding-right: 28px;
+      margin-left: 30px;
+    }
+    .instruction-text .text-title {
+      padding-right: 0;
+    }
+  }  
+
+}
