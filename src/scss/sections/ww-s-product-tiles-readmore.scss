@@ -32,7 +32,21 @@
       width: 100%;
       box-sizing: border-box;
     }
-	}
+    .card-wrapper {
+      @include desktop {
+        height: 100% !important;
+      }
+    }
+    .card__inner {
+      > a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
 
   .add-to-cart__wrapper .btn {
     width: 100%;
