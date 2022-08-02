@@ -99,10 +99,8 @@ This file can be re-written at any time.
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'theme.css' | asset_url | stylesheet_tag }}
-		{% comment %} TODO: Apply bundled css globally {% endcomment %}
-		{%- if template.name == 'index' -%}
-			{{ 'app.css' | asset_url | stylesheet_tag }}
-		{%- endif -%}
+    {% render 'template-css' %}
+    {{ 'app.css' | asset_url | stylesheet_tag }}
 
 		{%- section 'global-product-badges' -%}
 

@@ -1,13 +1,16 @@
 @charset "utf-8";
 
+@import './variables';
+
 @import './vendor/bulma';
 
 // @import './base/typography';
 
+@import './components/breadcrumbs';
 @import './components/button';
+@import './components/ww-c-collapsed';
 
 // Sections
-// TODO: output sections in multiple css files and only import when needed
 @import './sections/featured-blog';
 @import './sections/featured-collection';
 @import './sections/featured-reviews';
@@ -17,6 +20,8 @@
 @import './sections/newsletter';
 @import './sections/recent-posts';
 @import './sections/usp';
+@import './sections/ww-s-product-tiles-readmore';
+
 
 // Shopify templates
 @import './templates/index';

@@ -1,0 +1,77 @@
+.product-tiles-readmore {
+	$self: &;
+  --grid-desktop-horizontal-spacing: 29px;
+
+	.s-product-tiles-readmore & {
+    // overrides here
+    .card__heading {
+      font-family: 'Now';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: -0.02em;
+      color: #000000;      
+
+      a:after {
+        display: none;
+      }
+    }
+    .card__media img {
+      object-fit: cover;
+    }
+    .product-form__quantity-wrapper {
+      width: 100%;
+      display: block;
+      .product-form__buttons {
+        width: 100%;
+      }
+    }
+    .product-form .product-form__submit {
+      text-transform: none;
+      width: 100%;
+      box-sizing: border-box;
+    }
+	}
+
+  .add-to-cart__wrapper .btn {
+    width: 100%;
+  }
+  .card__product-desc {
+    font-family: 'Now';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.03em;
+  }
+  .price__container {
+    font-family: 'Now';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+  }
+  .ww-collapsed {
+    margin-bottom: 17px;
+  }
+  .ww-collapsed__cta {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #000000;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+  .ww-collapsed__content > * {
+    padding-top: 13px;
+    padding-bottom: 7px;
+  }
+}

@@ -1,0 +1,25 @@
+.ww-collapsed {
+  $self: &;
+  &__cta {
+    &-icon {
+      margin-left: 21px;
+      
+      svg {
+        transition: transform var(--duration-short) ease-in-out;
+        display: inline-block;
+        #{ $self }--active & {
+          transform: rotate(135deg);
+        }
+      }
+    }
+  }
+  &__content {
+    transition: max-height var(--duration-short) ease;
+    max-height: 500px;
+    
+    #{ $self }:not(#{ $self }--active) & {
+      max-height: 0;
+      overflow: hidden;
+    }
+  }
+}
