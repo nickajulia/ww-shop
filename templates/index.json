@@ -589,36 +589,6 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
-    },
-    "1658702085f575409b": {
-      "type": "product-tiles-readmore",
-      "settings": {
-        "title": "Subscription Kits",
-        "heading_size": "h1",
-        "heading_align": "centered",
-        "description": "<p>Get your dad an awesome 3-month subscription. Pick the kit that's right for his stage of beard growth and he'll get the bundle delivered once a month for 3 months.<\/p><p>You're only charged when the subscription ships each month. The subscription automatically ends after the third month.<\/p>",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "fathers-day-kits",
-        "products_to_show": 3,
-        "columns_desktop": 3,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-2",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "show_price": true,
-        "enable_quick_add": false,
-        "enable_skio": true,
-        "enable_read_more": true,
-        "exp_cta_text": "See what is included",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -638,7 +608,6 @@
     "16574179145510a577",
     "16574454446cd34658",
     "165743442023a243eb",
-    "16582549049419f8fc",
-    "1658702085f575409b"
+    "16582549049419f8fc"
   ]
 }
