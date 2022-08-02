@@ -186,6 +186,55 @@
         "is_v_compressed": false
       }
     },
+    "1657843681fe8caa40": {
+      "type": "apps",
+      "blocks": {
+        "56551344-c803-4d3d-a2d5-a4b97006dfe0": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "56551344-c803-4d3d-a2d5-a4b97006dfe0"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1658702085f575409b": {
+      "type": "product-tiles-readmore",
+      "settings": {
+        "title": "Subscription Kits",
+        "heading_size": "h1",
+        "heading_align": "centered",
+        "description": "<p>Get What you need for your beard in one easy subscription. Pick the kit that's right for your stage of beard growth and you'll get the bundle delivered once a month.<br\/><br\/>You're in control. <br\/>Keep the kit coming as long as you need or move on to the next stage.  <br\/>You're only charged when the subscription ships each month.<\/p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "fathers-day-kits",
+        "products_to_show": 4,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-2",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_price": true,
+        "enable_quick_add": true,
+        "enable_skio": true,
+        "enable_read_more": true,
+        "exp_cta_text": "See what is included",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "1657434746e5adb033": {
       "type": "multicolumn",
       "blocks": {
@@ -297,25 +346,6 @@
         "color_accent": "light",
         "padding_top": 80,
         "padding_bottom": 89
-      }
-    },
-    "1657843681fe8caa40": {
-      "type": "apps",
-      "blocks": {
-        "56551344-c803-4d3d-a2d5-a4b97006dfe0": {
-          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
-          "settings": {
-            "heading_size": 20,
-            "feed_width": 100,
-            "html_area": ""
-          }
-        }
-      },
-      "block_order": [
-        "56551344-c803-4d3d-a2d5-a4b97006dfe0"
-      ],
-      "settings": {
-        "include_margins": true
       }
     },
     "1657422816e931d42e": {
@@ -597,9 +627,10 @@
     "1655826256c65769d1",
     "165743412601b9f244",
     "16574178161834015c",
+    "1657843681fe8caa40",
+    "1658702085f575409b",
     "1657434746e5adb033",
     "1657434174b239fd4c",
-    "1657843681fe8caa40",
     "1657422816e931d42e",
     "1657418788a9c153ba",
     "165741929892b108e6",

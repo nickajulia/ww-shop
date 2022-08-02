@@ -2,35 +2,38 @@
 
 .template-product {
   // Typography ----------------------------------
-  h1, .h1,
-  h2, .h2,
-  h3, .h3,
-  h4, .h4 {
-    font-family: 'Now';
-    font-style: normal;
-    font-weight: 700;
-  }
-  
-  h1, .h1 {
-    // font-size: 48px;
-    font-size: 42px;
-    line-height: 110%;
-    
-    @include mobile {
-      font-size: 32px;
+  #MainContent {
+
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4 {
+      font-family: 'Now';
+      font-style: normal;
+      font-weight: 700;
     }
-  }
-  h2, .h2 {
-    font-size: 36px;
-    // line-height: 110%;
-  }
-  h3, .h3 {
-    font-size: 24px;
-    // line-height: 150%;
-  }
-  h4, .h4 {
-    font-size: 18px;
-    // line-height: 150%;
+    
+    h1, .h1 {
+      // font-size: 48px;
+      font-size: 42px;
+      line-height: 110%;
+      
+      @include mobile {
+        font-size: 32px;
+      }
+    }
+    h2, .h2 {
+      font-size: 36px;
+      // line-height: 110%;
+    }
+    h3, .h3 {
+      font-size: 24px;
+      // line-height: 150%;
+    }
+    h4, .h4 {
+      font-size: 18px;
+      // line-height: 150%;
+    }
   }
 
   // Customizations ----------------------------------
