@@ -169,6 +169,10 @@
   object-fit: cover;
   object-position: center center;
   width: 100%;
+
+  .card-wrapper--media-square & {
+    object-fit: contain;
+  }
 }
 
 .card__inner:not(.ratio) > .card__content {
