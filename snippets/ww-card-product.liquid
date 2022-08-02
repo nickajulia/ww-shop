@@ -125,6 +125,7 @@
                   height="{{ card_product.media[1].height }}"
                 >
               {%- endif -%}
+
             </div>
           </div>
         {%- endif -%}
@@ -146,9 +147,6 @@
 							</span>
 						{%- endcapture -%}
 						
-						
-						
-
 						{% comment %} Detect badge tag {% endcomment %}
 						{%- for tag in card_product.tags -%}
 							{%- unless tag contains 'badge:' -%} {%- continue -%} {%- endunless -%}
@@ -171,7 +169,13 @@
 
 						{%- endif -%}
           </div>
-        </div>
+        
+				
+				</div>
+
+				<a href="{{ card_product.url }}" title="{{ card_product.title | escape }}">
+					<span class="is-sr-only">{{ card_product.title | escape }}</span>
+				</a>
       </div>
       <div class="card__content">
         <div class="card__information">
