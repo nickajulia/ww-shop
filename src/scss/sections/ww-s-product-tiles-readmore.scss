@@ -11,7 +11,9 @@
       font-size: 24px;
       line-height: 150%;
       letter-spacing: -0.02em;
-      color: #000000;      
+      color: #000000;
+      margin-bottom: 8px;
+      flex-grow: 0;
 
       a:after {
         display: none;
@@ -23,6 +25,7 @@
     .product-form__quantity-wrapper {
       width: 100%;
       display: block;
+      margin-top: 0;
       .product-form__buttons {
         width: 100%;
       }
@@ -32,7 +35,21 @@
       width: 100%;
       box-sizing: border-box;
     }
-	}
+    .card-wrapper {
+      @include desktop {
+        height: 100% !important;
+      }
+    }
+    .card__inner {
+      > a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
 
   .add-to-cart__wrapper .btn {
     width: 100%;
@@ -44,6 +61,7 @@
     font-size: 16px;
     line-height: 150%;
     letter-spacing: -0.03em;
+    flex-grow: 1;
   }
   .price__container {
     font-family: 'Now';
