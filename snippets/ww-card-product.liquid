@@ -34,8 +34,8 @@
 
 	{%- capture product_desc -%}
 		{%- if card_product.metafields.subscription_kit.short_desc.value != blank -%}
-			<div class="card__product-desc">
-				<p>{{ card_product.metafields.subscription_kit.short_desc.value }}</p>
+			<div class="card__product-desc rte">
+				{{- card_product.metafields.subscription_kit.short_desc.value -}}
 			</div>
 		{%- endif -%}
 	{%- endcapture -%}
